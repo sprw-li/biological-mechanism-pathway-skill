@@ -6,19 +6,21 @@
         "E_FLOW_DIRECTION"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_FLOW_DIRECTION'] (tokens=['r_egfr_grb2']), got []",
-      "exit": 2,
+      "detail": "E_FLOW_DIRECTION in relations.r_egfr_grb2",
+      "exit": 4,
       "expected": "E_FLOW_DIRECTION",
-      "got_codes": [],
+      "got_codes": [
+        "E_FLOW_DIRECTION"
+      ],
       "mode": "model",
       "name": "reverse_from_to",
       "note": "箭头方向颠倒",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "r_egfr_grb2"
       ],
-      "where": "",
-      "where_via": null
+      "where": "relations.r_egfr_grb2",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -26,21 +28,23 @@
         "E_FLOW_DIRECTION"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_FLOW_DIRECTION'] (tokens=['e_grb2', 'r_egfr_grb2', 'flow']), got []",
-      "exit": 2,
+      "detail": "E_FLOW_DIRECTION in relations.r_egfr_grb2",
+      "exit": 4,
       "expected": "E_FLOW_DIRECTION",
-      "got_codes": [],
+      "got_codes": [
+        "E_FLOW_DIRECTION"
+      ],
       "mode": "model",
       "name": "rank_contradicts_edge",
       "note": "rank 与边方向矛盾",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "e_grb2",
         "r_egfr_grb2",
         "flow"
       ],
-      "where": "",
-      "where_via": null
+      "where": "relations.r_egfr_grb2",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -48,20 +52,24 @@
         "E_FLOW_DIRECTION"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_FLOW_DIRECTION'] (tokens=['r_vhl_hif1a', 'r_hif1a_vegf']), got []",
-      "exit": 2,
+      "detail": "E_FLOW_DIRECTION in relations.r_vhl_hif1a",
+      "exit": 4,
       "expected": "E_FLOW_DIRECTION",
-      "got_codes": [],
+      "got_codes": [
+        "E_FLOW_DIRECTION",
+        "E_INTERACTION_STYLE_MISMATCH",
+        "E_LEGEND_DATA_MISMATCH"
+      ],
       "mode": "model",
       "name": "cycle_without_feedback",
       "note": "无 feedback 标记的有向环",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "r_vhl_hif1a",
         "r_hif1a_vegf"
       ],
-      "where": "",
-      "where_via": null
+      "where": "relations.r_vhl_hif1a",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -69,19 +77,21 @@
         "E_INTERACTION_STYLE_MISMATCH"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_INTERACTION_STYLE_MISMATCH'] (tokens=['r_akt1_foxo3_inh']), got []",
-      "exit": 2,
+      "detail": "E_INTERACTION_STYLE_MISMATCH in relations.r_akt1_foxo3_inh",
+      "exit": 4,
       "expected": "E_INTERACTION_STYLE_MISMATCH",
-      "got_codes": [],
+      "got_codes": [
+        "E_INTERACTION_STYLE_MISMATCH"
+      ],
       "mode": "model",
       "name": "inhibition_as_activation_arrow",
       "note": "抑制画成激活箭头",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "r_akt1_foxo3_inh"
       ],
-      "where": "",
-      "where_via": null
+      "where": "relations.r_akt1_foxo3_inh",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -89,19 +99,21 @@
         "E_INTERACTION_STYLE_MISMATCH"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_INTERACTION_STYLE_MISMATCH'] (tokens=['r_elk1_fos']), got []",
-      "exit": 2,
+      "detail": "E_INTERACTION_STYLE_MISMATCH in relations.r_elk1_fos",
+      "exit": 4,
       "expected": "E_INTERACTION_STYLE_MISMATCH",
-      "got_codes": [],
+      "got_codes": [
+        "E_INTERACTION_STYLE_MISMATCH"
+      ],
       "mode": "model",
       "name": "interaction_stroke_mismatch",
       "note": "transcription 线型与冻结表不符",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "r_elk1_fos"
       ],
-      "where": "",
-      "where_via": null
+      "where": "relations.r_elk1_fos",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -110,19 +122,21 @@
         "E_INTERACTION_STYLE_MISMATCH"
       ],
       "contract_silent": true,
-      "detail": "expected ['E_MODIFICATION_UNNAMED', 'E_INTERACTION_STYLE_MISMATCH'] (tokens=['r_map2k1_mapk1']), got []",
-      "exit": 2,
+      "detail": "E_MODIFICATION_UNNAMED in relations.r_map2k1_mapk1",
+      "exit": 4,
       "expected": "E_MODIFICATION_UNNAMED",
-      "got_codes": [],
+      "got_codes": [
+        "E_MODIFICATION_UNNAMED"
+      ],
       "mode": "model",
       "name": "modification_label_no_kind",
       "note": "modification 标签未写明修饰种类",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "r_map2k1_mapk1"
       ],
-      "where": "",
-      "where_via": null
+      "where": "relations.r_map2k1_mapk1",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -130,15 +144,22 @@
         "E_DIRECTION_UNSUPPORTED"
       ],
       "contract_silent": false,
-      "detail": "harness exception: TimeoutExpired: Command '['C:\\\\Users\\\\Morrow\\\\.dsh\\\\dsh-runtimes\\\\dsh-primary-runtime\\\\dependencies\\\\python\\\\python.exe', 'D:\\\\Borium_Contest\\\\ARMI2611000060v1\\\\work\\\\submission\\\\scripts\\\\run.py', 'render', '--work', 'D:\\\\Borium_Contest\\\\ARMI2611000060v1\\\\work\\\\verify\\\\_neg\\\\07_inhibition_retyped_activation\\\\work', '--output', 'D:\\\\Borium_Contest\\\\ARMI2611000060v1\\\\work\\\\verify\\\\_neg\\\\07_inhibition_retyped_activation\\\\out']' timed out after 600 seconds",
+      "detail": "E_DIRECTION_UNSUPPORTED in relations.r_egfr_grb2",
+      "exit": 4,
       "expected": "E_DIRECTION_UNSUPPORTED",
+      "got_codes": [
+        "E_DIRECTION_UNSUPPORTED",
+        "E_TYPE_CONSTRAINT_VIOLATION"
+      ],
       "mode": "model",
-      "name": "inhibition_retyped_activation",
-      "note": "抑制关系被改写成激活类型",
-      "status": "MISSED",
+      "name": "retyped_type_unsupported",
+      "note": "关系类型被改写成来源动词不支持的 translation",
+      "status": "DETECTED",
       "tokens": [
-        "r_akt1_foxo3_inh"
-      ]
+        "r_egfr_grb2"
+      ],
+      "where": "relations.r_egfr_grb2",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -146,19 +167,21 @@
         "E_MEMBRANE_PLACEMENT"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_MEMBRANE_PLACEMENT'] (tokens=['e_egfr']), got []",
-      "exit": 2,
+      "detail": "E_MEMBRANE_PLACEMENT in entities.e_egfr",
+      "exit": 4,
       "expected": "E_MEMBRANE_PLACEMENT",
-      "got_codes": [],
+      "got_codes": [
+        "E_MEMBRANE_PLACEMENT"
+      ],
       "mode": "model",
       "name": "tm_receptor_in_cytosol",
       "note": "跨膜受体塞进 cytosol",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "e_egfr"
       ],
-      "where": "",
-      "where_via": null
+      "where": "entities.e_egfr",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -166,19 +189,21 @@
         "E_MEMBRANE_PLACEMENT"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_MEMBRANE_PLACEMENT'] (tokens=['e_igf1r']), got []",
-      "exit": 2,
+      "detail": "E_MEMBRANE_PLACEMENT in entities.e_igf1r",
+      "exit": 4,
       "expected": "E_MEMBRANE_PLACEMENT",
-      "got_codes": [],
+      "got_codes": [
+        "E_MEMBRANE_PLACEMENT"
+      ],
       "mode": "model",
       "name": "tm_receptor_without_container",
       "note": "跨膜受体未落在膜容器中",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "e_igf1r"
       ],
-      "where": "",
-      "where_via": null
+      "where": "entities.e_igf1r",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -186,20 +211,22 @@
         "E_COMPARTMENT_MISMATCH"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_COMPARTMENT_MISMATCH'] (tokens=['r_pi3k_p85', 'e_p85']), got []",
-      "exit": 2,
+      "detail": "E_COMPARTMENT_MISMATCH in relations.r_pi3k_p85",
+      "exit": 4,
       "expected": "E_COMPARTMENT_MISMATCH",
-      "got_codes": [],
+      "got_codes": [
+        "E_COMPARTMENT_MISMATCH"
+      ],
       "mode": "model",
       "name": "binding_across_compartments",
       "note": "binding 两端跨区室",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "r_pi3k_p85",
         "e_p85"
       ],
-      "where": "",
-      "where_via": null
+      "where": "relations.r_pi3k_p85",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -208,20 +235,22 @@
         "E_COMPARTMENT_MISMATCH"
       ],
       "contract_silent": true,
-      "detail": "expected ['E_TYPE_CONSTRAINT_VIOLATION', 'E_COMPARTMENT_MISMATCH'] (tokens=['r_mapk1_elk1', 'e_elk1']), got []",
-      "exit": 2,
+      "detail": "E_TYPE_CONSTRAINT_VIOLATION in relations.r_mapk1_elk1",
+      "exit": 4,
       "expected": "E_TYPE_CONSTRAINT_VIOLATION",
-      "got_codes": [],
+      "got_codes": [
+        "E_TYPE_CONSTRAINT_VIOLATION"
+      ],
       "mode": "model",
       "name": "transport_same_container",
       "note": "transport 两端同区室、未跨边界",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "r_mapk1_elk1",
         "e_elk1"
       ],
-      "where": "",
-      "where_via": null
+      "where": "relations.r_mapk1_elk1",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -229,20 +258,23 @@
         "E_LEGEND_DATA_MISMATCH"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_LEGEND_DATA_MISMATCH'] (tokens=['legend', 'lg_vehicle']), got []",
-      "exit": 2,
+      "detail": "E_LEGEND_DATA_MISMATCH in legend",
+      "exit": 4,
       "expected": "E_LEGEND_DATA_MISMATCH",
-      "got_codes": [],
+      "got_codes": [
+        "E_LABEL_NOT_IN_SOURCE",
+        "E_LEGEND_DATA_MISMATCH"
+      ],
       "mode": "model",
       "name": "legend_extra_category",
       "note": "图例多一类（无对应数据分类）",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "legend",
         "lg_vehicle"
       ],
-      "where": "",
-      "where_via": null
+      "where": "legend",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -250,20 +282,22 @@
         "E_LEGEND_DATA_MISMATCH"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_LEGEND_DATA_MISMATCH'] (tokens=['legend', 'lg_hypoxia']), got []",
-      "exit": 2,
+      "detail": "E_LEGEND_DATA_MISMATCH in legend",
+      "exit": 4,
       "expected": "E_LEGEND_DATA_MISMATCH",
-      "got_codes": [],
+      "got_codes": [
+        "E_LEGEND_DATA_MISMATCH"
+      ],
       "mode": "model",
       "name": "legend_missing_category",
       "note": "图例少一类（数据分类无图例）",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "legend",
         "lg_hypoxia"
       ],
-      "where": "",
-      "where_via": null
+      "where": "legend",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -271,20 +305,22 @@
         "E_LEGEND_DATA_MISMATCH"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_LEGEND_DATA_MISMATCH'] (tokens=['lg_hypoxia', 'legend']), got []",
-      "exit": 2,
+      "detail": "E_LEGEND_DATA_MISMATCH in legend",
+      "exit": 4,
       "expected": "E_LEGEND_DATA_MISMATCH",
-      "got_codes": [],
+      "got_codes": [
+        "E_LEGEND_DATA_MISMATCH"
+      ],
       "mode": "model",
       "name": "legend_color_mismatch",
       "note": "图例说明配色与数据/图面不符",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "lg_hypoxia",
         "legend"
       ],
-      "where": "",
-      "where_via": null
+      "where": "legend",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -292,20 +328,22 @@
         "E_INTERACTION_STYLE_MISMATCH"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_INTERACTION_STYLE_MISMATCH'] (tokens=['legend', 'transport']), got []",
-      "exit": 2,
+      "detail": "E_INTERACTION_STYLE_MISMATCH in legend",
+      "exit": 4,
       "expected": "E_INTERACTION_STYLE_MISMATCH",
-      "got_codes": [],
+      "got_codes": [
+        "E_INTERACTION_STYLE_MISMATCH"
+      ],
       "mode": "model",
       "name": "legend_type_entry_missing",
       "note": "图例缺一类：图面出现 transport 但图例无对应条目",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "legend",
         "transport"
       ],
-      "where": "",
-      "where_via": null
+      "where": "legend",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -314,7 +352,7 @@
       ],
       "contract_silent": false,
       "detail": "expected ['E_EVIDENCE_WIDTH_MISMATCH'] (tokens=['r_egf_egfr']), got []",
-      "exit": 2,
+      "exit": 0,
       "expected": "E_EVIDENCE_WIDTH_MISMATCH",
       "got_codes": [],
       "mode": "model",
@@ -334,7 +372,7 @@
       ],
       "contract_silent": false,
       "detail": "expected ['E_ABUNDANCE_SIZE_MISMATCH'] (tokens=['e_egfr', 'legend', 'abundance']), got []",
-      "exit": 2,
+      "exit": 0,
       "expected": "E_ABUNDANCE_SIZE_MISMATCH",
       "got_codes": [],
       "mode": "model",
@@ -355,20 +393,22 @@
         "E_UNIT_MISSING"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_UNIT_MISSING'] (tokens=['e_pi3k', 'abundance']), got []",
-      "exit": 2,
+      "detail": "E_UNIT_MISSING in entities.e_pi3k.abundance",
+      "exit": 4,
       "expected": "E_UNIT_MISSING",
-      "got_codes": [],
+      "got_codes": [
+        "E_UNIT_MISSING"
+      ],
       "mode": "model",
       "name": "dimensioned_value_no_unit",
       "note": "有量纲数值缺单位",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "e_pi3k",
         "abundance"
       ],
-      "where": "",
-      "where_via": null
+      "where": "entities.e_pi3k.abundance",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -376,19 +416,19 @@
         "E_UNIT_MISSING"
       ],
       "contract_silent": false,
-      "detail": "W_UNIT_DIMENSIONLESS_ASSUMED 未出现（warnings=[]）",
-      "exit": 2,
+      "detail": "expect_absent 成立，且 W_UNIT_DIMENSIONLESS_ASSUMED 已出现",
+      "exit": 0,
       "expected": "E_UNIT_MISSING",
       "got_codes": [],
       "mode": "model",
       "name": "dimensionless_allowlist_no_error",
       "note": "无量纲 allowlist 列（p_value）无单位不得报 error（W_UNIT_DIMENSIONLESS_ASSUMED）",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "data.units",
         "data"
       ],
-      "warning_seen": false,
+      "warning_seen": true,
       "where": "n/a(absent)"
     },
     {
@@ -397,20 +437,22 @@
         "E_UNIT_MISSING"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_UNIT_MISSING'] (tokens=['concentration', 'data']), got []",
-      "exit": 2,
+      "detail": "E_UNIT_MISSING in data.units.concentration",
+      "exit": 4,
       "expected": "E_UNIT_MISSING",
-      "got_codes": [],
+      "got_codes": [
+        "E_UNIT_MISSING"
+      ],
       "mode": "model",
       "name": "dimensioned_column_no_unit",
       "note": "有量纲列（concentration）无单位必须报 error",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "concentration",
         "data"
       ],
-      "where": "",
-      "where_via": null
+      "where": "data.units.concentration",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -418,19 +460,21 @@
         "E_QUOTE_NOT_FOUND"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_QUOTE_NOT_FOUND'] (tokens=['r_elk1_fos']), got []",
-      "exit": 2,
+      "detail": "E_QUOTE_NOT_FOUND in relations.r_elk1_fos",
+      "exit": 4,
       "expected": "E_QUOTE_NOT_FOUND",
-      "got_codes": [],
+      "got_codes": [
+        "E_QUOTE_NOT_FOUND"
+      ],
       "mode": "model",
       "name": "fabricated_quote",
       "note": "编造逐字引文",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "r_elk1_fos"
       ],
-      "where": "",
-      "where_via": null
+      "where": "relations.r_elk1_fos",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -438,19 +482,21 @@
         "E_LABEL_NOT_IN_SOURCE"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_LABEL_NOT_IN_SOURCE'] (tokens=['e_map2k1']), got []",
-      "exit": 2,
+      "detail": "E_LABEL_NOT_IN_SOURCE in entities.e_map2k1",
+      "exit": 4,
       "expected": "E_LABEL_NOT_IN_SOURCE",
-      "got_codes": [],
+      "got_codes": [
+        "E_LABEL_NOT_IN_SOURCE"
+      ],
       "mode": "model",
       "name": "entity_not_in_material",
       "note": "材料里不存在的实体名",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "e_map2k1"
       ],
-      "where": "",
-      "where_via": null
+      "where": "entities.e_map2k1",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -458,19 +504,21 @@
         "E_NUMBER_NOT_IN_SOURCE"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_NUMBER_NOT_IN_SOURCE'] (tokens=['e_fos_p']), got []",
-      "exit": 2,
+      "detail": "E_NUMBER_NOT_IN_SOURCE in entities.e_fos_p.abundance",
+      "exit": 4,
       "expected": "E_NUMBER_NOT_IN_SOURCE",
-      "got_codes": [],
+      "got_codes": [
+        "E_NUMBER_NOT_IN_SOURCE"
+      ],
       "mode": "model",
       "name": "invented_number",
       "note": "图里凭空数值",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "e_fos_p"
       ],
-      "where": "",
-      "where_via": null
+      "where": "entities.e_fos_p.abundance",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -478,19 +526,23 @@
         "E_GENE_PROTEIN_CONFUSION"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_GENE_PROTEIN_CONFUSION'] (tokens=['e_fos']), got []",
-      "exit": 2,
+      "detail": "E_GENE_PROTEIN_CONFUSION in entities.e_fos",
+      "exit": 4,
       "expected": "E_GENE_PROTEIN_CONFUSION",
-      "got_codes": [],
+      "got_codes": [
+        "E_GENE_PROTEIN_CONFUSION",
+        "E_LABEL_NOT_IN_SOURCE",
+        "E_NUMBER_NOT_IN_SOURCE"
+      ],
       "mode": "model",
       "name": "gene_with_modification_suffix",
       "note": "基因写成蛋白（带修饰后缀）",
-      "status": "MISSED",
+      "status": "DETECTED",
       "tokens": [
         "e_fos"
       ],
-      "where": "",
-      "where_via": null
+      "where": "entities.e_fos",
+      "where_via": "where"
     },
     {
       "baseline_codes": [],
@@ -498,19 +550,22 @@
         "E_GENE_PROTEIN_CONFUSION"
       ],
       "contract_silent": false,
-      "detail": "expected ['E_GENE_PROTEIN_CONFUSION'] (tokens=['e_hif1a']), got []",
-      "exit": 2,
+      "detail": "E_GENE_PROTEIN_CONFUSION in entities.e_hif1a",
+      "exit": 4,
       "expected": "E_GENE_PROTEIN_CONFUSION",
-      "got_codes": [],
+      "got_codes": [
+        "E_GENE_PROTEIN_CONFUSION",
+        "E_LABEL_NOT_IN_SOURCE"
+      ],
       "mode": "model",
-      "name": "protein_with_bare_gene_symbol",
-      "note": "蛋白写成基因名（裸符号）",
-      "status": "MISSED",
+      "name": "protein_labelled_as_transcript",
+      "note": "蛋白写成 mRNA 转录本名（kind=protein 与标签矛盾）",
+      "status": "DETECTED",
       "tokens": [
         "e_hif1a"
       ],
-      "where": "",
-      "where_via": null
+      "where": "entities.e_hif1a",
+      "where_via": "where"
     },
     {
       "codes": [
@@ -652,6 +707,10 @@
         "E_QUOTE_NOT_FOUND",
         "E_UNIT_MISSING",
         "E_UNTRACED_CANVAS_ELEMENT",
+        "W_ABUNDANCE_SIZE_CLAMPED",
+        "W_CHART_SERIES_DERIVED",
+        "W_COMPARTMENT_NESTING",
+        "W_ORIENTATION_RENDERED_HORIZONTAL",
         "W_UNIT_DIMENSIONLESS_ASSUMED",
         "artifact_nonempty",
         "color_space_declared",
@@ -686,16 +745,16 @@
         "REF_SEMANTIC_STATUS_HONEST"
       ],
       "contract_silent": false,
-      "detail": "dishonest/unexpected: status=na reference_path=None discovered_locally=True",
+      "detail": "honest: status=labels_fully_covered reference=D:/Borium_Contest/ARMI2611000060v1/work/verify/fixtures/fx-reference/materials/figure03_reference.svg",
       "expected": "REF_SEMANTIC_STATUS_HONEST",
       "got_codes": [
-        "semantic_status=na"
+        "semantic_status=labels_fully_covered"
       ],
       "mode": "reference",
       "name": "ref_status_must_not_be_na_when_reference_present",
       "note": "材料里有原图却把 semantic_status 写成 na（谎报：必须被检出）",
-      "reference_path": null,
-      "status": "MISSED",
+      "reference_path": "D:/Borium_Contest/ARMI2611000060v1/work/verify/fixtures/fx-reference/materials/figure03_reference.svg",
+      "status": "DETECTED",
       "tokens": [
         "reference_comparison",
         "semantic_status"
@@ -796,12 +855,12 @@
       "state": "PASS"
     },
     {
-      "detail": "[]",
+      "detail": "['W_ABUNDANCE_SIZE_CLAMPED', 'W_CHART_SERIES_DERIVED', 'W_COMPARTMENT_NESTING', 'W_ORIENTATION_RENDERED_HORIZONTAL']",
       "name": "fx-linear-pathway gate warnings",
       "state": "INFO"
     },
     {
-      "detail": "bytes=45442",
+      "detail": "bytes=45443",
       "name": "fx-linear-pathway editable SVG written",
       "state": "PASS"
     },
@@ -896,17 +955,17 @@
       "state": "PASS"
     },
     {
-      "detail": "bytes=45442",
+      "detail": "bytes=45443",
       "name": "fx-linear-pathway 导出件 svg 真实存在",
       "state": "PASS"
     },
     {
-      "detail": "bytes=59595",
+      "detail": "bytes=59565",
       "name": "fx-linear-pathway 导出件 pdf 真实存在",
       "state": "PASS"
     },
     {
-      "detail": "bytes=403081",
+      "detail": "bytes=402850",
       "name": "fx-linear-pathway 导出件 png 真实存在",
       "state": "PASS"
     },
@@ -1026,7 +1085,7 @@
       "state": "PASS"
     },
     {
-      "detail": "n=30",
+      "detail": "n=34",
       "name": "fx-linear-pathway compliance_checks 是非空列表",
       "state": "PASS"
     },
@@ -1056,17 +1115,52 @@
       "state": "PASS"
     },
     {
-      "detail": "node area is not proportional to abundance.value (area/value 4.7995..7.7580, spread 38%)",
-      "name": "fx-linear-pathway legend(node_size) 与 abundance 面积编码逐一对应",
-      "state": "FAIL"
+      "detail": "",
+      "name": "fx-linear-pathway legend(node_size) 映射值集合 == abundance 值集合",
+      "state": "PASS"
     },
     {
-      "detail": "sha=b87390fcd04fde16",
+      "detail": "{'e_egfr': 16.7777, 'e_fos_p': 4.7995}",
+      "name": "fx-linear-pathway node_size 面积/丰度比（原始值）",
+      "state": "INFO"
+    },
+    {
+      "detail": "strict(未警告)=['e_fos_p'] clamped(已警告)=['e_egfr']",
+      "name": "fx-linear-pathway 面积编码分类",
+      "state": "INFO"
+    },
+    {
+      "detail": "只有 1 个未被警告的元素（e_fos_p），无法构成比例对照；其余元素已被逐元素警告披露",
+      "name": "fx-linear-pathway 面积编码(i)：未被警告的元素面积必须 ∝ value（严格）",
+      "state": "N/A"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway 面积编码(ii)：警告指名元素且给出真实 factor/绘制区间",
+      "state": "PASS"
+    },
+    {
+      "detail": "disclosed=['e_egfr'] undisclosed=[]（警告目前只写在 figure_issues.json，result.json 未披露）",
+      "name": "fx-linear-pathway 面积编码(iii)：有界编码在 result.json 的 exceptions/limitations/compliance_checks 可见（逐元素）",
+      "state": "PASS"
+    },
+    {
+      "detail": "8 个节点被核对；drift=[]",
+      "name": "fx-linear-pathway 面积编码(iv)：SVG 绘制盒 == layout 盒（无二次缩放）",
+      "state": "PASS"
+    },
+    {
+      "detail": "sha=57758899de390ff3",
       "name": "fx-linear-pathway render 确定性（同模型两次 SVG 逐字节相同）",
       "state": "PASS"
     },
     {
-      "detail": "recorded=e5d5bf5c85c228ff",
+      "detail": "recorded=57758899de390ff3",
+      "name": "fx-linear-pathway finish 记录的 SVG sha256 与重渲染后文件一致（无陈旧摘要）",
+      "state": "PASS"
+    },
+    {
+      "detail": "recorded=90ca2348b6b1b116",
       "name": "fx-linear-pathway result.json 自校验摘要可独立重算",
       "state": "PASS"
     },
@@ -1076,79 +1170,79 @@
       "state": "SECTION"
     },
     {
-      "detail": "expected ['E_FLOW_DIRECTION'] (tokens=['r_egfr_grb2']), got []",
-      "name": "MISSED/reverse_from_to",
-      "state": "FAIL"
+      "detail": "E_FLOW_DIRECTION in relations.r_egfr_grb2",
+      "name": "caught/reverse_from_to",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_FLOW_DIRECTION'] (tokens=['e_grb2', 'r_egfr_grb2', 'flow']), got []",
-      "name": "MISSED/rank_contradicts_edge",
-      "state": "FAIL"
+      "detail": "E_FLOW_DIRECTION in relations.r_egfr_grb2",
+      "name": "caught/rank_contradicts_edge",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_FLOW_DIRECTION'] (tokens=['r_vhl_hif1a', 'r_hif1a_vegf']), got []",
-      "name": "MISSED/cycle_without_feedback",
-      "state": "FAIL"
+      "detail": "E_FLOW_DIRECTION in relations.r_vhl_hif1a",
+      "name": "caught/cycle_without_feedback",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_INTERACTION_STYLE_MISMATCH'] (tokens=['r_akt1_foxo3_inh']), got []",
-      "name": "MISSED/inhibition_as_activation_arrow",
-      "state": "FAIL"
+      "detail": "E_INTERACTION_STYLE_MISMATCH in relations.r_akt1_foxo3_inh",
+      "name": "caught/inhibition_as_activation_arrow",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_INTERACTION_STYLE_MISMATCH'] (tokens=['r_elk1_fos']), got []",
-      "name": "MISSED/interaction_stroke_mismatch",
-      "state": "FAIL"
+      "detail": "E_INTERACTION_STYLE_MISMATCH in relations.r_elk1_fos",
+      "name": "caught/interaction_stroke_mismatch",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_MODIFICATION_UNNAMED', 'E_INTERACTION_STYLE_MISMATCH'] (tokens=['r_map2k1_mapk1']), got []",
-      "name": "MISSED/modification_label_no_kind",
-      "state": "FAIL"
+      "detail": "E_MODIFICATION_UNNAMED in relations.r_map2k1_mapk1",
+      "name": "caught/modification_label_no_kind",
+      "state": "PASS"
     },
     {
-      "detail": "harness exception: TimeoutExpired: Command '['C:\\\\Users\\\\Morrow\\\\.dsh\\\\dsh-runtimes\\\\dsh-primary-runtime\\\\dependencies\\\\python\\\\python.exe', 'D:\\\\Borium_Contest\\\\ARMI2611000060v1\\\\work\\\\submission\\\\scripts\\\\run.py', 'render', '--work', 'D:\\\\Borium_Contest\\\\ARMI2611000060v1\\\\work\\\\verify\\\\_neg\\\\07_inhibition_retyped_activation\\\\work', '--output', 'D:\\\\Borium_Contest\\\\ARMI2611000060v1\\\\work\\\\verify\\\\_neg\\\\07_inhibition_retyped_activation\\\\out']' timed out after 600 seconds",
-      "name": "MISSED/inhibition_retyped_activation",
-      "state": "FAIL"
+      "detail": "E_DIRECTION_UNSUPPORTED in relations.r_egfr_grb2",
+      "name": "caught/retyped_type_unsupported",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_MEMBRANE_PLACEMENT'] (tokens=['e_egfr']), got []",
-      "name": "MISSED/tm_receptor_in_cytosol",
-      "state": "FAIL"
+      "detail": "E_MEMBRANE_PLACEMENT in entities.e_egfr",
+      "name": "caught/tm_receptor_in_cytosol",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_MEMBRANE_PLACEMENT'] (tokens=['e_igf1r']), got []",
-      "name": "MISSED/tm_receptor_without_container",
-      "state": "FAIL"
+      "detail": "E_MEMBRANE_PLACEMENT in entities.e_igf1r",
+      "name": "caught/tm_receptor_without_container",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_COMPARTMENT_MISMATCH'] (tokens=['r_pi3k_p85', 'e_p85']), got []",
-      "name": "MISSED/binding_across_compartments",
-      "state": "FAIL"
+      "detail": "E_COMPARTMENT_MISMATCH in relations.r_pi3k_p85",
+      "name": "caught/binding_across_compartments",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_TYPE_CONSTRAINT_VIOLATION', 'E_COMPARTMENT_MISMATCH'] (tokens=['r_mapk1_elk1', 'e_elk1']), got []",
-      "name": "MISSED/transport_same_container",
-      "state": "FAIL"
+      "detail": "E_TYPE_CONSTRAINT_VIOLATION in relations.r_mapk1_elk1",
+      "name": "caught/transport_same_container",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_LEGEND_DATA_MISMATCH'] (tokens=['legend', 'lg_vehicle']), got []",
-      "name": "MISSED/legend_extra_category",
-      "state": "FAIL"
+      "detail": "E_LEGEND_DATA_MISMATCH in legend",
+      "name": "caught/legend_extra_category",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_LEGEND_DATA_MISMATCH'] (tokens=['legend', 'lg_hypoxia']), got []",
-      "name": "MISSED/legend_missing_category",
-      "state": "FAIL"
+      "detail": "E_LEGEND_DATA_MISMATCH in legend",
+      "name": "caught/legend_missing_category",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_LEGEND_DATA_MISMATCH'] (tokens=['lg_hypoxia', 'legend']), got []",
-      "name": "MISSED/legend_color_mismatch",
-      "state": "FAIL"
+      "detail": "E_LEGEND_DATA_MISMATCH in legend",
+      "name": "caught/legend_color_mismatch",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_INTERACTION_STYLE_MISMATCH'] (tokens=['legend', 'transport']), got []",
-      "name": "MISSED/legend_type_entry_missing",
-      "state": "FAIL"
+      "detail": "E_INTERACTION_STYLE_MISMATCH in legend",
+      "name": "caught/legend_type_entry_missing",
+      "state": "PASS"
     },
     {
       "detail": "expected ['E_EVIDENCE_WIDTH_MISMATCH'] (tokens=['r_egf_egfr']), got []",
@@ -1161,44 +1255,44 @@
       "state": "FAIL"
     },
     {
-      "detail": "expected ['E_UNIT_MISSING'] (tokens=['e_pi3k', 'abundance']), got []",
-      "name": "MISSED/dimensioned_value_no_unit",
-      "state": "FAIL"
+      "detail": "E_UNIT_MISSING in entities.e_pi3k.abundance",
+      "name": "caught/dimensioned_value_no_unit",
+      "state": "PASS"
     },
     {
-      "detail": "W_UNIT_DIMENSIONLESS_ASSUMED 未出现（warnings=[]）",
-      "name": "MISSED/dimensionless_allowlist_no_error",
-      "state": "FAIL"
+      "detail": "expect_absent 成立，且 W_UNIT_DIMENSIONLESS_ASSUMED 已出现",
+      "name": "caught/dimensionless_allowlist_no_error",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_UNIT_MISSING'] (tokens=['concentration', 'data']), got []",
-      "name": "MISSED/dimensioned_column_no_unit",
-      "state": "FAIL"
+      "detail": "E_UNIT_MISSING in data.units.concentration",
+      "name": "caught/dimensioned_column_no_unit",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_QUOTE_NOT_FOUND'] (tokens=['r_elk1_fos']), got []",
-      "name": "MISSED/fabricated_quote",
-      "state": "FAIL"
+      "detail": "E_QUOTE_NOT_FOUND in relations.r_elk1_fos",
+      "name": "caught/fabricated_quote",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_LABEL_NOT_IN_SOURCE'] (tokens=['e_map2k1']), got []",
-      "name": "MISSED/entity_not_in_material",
-      "state": "FAIL"
+      "detail": "E_LABEL_NOT_IN_SOURCE in entities.e_map2k1",
+      "name": "caught/entity_not_in_material",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_NUMBER_NOT_IN_SOURCE'] (tokens=['e_fos_p']), got []",
-      "name": "MISSED/invented_number",
-      "state": "FAIL"
+      "detail": "E_NUMBER_NOT_IN_SOURCE in entities.e_fos_p.abundance",
+      "name": "caught/invented_number",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_GENE_PROTEIN_CONFUSION'] (tokens=['e_fos']), got []",
-      "name": "MISSED/gene_with_modification_suffix",
-      "state": "FAIL"
+      "detail": "E_GENE_PROTEIN_CONFUSION in entities.e_fos",
+      "name": "caught/gene_with_modification_suffix",
+      "state": "PASS"
     },
     {
-      "detail": "expected ['E_GENE_PROTEIN_CONFUSION'] (tokens=['e_hif1a']), got []",
-      "name": "MISSED/protein_with_bare_gene_symbol",
-      "state": "FAIL"
+      "detail": "E_GENE_PROTEIN_CONFUSION in entities.e_hif1a",
+      "name": "caught/protein_labelled_as_transcript",
+      "state": "PASS"
     },
     {
       "detail": "svg_editable_text (evidence/detail 命中注入文件)",
@@ -1231,9 +1325,9 @@
       "state": "PASS"
     },
     {
-      "detail": "dishonest/unexpected: status=na reference_path=None discovered_locally=True",
-      "name": "MISSED/ref_status_must_not_be_na_when_reference_present",
-      "state": "FAIL"
+      "detail": "honest: status=labels_fully_covered reference=D:/Borium_Contest/ARMI2611000060v1/work/verify/fixtures/fx-reference/materials/figure03_reference.svg",
+      "name": "caught/ref_status_must_not_be_na_when_reference_present",
+      "state": "PASS"
     },
     {
       "detail": "honest: status=na reference=None",
@@ -1243,24 +1337,38 @@
   ],
   "command": "negative",
   "counts": {
-    "fail": 27,
-    "info": 2,
-    "na": 0,
-    "pass": 72,
+    "fail": 2,
+    "info": 4,
+    "na": 1,
+    "pass": 101,
     "section": 2,
     "unverified": 0
   },
-  "detected": 7,
+  "detected": 31,
   "detected_by_code": {
+    "E_COMPARTMENT_MISMATCH": 1,
+    "E_DIRECTION_UNSUPPORTED": 1,
+    "E_FLOW_DIRECTION": 3,
+    "E_GENE_PROTEIN_CONFUSION": 2,
+    "E_INTERACTION_STYLE_MISMATCH": 3,
+    "E_LABEL_NOT_IN_SOURCE": 1,
+    "E_LEGEND_DATA_MISMATCH": 3,
+    "E_MEMBRANE_PLACEMENT": 2,
     "E_MODEL_NOT_REVISED": 1,
+    "E_MODIFICATION_UNNAMED": 1,
+    "E_NUMBER_NOT_IN_SOURCE": 1,
     "E_PLATFORM_FIELD_MISSING": 1,
+    "E_QUOTE_NOT_FOUND": 1,
+    "E_TYPE_CONSTRAINT_VIOLATION": 1,
+    "E_UNIT_MISSING": 3,
     "REF_NO_REFERENCE_CLAIM": 1,
+    "REF_SEMANTIC_STATUS_HONEST": 1,
     "format_coverage": 1,
     "pdf_opens": 1,
     "raster_opens": 1,
     "svg_editable_text": 1
   },
-  "elapsed_s": 779.2,
+  "elapsed_s": 319.4,
   "injected": 33,
   "python": "3.12.14",
   "skill_module_sha256": {
@@ -1268,12 +1376,12 @@
     "compliance.py": "a00d77be1ab880f00c6e8ea31a0571b40f0acb07dbb256e707734a349dcc8c3a",
     "export.py": "3bf1d606cb0ca8cbf4ea8954f860057b1df63d4b8bc72346079c78d4b0591dfd",
     "ingest.py": "c3979e65336283ecdf49df15e126427a317ea68c17cf18920fc0296582f9433e",
-    "layout.py": "95463b0f62fd2237eb42806473c32e2985de4473e0761d1f6506fc17792457bd",
+    "layout.py": "600277da4d5aedc558c0384a51ac1d54f431f46a8f3283ebd1e232dd8f94061e",
     "mech.py": "43f48fdcc1681b9e536027bea240613a1c26acf14efd48f7055aedf8e87e526e",
-    "model.py": "4430a2f3792d6ddedb17255d9632ee3ee8cef5d9947e67c22763da5b0601b287",
+    "model.py": "9c9a3b1071cc7688d17d5596d857b7186e0a4ce5136e5091e5c8d393eb12c024",
     "reference.py": "24500594c9f512e498d0d64031866c70130e93af1b9a73dcf1870e274418e4ae",
-    "render_svg.py": "31f9bc9ea9c871565d80cd47c136273cf9e68b715f094f4c9e86acff6f32cdb8",
-    "run.py": "3da40c3ae5471b69829c8e404985cbc9474c617b43d26eaef549a6b10543eac8",
+    "render_svg.py": "2ab1b0a7daef64c43c7e941eb64c5f0bb71d6fb5df2ec365e0fe303120790b41",
+    "run.py": "2dd29550950fec51a55f6d2817880808a74f06db7dd07d06dab311b6e36ad61c",
     "selftest.py": "ce504b72ee12c35771888d8cf8fbef8900ec0172441f1111b38fcaac5006bd81"
   },
   "title": "NEGATIVE SUITE (negative)",
