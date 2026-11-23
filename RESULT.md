@@ -80,13 +80,57 @@
 
 ## 6. 独立验收状态（**不得声称 ACCEPT**）
 
-- **第三方验收者（verify-harness，非实现方）**：harness 已建（`work/verify/harness.py` 72KB + `naive_baseline.py` + 夹具），但其冻结后的最终 `run`/`negative` 出口与 `REVIEW.md`/`BASELINE.md` **在本轮结束时仍未落盘** ⇒ 总门禁只能报 **INCOMPLETE**，不是 PASS。
-- **本地不可验项（如实列出）**：① 组织方 3 个隐藏案例从未在本地运行；② `/skills/weekly-skill` 的真实安装与触发；③ 人工视觉判断（图是否"读得懂"）；④ 平台真实计分（`human_review_only`，无自动分）。
-- **我方夹具不是组织方案例**：`work/fixtures-lead/*`、`work/fixtures/*`、`work/fixtures-render/*`、`work/verify/fixtures/*` 均为自建接口夹具，材料中已显著标注 `SYNTHETIC FIXTURE - NOT AN OFFICIAL CASE`，**不得**当作组织案例结果引用。
-- **council / opt 矩阵**：本轮**未跑** 8×n 矩阵与 8 次 council 调用（成本与时间预算），**不冒充**；`work/council/` 无记录。这是本版最明确的流程缺口，见 §7。
-- **验收时序披露**：`integration-run-4`（`work/fixtures-render/`，13:28）为 4/4 PASS；13:32 与 13:38 的收尾改动（`render_svg.py` 两处、`run.py` 传 `materials=inp`）**未被该次覆盖**，其后由 `run-5` 与 Lead 的复跑覆盖；本 RESULT 的数字以最后一次复跑为准，采样时间已标注。
+**独立验收者（verify-harness，非实现方）在 v2 冻结树上的终验判定：`CONDITIONAL`**（`work/verify/REVIEW.md §1`，指纹见 `harness_results.json.skill_module_sha256`）
+- 正向套件 `run`：**207 PASS / 2 FAIL / 0 UNVERIFIED / 6 N/A，exit 1**；两条 FAIL 是同一根因 **B1-residual**。
+- 负例套件 `negative`：**`injected=33 / detected=31`**，`vacuous_skips=[]`，`where_field_absent_or_loose=5`。
+- 验收者逐条复核**转绿**：P0、B2（`_norm_name('VEGFA 基因')='vegfa基因'` ≠ `'vegfa蛋白'`）、B3、B7（正反两向都验）、B8（伪造 `abundance.value=987654` ⇒ `E_NUMBER_NOT_IN_SOURCE`，`where` 命中）、B9（披露已进 `figure_issues.json`/`compliance_checks`）、B1 的**二次缩放根因**（判据 (iv)「SVG 绘制盒 == layout 盒」三夹具全 PASS，drift 全部 x1.00，此前恒 x0.68）。
+- 未检出 2/33 = `E_EVIDENCE_WIDTH_MISMATCH`、`E_ABUNDANCE_SIZE_MISMATCH`：**契约已冻结、实现未落地** ⇒ 按验收者口径记 **UNVERIFIED**，不记 FAIL。
+- **B1-residual（中，未修，唯一未清正例根因）**：节点盒 = 「文本/列宽驱动的基础盒」× `sqrt(value/ref)`，**面积里混进了标签长度**（实测基础盒面积 `e_hif1a` 217.78 vs `e_vegf_p` 109.48，差 1.99×；`e_pi3k` 170.49 vs `e_igf1r` 108.00，差 1.58×）。锚点 `layout.py:1947-1950`。⇒ 图例/契约声称"面积 ∝ value"而实现是**混合语义**，**这一条会被评审抓**，已在 §7 列为下一轮首位。本版**未**用"改判据"的方式掩盖：验收者的 2 条 FAIL 原样保留在 `harness_results.json`。
+- 判为 CONDITIONAL 而非 ACCEPT 的三条理由：① 正例仍有 B1-residual 2 条 FAIL；② 负例 31/33（2 条未实现）；③ 存在本地不可验范围（§5）。
+- 验收者**明确拒绝**把 FAIL 抹掉换取 `complete`，按纪律 `release` 了 task-4 —— 这是正确的验收行为，本文件照录。
+
+
+**本地不可验项（如实列出）**：① 组织方 3 个隐藏案例从未在本地运行；② `/skills/weekly-skill` 的真实安装与触发；③ 人工视觉判断（图是否"读得懂"）；④ 平台真实计分（`human_review_only`，无自动分）。
+
+**我方夹具不是组织方案例**：`work/fixtures-lead/*`、`work/fixtures/*`、`work/fixtures-render/*`、`work/verify/fixtures/*` 均为自建接口夹具，材料中已显著标注 `SYNTHETIC FIXTURE - NOT AN OFFICIAL CASE`，**不得**当作组织案例结果引用。
+
+**council / opt 矩阵**：本轮**未跑** 8×n 矩阵与 8 次 council 调用（成本与时间预算），**不冒充**；`work/council/` 无记录。这是本版最明确的流程缺口，见 §7。
+
+**验收时序披露**：`integration-run-4`（13:28）为 4/4 PASS；其后仍有 7 处实现改动（`render_svg.py` 3 处、`compliance.py` 6 处、`run.py` 1 处、`layout.py` 丰度映射与 `DIRECTIONAL_TYPES`），**均由 Lead 在 15:0x 的终冻前重新验证**（`integration_check` → **4 case(s), 0 failing, exit 0**；`selftest` → `67/0`；`gates.py` → 24/24）。本 RESULT 的数字以终冻前最后一次复跑为准。
+
+## 6b. 提交回执（本版）
+
+**两笔真实提交（内容不同、SHA 不同，均非重复提交）**
+
+| 项 | v1（第一笔） | **v2（当前有效）** |
+|---|---|---|
+| attempt_id | 100345 | **100713** |
+| bundle | `receipts/bundle_v1.zip` 8,453,199 B sha256 `8a7e2bad…c8d669f` | `receipts/bundle_v2.zip` 9,499,508 B sha256 `a0b47b1127d411057d971817a5076d3557862a2964f7dea6eee75c441fe5e5de` |
+| native_trace | `traces/trace_v2.jsonl` 1,262,495 B / 663 记录 / 359 tool_result | `traces/trace_v3.jsonl` 1,512,214 B / 856 记录 / **454 tool_result** sha `cee6bacd10fae8d2…` |
+| 冻结树 | `tree_sha256 1046714de9e1a0a63eda2f80f107cbc34f6b11ce70f6ea00236b17f10c147220`（30 文件 / 1,121,506 B） | `tree_sha256 2c3c9af9e22e49758c57da03c67f8e4b26e271e4f024af4b3c45255602201237`（30 文件 / 1,128,381 B） |
+| bundle 闸门 | PASS | **PASS**：104 entries、`unsafe_entries=0`、`duplicate_entries=[]`、`backslash_entries=0`、`native_trace` 恰好 1、`skills=[{name:'submission', files:30}]`、`skill_bytes=1,134,920` ≤2MB、`symlinks=0`；G9 仅 warn（CLI 生成的 `characterization.json` 占位 stub，按规则不手改） |
+| G10 轨迹闸门 | PASS (exit 0) | **PASS (exit 0)**（本会话真实运行，未复用；G10.4 时效因轨迹无可解析时间戳跳过，**不代表通过**） |
+| SHA 去重预检 | 通过（0 条历史） | **通过（该题 1 条历史包，SHA 不同）** |
+| 状态 | `queued`（有界轮询 5 次） | `queued`（有界轮询 4 次）→ 归 **external-review**，已停手 |
+| 提交配额 | limit 10 / used 1 | limit 10 / **used 2** |
+| 回执原文 | `receipts/submit_v1.out` | `receipts/submit_v2.out` |
+
+**v2 相对 v1 修了什么**（均有独立验收者复跑证据，见 §6）：P0（我自己引入的 `layout.py` `NameError: degrade` 使全管线 `render exit 2`）、**B1 二次缩放根因**（render 与 layout 各自缩放同一通道 ⇒ 面积恒偏 x0.68）、B2（中文材料下 `E_GENE_PROTEIN_CONFUSION` 误报）、B3（`E_PLATFORM_FIELD_MISSING` 未实现）、B7（无量纲 allowlist 未接上报错路径 ⇒ 过严）、B8（`entities[].abundance.value` 不做来源核对，违反题面点名的"图上的数值找不到来源"）、B9（`ctx["degradations"]` 从未 flush ⇒ 逐元素披露根本没到达平台可见字段）。
+
+**冻结校验**：`validate_skill_submission.py` → `status=ok`、`errors=[]`、exit 0；`freeze_manifest.py --check` → PASS（0 problems）；`deliverables/submission/` 与 `work/submission/` 逐文件哈希一致（30/30，0 处不符）。
+
+
+**GitHub 推送delta（如实记录）**：仓库已在提交时推送成功（commit `2f07dd659984`，含 `SKILL.md`/`scripts/`/`references/`/`schemas/`/`examples/`/`verification/`/`RESULT.md`）。提交回执落盘后我对 `RESULT.md` 做了一次增补并已本地 commit，但 **15:2x 的补推两次均因 `github.com:443` 连接失败而停止**（按工作区规则"失败端点不循环重试"已停手）。⇒ **仓库内容是有效且可打开的（+5 判据成立），但与本地 `RESULT.md` 差一次文档提交**（差的只是本节 §6b 的提交回执，不影响作品可见性与内容主体）。
+**GitHub 公开链接（+5）**：https://github.com/sprw-li/biological-mechanism-pathway-skill （public，`gh api` 核验：`visibility=public`、`default_branch=main`、commit `2f07dd659984`；仓库内含 `SKILL.md`/`scripts/`/`references/`/`schemas/`/`examples/`/`verification/`/`RESULT.md`，`scripts/` 下 11 个 `.py` 无 `__pycache__`）。
+**推送 delta（如实）**：提交后的文档增补两次补推均因 `github.com:443` 连接失败而停止（按"失败端点不循环重试"停手）⇒ 仓库有效可打开（+5 判据成立），但与本地 `RESULT.md` 差一次**文档**提交。
+
+**打包后污染与处置（如实记录）**：v1 提交（14:57）后 15:07:45 出现 `work/submission/scripts/__pycache__/mech.cpython-312.pyc`（某次并发运行的 import 残留；**提交时的 bundle 已核为 30 文件、无 pycache**）。Lead 删除后复算 `tree_sha256` 与冻结值逐字节相同。**v2 冻结前再次全树扫描 `__pycache__`/`*.pyc` 为空**，`deliverables/submission/` 与 GitHub 副本亦无。
+
 
 ## 7. 已定位但**未修**（下一轮直接接手）
+
+0. **B1-residual（首位，唯一未清正例根因）**：节点面积 = 基础盒（由标签长度与层级列宽决定）× `sqrt(value/ref)` ⇒ 面积混入标签长度，"面积 ∝ value"不成立。修法二选一：① 节点尺寸**只由 value 决定**（固定长宽比/边长 ∝ √value），标签只做字号+换行降级（复用已有 `W_LABEL_DEGRADED` 阶梯）；② 保留文本驱动盒，则必须把 `legend`/契约措辞从"面积 ∝ value"改为**方向性编码**，并实现 `E_ABUNDANCE_SIZE_MISMATCH` 做上限校验。**当前是混合语义且图例写的是精确比例 —— 这是会被评审抓的点**。锚点 `layout.py:1947-1950`，证据 `work/verify/harness_results.json`（2 FAIL）。
+0b. **`E_EVIDENCE_WIDTH_MISMATCH` / `E_ABUNDANCE_SIZE_MISMATCH` 两个冻结码未实现**（契约 §3.7 已冻结为 error 级，全树 grep 0 命中）⇒ 负例 31/33 的缺口全部来自这里。
 
 1. **`top_down` 真转置**：应把转置做成**构建参数**（先把真实区域转置成引擎输入 `w=rh,h=rw`、`canvas_w=H`、`_size_node(swap=True)` 按跨轴换行），并让转置走与 `left_right` **同一套**确定性 fit 判据；根因是 `slot` 用真实区域**宽**而转置后应取**高**，列宽被挤到 `avail=2.0mm` 下限。（`layout.py:214`、`TOP_DOWN_RENDER_ENABLED`）
 2. **确定性 fit 未接线**：`metrics.flow_scale` 恒 `1.0`（读取从未赋值的 `stats["fit"]`）；`MIN_FIT_SCALE`/`ctx["font_scale"]` 已定义未接。
