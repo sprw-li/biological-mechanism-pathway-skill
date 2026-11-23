@@ -343,6 +343,13 @@ def validate_model(model, inventory, *, strict=True):
             _check_label(where, ent["label"], index, errors)
         _check_numbers(where, [ent.get("label"), ent.get("value"), ent.get("unit")],
                        index, errors)
+        # A node-size encoding is a number printed on the figure: its value must be
+        # traceable to the materials exactly like any other number (the topic's own
+        # failure list names "numbers on the figure with no source").
+        abundance = ent.get("abundance") if isinstance(ent.get("abundance"), dict) else None
+        if abundance is not None:
+            _check_numbers("%s.abundance" % where,
+                           [abundance.get("value"), abundance.get("unit")], index, errors)
         if isinstance(ent.get("value"), (int, float)) and not isinstance(ent.get("value"), bool):
             if not str(ent.get("unit") or "").strip():
                 if _dimensionless_declared(ent):
@@ -622,6 +629,17 @@ def validate_model(model, inventory, *, strict=True):
                       "numeric column %r is declared dimensionless (unit: null / "
                       "unit_status: dimensionless): p-values, fold changes and counts are "
                       "conventionally unitless and the material gives no unit" % col,
+                      "data.units.%s" % col)
+                continue
+            # CONTRACT sec 3.7: a column whose *name* is on the dimensionless allowlist
+            # (p_value, fold_change, ratio, count, ...) is conventionally unitless.  That
+            # releases the error, but it is still recorded as a warning so an undeclared
+            # unit is never silently assumed.
+            if mech.is_dimensionless_column(col):
+                _warn(warnings, "W_UNIT_DIMENSIONLESS_ASSUMED",
+                      "numeric column %r matches the dimensionless allowlist (p-values, fold "
+                      "changes, ratios and counts are conventionally unitless); treated as "
+                      "dimensionless and reported rather than rejected" % col,
                       "data.units.%s" % col)
                 continue
             emit("E_UNIT_MISSING",
