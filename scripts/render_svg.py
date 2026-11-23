@@ -536,15 +536,13 @@ def decorate_layout(model, layout):
             node["abundance_unit"] = str(ab.get("unit") or "")
             node["abundance_source"] = ab.get("source")
             node["abundance_scale"] = round(scale, 4)
-        if scale != 1.0 and _num(node.get("w_mm")) > 0 and _num(node.get("h_mm")) > 0:
-            node = _shrink_into({
-                "container": layout_container or node["container"],
-                "x_mm": _num(node.get("x_mm")),
-                "y_mm": _num(node.get("y_mm")),
-                "w_mm": _num(node.get("w_mm")) * scale,
-                "h_mm": _num(node.get("h_mm")) * scale,
-            }, containers)
-            nodes[nid] = dict(nodes[nid], **node)
+        # The layout engine owns geometry AND the abundance -> size channel: it has already
+        # scaled these boxes (and has already disclosed any legibility clamp).  Scaling a
+        # second time here broke area proportionality (a node with factor 0.5 was drawn at
+        # 0.34 of its base box), so the renderer now draws the layout box unchanged and
+        # states which scale it observed.
+        if scale != 1.0:
+            node["abundance_scale_applied_by"] = "layout"
         node = nodes[nid]
         node["node_area_mm2"] = round(_num(node.get("w_mm")) * _num(node.get("h_mm")), 4)
 
