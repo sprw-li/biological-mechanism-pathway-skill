@@ -1946,8 +1946,26 @@ def _build(ctx):
             lines, w, h, text_w, line_h = _size_node(n["label"], pt, budget, gaps, swap)
             s = size_scale.get(eid, 1.0)
             if s != 1.0:
-                w = max(text_w + 2.0 * gaps["node_pad_x"], w * s)
-                h = max(len(lines) * line_h + 2.0 * gaps["node_pad_y"], h * s)
+                floor_w = text_w + 2.0 * gaps["node_pad_x"]
+                floor_h = len(lines) * line_h + 2.0 * gaps["node_pad_y"]
+                requested_w, requested_h = w * s, h * s
+                # Remember what proportionality asked for, and the label floor that may
+                # override it, so the *final* emitted box can be judged against them.
+                n["size_target_mm"] = (requested_w, requested_h)
+                n["size_floor_mm"] = (floor_w, floor_h)
+                w = max(floor_w, requested_w)
+                h = max(floor_h, requested_h)
+                if requested_w < floor_w - 1e-9 or requested_h < floor_h - 1e-9:
+                    # The label sets a hard legibility floor, so a small-abundance node can
+                    # not shrink to its proportional size.  Disclose it per element instead
+                    # of letting a reader infer an exact ratio that is not on the page.
+                    degrade[("W_ABUNDANCE_SIZE_CLAMPED", eid)] = _w(
+                        "W_ABUNDANCE_SIZE_CLAMPED",
+                        "abundance size factor %.3f for %s cannot be drawn: the label needs at "
+                        "least %.2f x %.2f mm while the proportional box would be %.2f x %.2f "
+                        "mm; node area is a bounded encoding here, not an exact ratio"
+                        % (s, eid, floor_w, floor_h, requested_w, requested_h),
+                        "entities.%s.abundance" % eid)
             chosen = (lines, w, h, text_w, line_h, pt)
             if len(lines) <= MAX_LABEL_LINES or pt <= MIN_LABEL_FONT_PT + 1e-9:
                 break
@@ -3352,6 +3370,66 @@ def _membrane_fields(eid, ent, node_box, bands, conts, comp_info, flow):
 # --------------------------------------------------------------------------
 # public API
 # --------------------------------------------------------------------------
+def _size_encoding_state(eid, factor, node_box, node, degrade):
+    """Report whether the *drawn* box still carries the proportional size factor.
+
+    ``_fit`` can only reason about the box it computes.  Downstream steps (membrane band
+    adaptation, column fitting, canvas compaction) may still change a box, so the honest
+    place to judge the size channel is here, on the geometry that is about to be emitted.
+    Any element whose final area has drifted from the proportional target is disclosed
+    (``W_ABUNDANCE_SIZE_CLAMPED``) so that a reader - and a verifier - can tell a
+    *disclosed* bounded encoding apart from a silently wrong one.
+    """
+    try:
+        w, h = float(node_box["w_mm"]), float(node_box["h_mm"])
+    except (KeyError, TypeError, ValueError):
+        return {"state": "unverified", "reason": "node box is not numeric"}
+    area = w * h
+    target = node.get("size_target_mm")
+    floor = node.get("size_floor_mm")
+    result = {
+        "factor_requested": round(float(factor), 4),
+        "node_area_mm2": round(area, 4),
+    }
+    if not target:
+        result["state"] = "proportional"
+        result["note"] = "node area follows abundance.value"
+        return result
+
+    target_area = float(target[0]) * float(target[1])
+    floor_area = (float(floor[0]) * float(floor[1])) if floor else 0.0
+    # The most area proportionality could have produced without breaking the label.
+    achievable = max(target_area, floor_area)
+    drift = abs(area - achievable) / achievable if achievable > 0 else 0.0
+    result["target_area_mm2"] = round(target_area, 4)
+    result["floor_area_mm2"] = round(floor_area, 4)
+    result["drift_vs_achievable"] = round(drift, 4)
+    if drift <= 0.02:
+        result["state"] = "clamped-to-floor" if floor_area > target_area + 1e-9 else "proportional"
+        result["note"] = ("node area follows abundance.value" if result["state"] == "proportional"
+                          else "node area held at the label legibility floor (disclosed)")
+        if result["state"] == "clamped-to-floor":
+            degrade.setdefault(("W_ABUNDANCE_SIZE_CLAMPED", eid), _w(
+                "W_ABUNDANCE_SIZE_CLAMPED",
+                "abundance size factor %.3f for %s is held at the label legibility floor: the "
+                "proportional box would be %.2f x %.2f mm while the label needs %.2f x %.2f mm; "
+                "node area is a bounded encoding here, not an exact ratio"
+                % (float(factor), eid, target[0], target[1], floor[0], floor[1]),
+                "entities.%s.abundance" % eid))
+        return result
+
+    degrade[("W_ABUNDANCE_SIZE_CLAMPED", eid)] = _w(
+        "W_ABUNDANCE_SIZE_CLAMPED",
+        "abundance size factor %.3f for %s is not carried exactly by the drawn box: the emitted "
+        "area is %.2f mm2 while proportionality (allowing for the label floor) reaches %.2f mm2 "
+        "(%.1f%% drift). Node area is a bounded encoding for this element, not an exact ratio."
+        % (float(factor), eid, area, achievable, drift * 100.0),
+        "entities.%s.abundance" % eid)
+    result["state"] = "disclosed"
+    result["note"] = "drawn area deviates from proportionality and is disclosed"
+    return result
+
+
 def _compartments_out(conts, comp_info, bands_out, flow):
     """Serialisable compartment report: declared compartment -> drawn band geometry.
 
@@ -3827,7 +3905,11 @@ def layout(model):
                                                        comp_info, flow))
             if ent.get("abundance"):
                 nodes_out[eid]["abundance"] = ent["abundance"]
-                nodes_out[eid]["size_scale"] = round(size_scale.get(eid, 1.0), 4)
+                s = float(size_scale.get(eid, 1.0) or 1.0)
+                nodes_out[eid]["size_scale"] = round(s, 4)
+                degrade = ctx.setdefault("degradations", {})
+                nodes_out[eid]["size_encoding"] = _size_encoding_state(
+                    eid, s, nodes_out[eid], n, degrade)
         for cid in sorted(bands, key=_skey):
             if cid is None:
                 continue
@@ -3893,6 +3975,12 @@ def layout(model):
         _link_series_to_model(series, legend_out.get("items"), ents)
         chart_out = _chart_plan(model, series, data or {}, units, chart_region, style, warnings)
 
+    # Degradations are collected in a dict (keyed so a repeated case cannot duplicate a
+    # warning) but had no path into the warning list: they were recorded and then thrown
+    # away, so a disclosed bounded encoding never reached the reviewer.  Flush them here,
+    # which is the single place the layout's outward report is assembled.
+    for _key in sorted(ctx.get("degradations") or {}, key=lambda k: (str(k[0]), str(k[1]))):
+        warnings.append(ctx["degradations"][_key])
     out = {
         "schema_version": SCHEMA_VERSION,
         "figure_id": str(fig.get("id") or ""),
