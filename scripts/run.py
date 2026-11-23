@@ -382,7 +382,12 @@ def _do_render(args, model, work, out, case_id, *, record=True, is_draft=False):
 
     merged = {
         "errors": list(issues.get("errors", [])) + list(lay_issues.get("errors", [])),
-        "warnings": list(issues.get("warnings", [])) + list(lay_issues.get("warnings", [])),
+        # The layout's OWN warnings (disclosure of clamped encodings, orientation fallback,
+        # degraded labels) must reach the platform-visible fields too: a disclosure that
+        # only exists inside layout.json is not a disclosure the reviewer can see.
+        "warnings": (list(issues.get("warnings", []))
+                     + list(lay_issues.get("warnings", []))
+                     + list(layout.get("warnings", []) or [])),
         "stats": {"model": issues.get("stats", {}), "layout": lay_issues.get("stats", {})},
     }
     # A diagnostic that means "this figure misrepresents the data" cannot be
