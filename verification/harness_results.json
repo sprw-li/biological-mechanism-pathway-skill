@@ -71,12 +71,12 @@
       "state": "PASS"
     },
     {
-      "detail": "[]",
+      "detail": "['W_ABUNDANCE_SIZE_CLAMPED', 'W_CHART_SERIES_DERIVED', 'W_COMPARTMENT_NESTING', 'W_ORIENTATION_RENDERED_HORIZONTAL']",
       "name": "fx-linear-pathway gate warnings",
       "state": "INFO"
     },
     {
-      "detail": "bytes=45442",
+      "detail": "bytes=45443",
       "name": "fx-linear-pathway editable SVG written",
       "state": "PASS"
     },
@@ -171,17 +171,17 @@
       "state": "PASS"
     },
     {
-      "detail": "bytes=45442",
+      "detail": "bytes=45443",
       "name": "fx-linear-pathway 导出件 svg 真实存在",
       "state": "PASS"
     },
     {
-      "detail": "bytes=59595",
+      "detail": "bytes=59565",
       "name": "fx-linear-pathway 导出件 pdf 真实存在",
       "state": "PASS"
     },
     {
-      "detail": "bytes=403081",
+      "detail": "bytes=402850",
       "name": "fx-linear-pathway 导出件 png 真实存在",
       "state": "PASS"
     },
@@ -301,7 +301,7 @@
       "state": "PASS"
     },
     {
-      "detail": "n=30",
+      "detail": "n=34",
       "name": "fx-linear-pathway compliance_checks 是非空列表",
       "state": "PASS"
     },
@@ -331,22 +331,52 @@
       "state": "PASS"
     },
     {
-      "detail": "node area is not proportional to abundance.value (area/value 4.7995..7.7580, spread 38%)",
-      "name": "fx-linear-pathway legend(node_size) 与 abundance 面积编码逐一对应",
-      "state": "FAIL"
+      "detail": "",
+      "name": "fx-linear-pathway legend(node_size) 映射值集合 == abundance 值集合",
+      "state": "PASS"
     },
     {
-      "detail": "sha=b87390fcd04fde16",
+      "detail": "{'e_egfr': 16.7777, 'e_fos_p': 4.7995}",
+      "name": "fx-linear-pathway node_size 面积/丰度比（原始值）",
+      "state": "INFO"
+    },
+    {
+      "detail": "strict(未警告)=['e_fos_p'] clamped(已警告)=['e_egfr']",
+      "name": "fx-linear-pathway 面积编码分类",
+      "state": "INFO"
+    },
+    {
+      "detail": "只有 1 个未被警告的元素（e_fos_p），无法构成比例对照；其余元素已被逐元素警告披露",
+      "name": "fx-linear-pathway 面积编码(i)：未被警告的元素面积必须 ∝ value（严格）",
+      "state": "N/A"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway 面积编码(ii)：警告指名元素且给出真实 factor/绘制区间",
+      "state": "PASS"
+    },
+    {
+      "detail": "disclosed=['e_egfr'] undisclosed=[]（警告目前只写在 figure_issues.json，result.json 未披露）",
+      "name": "fx-linear-pathway 面积编码(iii)：有界编码在 result.json 的 exceptions/limitations/compliance_checks 可见（逐元素）",
+      "state": "PASS"
+    },
+    {
+      "detail": "8 个节点被核对；drift=[]",
+      "name": "fx-linear-pathway 面积编码(iv)：SVG 绘制盒 == layout 盒（无二次缩放）",
+      "state": "PASS"
+    },
+    {
+      "detail": "sha=57758899de390ff3",
       "name": "fx-linear-pathway render 确定性（同模型两次 SVG 逐字节相同）",
       "state": "PASS"
     },
     {
-      "detail": "recorded=b87390fcd04fde16",
+      "detail": "recorded=57758899de390ff3",
       "name": "fx-linear-pathway finish 记录的 SVG sha256 与重渲染后文件一致（无陈旧摘要）",
       "state": "PASS"
     },
     {
-      "detail": "recorded=9b00c6559b5abb1f",
+      "detail": "recorded=a6e9742ccea32880",
       "name": "fx-linear-pathway result.json 自校验摘要可独立重算",
       "state": "PASS"
     },
@@ -421,12 +451,12 @@
       "state": "PASS"
     },
     {
-      "detail": "['W_BACKWARD_EDGE', 'W_TRANSCRIPTION_ORIGIN']",
+      "detail": "['W_BACKWARD_EDGE', 'W_COMPARTMENT_NESTING', 'W_ORIENTATION_RENDERED_HORIZONTAL', 'W_TRANSCRIPTION_ORIGIN']",
       "name": "fx-branch-feedback gate warnings",
       "state": "INFO"
     },
     {
-      "detail": "bytes=44429",
+      "detail": "bytes=44428",
       "name": "fx-branch-feedback editable SVG written",
       "state": "PASS"
     },
@@ -521,17 +551,17 @@
       "state": "PASS"
     },
     {
-      "detail": "bytes=44429",
+      "detail": "bytes=44428",
       "name": "fx-branch-feedback 导出件 svg 真实存在",
       "state": "PASS"
     },
     {
-      "detail": "bytes=56265",
+      "detail": "bytes=56241",
       "name": "fx-branch-feedback 导出件 pdf 真实存在",
       "state": "PASS"
     },
     {
-      "detail": "bytes=413345",
+      "detail": "bytes=412021",
       "name": "fx-branch-feedback 导出件 png 真实存在",
       "state": "PASS"
     },
@@ -651,7 +681,7 @@
       "state": "PASS"
     },
     {
-      "detail": "n=33",
+      "detail": "n=35",
       "name": "fx-branch-feedback compliance_checks 是非空列表",
       "state": "PASS"
     },
@@ -682,8 +712,13 @@
     },
     {
       "detail": "",
-      "name": "fx-branch-feedback legend(node_size) 与 abundance 面积编码逐一对应",
+      "name": "fx-branch-feedback legend(node_size) 映射值集合 == abundance 值集合",
       "state": "PASS"
+    },
+    {
+      "detail": "{'e_hif1a': 10.8905, 'e_vegf_p': 5.4742}",
+      "name": "fx-branch-feedback node_size 面积/丰度比（原始值）",
+      "state": "INFO"
     },
     {
       "detail": "",
@@ -696,17 +731,42 @@
       "state": "N/A"
     },
     {
-      "detail": "sha=e994aba592be6fe9",
+      "detail": "strict(未警告)=['e_hif1a', 'e_vegf_p'] clamped(已警告)=[]",
+      "name": "fx-branch-feedback 面积编码分类",
+      "state": "INFO"
+    },
+    {
+      "detail": "area/value={'e_hif1a': 10.8905, 'e_vegf_p': 5.4742} spread=49.7%",
+      "name": "fx-branch-feedback 面积编码(i)：未被警告的元素面积必须 ∝ value（严格）",
+      "state": "FAIL"
+    },
+    {
+      "detail": "没有任何元素被钳位警告",
+      "name": "fx-branch-feedback 面积编码(ii)：警告指名元素",
+      "state": "N/A"
+    },
+    {
+      "detail": "没有任何元素被钳位警告",
+      "name": "fx-branch-feedback 面积编码(iii)：有界编码披露可见性",
+      "state": "N/A"
+    },
+    {
+      "detail": "6 个节点被核对；drift=[]",
+      "name": "fx-branch-feedback 面积编码(iv)：SVG 绘制盒 == layout 盒（无二次缩放）",
+      "state": "PASS"
+    },
+    {
+      "detail": "sha=e794624de1e02cc3",
       "name": "fx-branch-feedback render 确定性（同模型两次 SVG 逐字节相同）",
       "state": "PASS"
     },
     {
-      "detail": "recorded=e994aba592be6fe9",
+      "detail": "recorded=e794624de1e02cc3",
       "name": "fx-branch-feedback finish 记录的 SVG sha256 与重渲染后文件一致（无陈旧摘要）",
       "state": "PASS"
     },
     {
-      "detail": "recorded=0688e3c3db2832f9",
+      "detail": "recorded=0f2bf75e2873ff65",
       "name": "fx-branch-feedback result.json 自校验摘要可独立重算",
       "state": "PASS"
     },
@@ -781,7 +841,7 @@
       "state": "PASS"
     },
     {
-      "detail": "['W_FLOW_RANKS_DERIVED']",
+      "detail": "['W_COMPARTMENT_NESTING', 'W_FLOW_RANKS_DERIVED', 'W_ORIENTATION_RENDERED_HORIZONTAL', 'W_PARALLEL_LEVEL_EDGE']",
       "name": "fx-multi-compartment gate warnings",
       "state": "INFO"
     },
@@ -886,12 +946,12 @@
       "state": "PASS"
     },
     {
-      "detail": "bytes=53803",
+      "detail": "bytes=53805",
       "name": "fx-multi-compartment 导出件 pdf 真实存在",
       "state": "PASS"
     },
     {
-      "detail": "bytes=397503",
+      "detail": "bytes=397149",
       "name": "fx-multi-compartment 导出件 png 真实存在",
       "state": "PASS"
     },
@@ -1011,7 +1071,7 @@
       "state": "PASS"
     },
     {
-      "detail": "n=32",
+      "detail": "n=35",
       "name": "fx-multi-compartment compliance_checks 是非空列表",
       "state": "PASS"
     },
@@ -1041,22 +1101,52 @@
       "state": "PASS"
     },
     {
-      "detail": "node area is not proportional to abundance.value (area/value 14.3359..19.6364, spread 27%)",
-      "name": "fx-multi-compartment legend(node_size) 与 abundance 面积编码逐一对应",
+      "detail": "",
+      "name": "fx-multi-compartment legend(node_size) 映射值集合 == abundance 值集合",
+      "state": "PASS"
+    },
+    {
+      "detail": "{'e_igf1r': 19.6364, 'e_pi3k': 31.0027}",
+      "name": "fx-multi-compartment node_size 面积/丰度比（原始值）",
+      "state": "INFO"
+    },
+    {
+      "detail": "strict(未警告)=['e_igf1r', 'e_pi3k'] clamped(已警告)=[]",
+      "name": "fx-multi-compartment 面积编码分类",
+      "state": "INFO"
+    },
+    {
+      "detail": "area/value={'e_igf1r': 19.6364, 'e_pi3k': 31.0027} spread=36.7%",
+      "name": "fx-multi-compartment 面积编码(i)：未被警告的元素面积必须 ∝ value（严格）",
       "state": "FAIL"
     },
     {
-      "detail": "sha=289f7dd05323334b",
+      "detail": "没有任何元素被钳位警告",
+      "name": "fx-multi-compartment 面积编码(ii)：警告指名元素",
+      "state": "N/A"
+    },
+    {
+      "detail": "没有任何元素被钳位警告",
+      "name": "fx-multi-compartment 面积编码(iii)：有界编码披露可见性",
+      "state": "N/A"
+    },
+    {
+      "detail": "9 个节点被核对；drift=[]",
+      "name": "fx-multi-compartment 面积编码(iv)：SVG 绘制盒 == layout 盒（无二次缩放）",
+      "state": "PASS"
+    },
+    {
+      "detail": "sha=f3759c43e30c5dad",
       "name": "fx-multi-compartment render 确定性（同模型两次 SVG 逐字节相同）",
       "state": "PASS"
     },
     {
-      "detail": "recorded=289f7dd05323334b",
+      "detail": "recorded=f3759c43e30c5dad",
       "name": "fx-multi-compartment finish 记录的 SVG sha256 与重渲染后文件一致（无陈旧摘要）",
       "state": "PASS"
     },
     {
-      "detail": "recorded=164a029a194457ae",
+      "detail": "recorded=462548c8a202ac93",
       "name": "fx-multi-compartment result.json 自校验摘要可独立重算",
       "state": "PASS"
     }
@@ -1064,25 +1154,25 @@
   "command": "run",
   "counts": {
     "fail": 2,
-    "info": 6,
-    "na": 1,
-    "pass": 200,
+    "info": 12,
+    "na": 6,
+    "pass": 207,
     "section": 3,
     "unverified": 0
   },
-  "elapsed_s": 92.6,
+  "elapsed_s": 169.2,
   "python": "3.12.14",
   "skill_module_sha256": {
     "common.py": "b41935018c17ea6fc13bf578c8967556641a542e69aa51a6990031731dc43a80",
     "compliance.py": "a00d77be1ab880f00c6e8ea31a0571b40f0acb07dbb256e707734a349dcc8c3a",
     "export.py": "3bf1d606cb0ca8cbf4ea8954f860057b1df63d4b8bc72346079c78d4b0591dfd",
     "ingest.py": "c3979e65336283ecdf49df15e126427a317ea68c17cf18920fc0296582f9433e",
-    "layout.py": "95463b0f62fd2237eb42806473c32e2985de4473e0761d1f6506fc17792457bd",
+    "layout.py": "600277da4d5aedc558c0384a51ac1d54f431f46a8f3283ebd1e232dd8f94061e",
     "mech.py": "43f48fdcc1681b9e536027bea240613a1c26acf14efd48f7055aedf8e87e526e",
-    "model.py": "4430a2f3792d6ddedb17255d9632ee3ee8cef5d9947e67c22763da5b0601b287",
+    "model.py": "9c9a3b1071cc7688d17d5596d857b7186e0a4ce5136e5091e5c8d393eb12c024",
     "reference.py": "24500594c9f512e498d0d64031866c70130e93af1b9a73dcf1870e274418e4ae",
-    "render_svg.py": "237c4517f62c35166eb22cc60a60b48016dcda69f30317166699a8ed8adb621f",
-    "run.py": "3da40c3ae5471b69829c8e404985cbc9474c617b43d26eaef549a6b10543eac8",
+    "render_svg.py": "2ab1b0a7daef64c43c7e941eb64c5f0bb71d6fb5df2ec365e0fe303120790b41",
+    "run.py": "2dd29550950fec51a55f6d2817880808a74f06db7dd07d06dab311b6e36ad61c",
     "selftest.py": "ce504b72ee12c35771888d8cf8fbef8900ec0172441f1111b38fcaac5006bd81"
   },
   "title": "POSITIVE SUITE (run)"
