@@ -148,8 +148,8 @@
         },
         {
           "path": "scripts/layout.py",
-          "bytes": 189366,
-          "sha256": "95463b0f62fd2237eb42806473c32e2985de4473e0761d1f6506fc17792457bd"
+          "bytes": 194609,
+          "sha256": "c4e5705dc310ebf6a8687dc43beec343ae6883881ef3c3325db88aa485bdbe83"
         },
         {
           "path": "scripts/mech.py",
@@ -158,8 +158,8 @@
         },
         {
           "path": "scripts/model.py",
-          "bytes": 94699,
-          "sha256": "4430a2f3792d6ddedb17255d9632ee3ee8cef5d9947e67c22763da5b0601b287"
+          "bytes": 95970,
+          "sha256": "9c9a3b1071cc7688d17d5596d857b7186e0a4ce5136e5091e5c8d393eb12c024"
         },
         {
           "path": "scripts/reference.py",
@@ -168,13 +168,13 @@
         },
         {
           "path": "scripts/render_svg.py",
-          "bytes": 76788,
-          "sha256": "237c4517f62c35166eb22cc60a60b48016dcda69f30317166699a8ed8adb621f"
+          "bytes": 76800,
+          "sha256": "2ab1b0a7daef64c43c7e941eb64c5f0bb71d6fb5df2ec365e0fe303120790b41"
         },
         {
           "path": "scripts/run.py",
-          "bytes": 59983,
-          "sha256": "3da40c3ae5471b69829c8e404985cbc9474c617b43d26eaef549a6b10543eac8"
+          "bytes": 60332,
+          "sha256": "2dd29550950fec51a55f6d2817880808a74f06db7dd07d06dab311b6e36ad61c"
         },
         {
           "path": "scripts/selftest.py",
@@ -188,7 +188,7 @@
         }
       ],
       "file_count_including_self": 30,
-      "bytes_including_self": 1121767,
+      "bytes_including_self": 1128381,
       "github": "https://github.com/sprw-li/biological-mechanism-pathway-skill"
     }
   ],
