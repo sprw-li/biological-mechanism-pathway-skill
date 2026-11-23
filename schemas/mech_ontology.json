@@ -1,0 +1,387 @@
+{
+  "ontology_version": "1.1",
+  "source_of_truth": "work/submission/scripts/mech.py",
+  "contract": "work/CONTRACT.md section 3",
+  "figure_kinds": [
+    "relationship_schematic",
+    "chart",
+    "flowchart",
+    "mixed",
+    "mechanism_pathway"
+  ],
+  "legend_figure_kinds": [
+    "relationship_schematic",
+    "chart",
+    "flowchart",
+    "mixed"
+  ],
+  "entity_kinds": [
+    "gene",
+    "protein",
+    "process",
+    "treatment",
+    "sample",
+    "category",
+    "axis",
+    "concept",
+    "compound",
+    "cell",
+    "condition",
+    "complex",
+    "organelle",
+    "cell_type",
+    "metabolite",
+    "modification_site",
+    "stimulus",
+    "drug"
+  ],
+  "legacy_entity_kinds": [
+    "gene",
+    "protein",
+    "process",
+    "treatment",
+    "sample",
+    "category",
+    "axis",
+    "concept",
+    "compound",
+    "cell",
+    "condition"
+  ],
+  "mechanism_entity_kinds": [
+    "complex",
+    "organelle",
+    "cell_type",
+    "metabolite",
+    "modification_site",
+    "stimulus",
+    "drug"
+  ],
+  "container_kinds": [
+    "compartment",
+    "membrane",
+    "cell",
+    "group"
+  ],
+  "compartments": [
+    "nucleus",
+    "cytosol",
+    "mitochondrion",
+    "er",
+    "golgi",
+    "lysosome",
+    "extracellular",
+    "cytoplasm"
+  ],
+  "compartment_aliases": {
+    "nucleus": "nucleus",
+    "nuclear": "nucleus",
+    "nucleoplasm": "nucleus",
+    "nucleus_transcription": "nucleus",
+    "intranuclear": "nucleus",
+    "cytosol": "cytosol",
+    "cytosolic": "cytosol",
+    "cytoplasm": "cytoplasm",
+    "cytoplasmic": "cytoplasm",
+    "intracellular": "cytoplasm",
+    "mitochondrion": "mitochondrion",
+    "mitochondria": "mitochondrion",
+    "mitochondrial": "mitochondrion",
+    "mitochondrial_matrix": "mitochondrion",
+    "er": "er",
+    "endoplasmic_reticulum": "er",
+    "er_lumen": "er",
+    "golgi": "golgi",
+    "golgi_apparatus": "golgi",
+    "lysosome": "lysosome",
+    "lysosomal": "lysosome",
+    "extracellular": "extracellular",
+    "extracellular_space": "extracellular",
+    "extracellular_matrix": "extracellular",
+    "medium": "extracellular",
+    "plasma_membrane": "plasma_membrane",
+    "membrane": "plasma_membrane",
+    "cell_membrane": "plasma_membrane",
+    "plasmalemma": "plasma_membrane",
+    "inner_membrane": "inner_membrane",
+    "outer_membrane": "outer_membrane"
+  },
+  "compartment_tier": {
+    "extracellular": 0,
+    "plasma_membrane": 0,
+    "outer_membrane": 0,
+    "cytoplasm": 1,
+    "cytosol": 1,
+    "mitochondrion": 1,
+    "er": 1,
+    "golgi": 1,
+    "lysosome": 1,
+    "inner_membrane": 1,
+    "nucleus": 2
+  },
+  "membrane_roles": [
+    "transmembrane",
+    "membrane_anchored",
+    "luminal",
+    "cytosolic",
+    "extracellular",
+    "na"
+  ],
+  "relation_types": [
+    "activation",
+    "inhibition",
+    "containment",
+    "sequence",
+    "causation",
+    "association",
+    "membership",
+    "binding",
+    "modification",
+    "transport",
+    "transcription",
+    "translation",
+    "feedback"
+  ],
+  "relation_styles": {
+    "activation": {
+      "arrow": "normal",
+      "stroke": "solid"
+    },
+    "inhibition": {
+      "arrow": "tee",
+      "stroke": "solid"
+    },
+    "binding": {
+      "arrow": "none",
+      "stroke": "solid"
+    },
+    "modification": {
+      "arrow": "normal",
+      "stroke": "dashed"
+    },
+    "transport": {
+      "arrow": "normal",
+      "stroke": "solid"
+    },
+    "transcription": {
+      "arrow": "normal",
+      "stroke": "solid"
+    },
+    "translation": {
+      "arrow": "normal",
+      "stroke": "solid"
+    },
+    "feedback": {
+      "arrow": "normal",
+      "stroke": "dashed"
+    },
+    "association": {
+      "arrow": "none",
+      "stroke": "dotted"
+    },
+    "containment": {
+      "arrow": "none",
+      "stroke": "dotted"
+    },
+    "membership": {
+      "arrow": "none",
+      "stroke": "dotted"
+    },
+    "sequence": {
+      "arrow": "normal",
+      "stroke": "solid"
+    },
+    "causation": {
+      "arrow": "normal",
+      "stroke": "solid"
+    }
+  },
+  "relation_legend_labels": {
+    "activation": "箭头=激活",
+    "inhibition": "平头(⊥)=抑制",
+    "binding": "无箭头实线=结合",
+    "modification": "虚线箭头=修饰",
+    "transport": "跨边界箭头=转运",
+    "transcription": "箭头=转录激活",
+    "translation": "箭头=翻译",
+    "feedback": "虚线=反馈",
+    "association": "点线=关联（无方向）",
+    "containment": "虚线框=区室",
+    "membership": "虚线框=区室",
+    "sequence": "箭头=顺序/因果",
+    "causation": "箭头=顺序/因果"
+  },
+  "relation_colors": {
+    "activation": "#0072B2",
+    "sequence": "#0072B2",
+    "causation": "#0072B2",
+    "inhibition": "#D55E00",
+    "modification": "#D55E00",
+    "feedback": "#D55E00",
+    "binding": "#009E73",
+    "transport": "#009E73",
+    "translation": "#009E73",
+    "transcription": "#CC79A7",
+    "association": "#56B4E9",
+    "containment": "#8C97A3",
+    "membership": "#8C97A3"
+  },
+  "directional_relation_types": [
+    "activation",
+    "inhibition",
+    "sequence",
+    "causation",
+    "modification",
+    "transport",
+    "transcription",
+    "translation"
+  ],
+  "undirected_relation_types": [
+    "binding",
+    "association"
+  ],
+  "structural_relation_types": [
+    "containment",
+    "membership"
+  ],
+  "feedback_relation_types": [
+    "feedback"
+  ],
+  "evidence": {
+    "strengths": [
+      "high",
+      "medium",
+      "low"
+    ],
+    "kinds": [
+      "direct",
+      "indirect",
+      "inferred"
+    ],
+    "strength_to_line_width_pt": {
+      "high": 1.4,
+      "medium": 1.0,
+      "low": 0.6
+    }
+  },
+  "modification_cues": [
+    "phosphorylation",
+    "phosphorylated",
+    "phospho",
+    "dephosphorylation",
+    "ubiquitination",
+    "ubiquitylation",
+    "acetylation",
+    "deacetylation",
+    "methylation",
+    "demethylation",
+    "glycosylation",
+    "sumoylation",
+    "hydroxylation",
+    "nitrosylation",
+    "palmitoylation",
+    "prenylation",
+    "磷酸化",
+    "去磷酸化",
+    "泛素化",
+    "乙酰化",
+    "去乙酰化",
+    "甲基化",
+    "糖基化",
+    "sumo化",
+    "羟基化",
+    "硝基化",
+    "棕榈酰化"
+  ],
+  "dimensionless_columns": [
+    "abundance",
+    "adjp",
+    "adjustedp",
+    "au",
+    "auc",
+    "bh",
+    "coefficient",
+    "cohensd",
+    "correlation",
+    "count",
+    "counts",
+    "cv",
+    "delta",
+    "effect",
+    "fc",
+    "fdr",
+    "fishers",
+    "foldchange",
+    "fraction",
+    "hazardratio",
+    "hr",
+    "index",
+    "log2fc",
+    "log2foldchange",
+    "logfc",
+    "logratio",
+    "n",
+    "ncell",
+    "ncells",
+    "normalized",
+    "nreplicate",
+    "nreplicates",
+    "oddsratio",
+    "p",
+    "padj",
+    "padjusted",
+    "pct",
+    "pearson",
+    "percent",
+    "percentage",
+    "prob",
+    "probability",
+    "proportion",
+    "pval",
+    "pvalue",
+    "q",
+    "qval",
+    "qvalue",
+    "r2",
+    "rank",
+    "ratio",
+    "relative",
+    "residual",
+    "rho",
+    "rsquared",
+    "score",
+    "sd",
+    "sem",
+    "spearman",
+    "stdev",
+    "t",
+    "variance",
+    "zscore"
+  ],
+  "policies": {
+    "membrane_anchored_container": "membrane_or_adjacent_compartment",
+    "binding_compartment": "membrane_adjacent_allowed",
+    "self_edge_rank": "exempt",
+    "transcription_origin": "nucleus_or_declared_crossing"
+  },
+  "policies_note": "Documented relaxations of the literal CONTRACT wording, each one required by a real workorder shape: (a) membrane_anchored may sit in an adjacent cytosolic compartment (RAS-GTP); (b) a binding partner on a membrane band is adjacent to both sides, so ligand-receptor binding across the bilayer is not a E_COMPARTMENT_MISMATCH; (c) a self-edge (from == to, e.g. EGFR autophosphorylation) carries no rank change, so it is exempt from the strict rank increase and from cycle detection; (d) a transcription factor that translocates may start the edge outside the nucleus when the model declares crosses[]; (e) transport without crosses[] is a warning when the endpoint containers already differ, and an error only when no boundary is crossed.",
+  "error_codes": {
+    "E_GENE_PROTEIN_CONFUSION": "CONTRACT 3.2: a gene asserted with a protein name or modification decoration, or a gene/protein pair whose labels are not distinguishable",
+    "E_MEMBRANE_PLACEMENT": "CONTRACT 3.3: transmembrane/membrane_anchored entity not on a kind='membrane' container (or an invalid role)",
+    "E_FLOW_DIRECTION": "CONTRACT 3.5: non-feedback edge that does not raise the rank, a directed cycle of non-feedback edges, a missing/incomplete figure.flow.ranks, or a non-backward feedback arc",
+    "E_INTERACTION_STYLE_MISMATCH": "CONTRACT 3.4: rendered (arrow, stroke) differs from the frozen table, or a drawn type has no legend entry",
+    "E_COMPARTMENT_MISMATCH": "CONTRACT 3.4: binding whose partners sit in different compartments",
+    "E_TYPE_CONSTRAINT_VIOLATION": "CONTRACT 3.4: transcription/translation endpoint kinds or a transport that crosses no boundary",
+    "E_MODIFICATION_UNNAMED": "CONTRACT 3.4: modification edge whose label does not name the modification kind",
+    "E_LEGEND_DATA_MISMATCH": "CONTRACT 3.6: legend[].encoding mapping values, visuals and data values do not correspond one-to-one"
+  },
+  "warning_codes": {
+    "W_UNIT_DIMENSIONLESS_ASSUMED": "a numeric column/value is declared dimensionless (unit: null / unit_status) and the material gives no unit",
+    "W_MEMBRANE_ROLE_MISSING": "entity sits in a membrane container without a membrane_role",
+    "W_MEMBRANE_ROLE_CONTAINER": "luminal/cytosolic/extracellular role inside a membrane band container",
+    "W_TRANSCRIPTION_ORIGIN": "transcription factor drawn outside the nucleus without a declared crossing",
+    "W_TRANSPORT_CROSSES_MISSING": "transport whose endpoints differ but which omits crosses[]",
+    "W_FLOW_RANKS_DERIVED": "declared figure.flow.ranks disagrees with the ranks derived from the edges",
+    "W_LEGEND_ENCODING_MISSING": "a mechanism figure with data/relations declares no legend[].encoding"
+  }
+}

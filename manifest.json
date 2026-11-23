@@ -1,0 +1,196 @@
+{
+  "generated_from": "actual file tree; every listed path exists and every sha256 was recomputed",
+  "generator": "work/freeze_manifest.py",
+  "skills": [
+    {
+      "name": "biological-mechanism-pathway-figure",
+      "version": "1.1",
+      "detection": "explicit",
+      "runtime": {
+        "input": "/input/case.json",
+        "work": "/app/work",
+        "output": "/app/output",
+        "result": "/app/output/result.json",
+        "entrypoint": "scripts/run.py",
+        "stage_order": [
+          "prepare",
+          "render",
+          "export",
+          "compare",
+          "edit",
+          "finish"
+        ],
+        "commands": [
+          "prepare",
+          "render",
+          "export",
+          "compare",
+          "edit",
+          "finish"
+        ],
+        "budget": {
+          "model_requests": 64,
+          "seconds": 900,
+          "tokens_per_response": 16384
+        },
+        "limits": {
+          "files": 50,
+          "per_file_bytes": 500000,
+          "total_bytes": 2000000,
+          "symlinks": 0
+        }
+      },
+      "files": [
+        {
+          "path": "examples/case.json",
+          "bytes": 1195,
+          "sha256": "d39207cd1d2393785d29abb8ff394e0e161638a6624ebfbf812fa51bb17dcff9"
+        },
+        {
+          "path": "examples/expected_model.json",
+          "bytes": 12067,
+          "sha256": "5c5cff1271f43f1019b485462eb11823c7e5bbde16e91b42b1ac8a3feea54b76"
+        },
+        {
+          "path": "examples/materials/example_pathway_notes.md",
+          "bytes": 1517,
+          "sha256": "3a4f2bdbffdbce5121c9d9655ef0fa52ab1a2803a56d25ff059770be7bf1fc74"
+        },
+        {
+          "path": "examples/materials/example_pathway_workorder.json",
+          "bytes": 2664,
+          "sha256": "724004083e0b57fd88bee6f896622fd423cdbee1a0fb57be010e36bda95e4790"
+        },
+        {
+          "path": "examples/README.md",
+          "bytes": 6283,
+          "sha256": "59a52e127bc61eceda7daf7b3c4c3f03c26ba46f872bda2e7bc3256bfcbfeb18"
+        },
+        {
+          "path": "GITHUB_URL.txt",
+          "bytes": 71,
+          "sha256": "55bf0841df7180f5c741defc5c6bd9ae740fb826df74d2970e58ea5363786eaf"
+        },
+        {
+          "path": "README.md",
+          "bytes": 13859,
+          "sha256": "6b82f43338928348e15d87427d45f6a818153b2862cd800585d012cdf17b49df"
+        },
+        {
+          "path": "references/export_and_compliance.md",
+          "bytes": 27634,
+          "sha256": "0343809187a29d24cad9ca8aa62cea68a1516309325d46c6bcb306f5871354b4"
+        },
+        {
+          "path": "references/extraction_rules.md",
+          "bytes": 16628,
+          "sha256": "36d459c6633268a0a62a003cfc41e2c1c9f169ead6b9ea5b1a3a8992018e091e"
+        },
+        {
+          "path": "references/implementation_status.md",
+          "bytes": 21190,
+          "sha256": "83c69eb902e1c0d34298a5316ced4c1c6be95d84b18e4efad8e24ba5780c3e04"
+        },
+        {
+          "path": "references/layout_and_svg.md",
+          "bytes": 24274,
+          "sha256": "54a52d3ef3f0ad31f5af20fc7c75e83e2c40444885bfa1d556dd06dfa0ae49b7"
+        },
+        {
+          "path": "references/mechanism_semantics.md",
+          "bytes": 21129,
+          "sha256": "5efd7cc21d78d5709b242c20a0b90e36d8cb1e5598ef888a21455c22b0ad09fb"
+        },
+        {
+          "path": "references/result_contract.md",
+          "bytes": 10450,
+          "sha256": "66d5130080730c19706eface9b3da59271deaea7fc6db17ca4d23e8e927b6456"
+        },
+        {
+          "path": "schemas/edit_ops.schema.json",
+          "bytes": 2099,
+          "sha256": "809ef78f8d5e37356109650a4a40e0192393b914764f25867b1e9f7501ad3810"
+        },
+        {
+          "path": "schemas/figure_model.schema.json",
+          "bytes": 12464,
+          "sha256": "956c467eb62f83344c7d4b241a73903191af3e2600a556726835596a6fe1fd5f"
+        },
+        {
+          "path": "schemas/mech_ontology.json",
+          "bytes": 9993,
+          "sha256": "f2fb7b264119b3688c51ce73b0f7a98c2f8164b9ba60ed844e21c9fd619a05d7"
+        },
+        {
+          "path": "schemas/review_batch.schema.json",
+          "bytes": 2257,
+          "sha256": "a52ea1854b0164f723037a0eaca22432660c650b90d20401e4a563dffbc6928e"
+        },
+        {
+          "path": "scripts/common.py",
+          "bytes": 12396,
+          "sha256": "b41935018c17ea6fc13bf578c8967556641a542e69aa51a6990031731dc43a80"
+        },
+        {
+          "path": "scripts/compliance.py",
+          "bytes": 208947,
+          "sha256": "a00d77be1ab880f00c6e8ea31a0571b40f0acb07dbb256e707734a349dcc8c3a"
+        },
+        {
+          "path": "scripts/export.py",
+          "bytes": 98754,
+          "sha256": "3bf1d606cb0ca8cbf4ea8954f860057b1df63d4b8bc72346079c78d4b0591dfd"
+        },
+        {
+          "path": "scripts/ingest.py",
+          "bytes": 66240,
+          "sha256": "c3979e65336283ecdf49df15e126427a317ea68c17cf18920fc0296582f9433e"
+        },
+        {
+          "path": "scripts/layout.py",
+          "bytes": 189366,
+          "sha256": "95463b0f62fd2237eb42806473c32e2985de4473e0761d1f6506fc17792457bd"
+        },
+        {
+          "path": "scripts/mech.py",
+          "bytes": 57455,
+          "sha256": "43f48fdcc1681b9e536027bea240613a1c26acf14efd48f7055aedf8e87e526e"
+        },
+        {
+          "path": "scripts/model.py",
+          "bytes": 94699,
+          "sha256": "4430a2f3792d6ddedb17255d9632ee3ee8cef5d9947e67c22763da5b0601b287"
+        },
+        {
+          "path": "scripts/reference.py",
+          "bytes": 12935,
+          "sha256": "24500594c9f512e498d0d64031866c70130e93af1b9a73dcf1870e274418e4ae"
+        },
+        {
+          "path": "scripts/render_svg.py",
+          "bytes": 76788,
+          "sha256": "237c4517f62c35166eb22cc60a60b48016dcda69f30317166699a8ed8adb621f"
+        },
+        {
+          "path": "scripts/run.py",
+          "bytes": 59983,
+          "sha256": "3da40c3ae5471b69829c8e404985cbc9474c617b43d26eaef549a6b10543eac8"
+        },
+        {
+          "path": "scripts/selftest.py",
+          "bytes": 25200,
+          "sha256": "ce504b72ee12c35771888d8cf8fbef8900ec0172441f1111b38fcaac5006bd81"
+        },
+        {
+          "path": "SKILL.md",
+          "bytes": 26164,
+          "sha256": "eb14ae827c5e36cd5ccb2d7b8325db9a67d3b93b83e0e6e6eae1b9cce07a0966"
+        }
+      ],
+      "file_count_including_self": 30,
+      "bytes_including_self": 1121767,
+      "github": "https://github.com/sprw-li/biological-mechanism-pathway-skill"
+    }
+  ],
+  "integrity_rule": "rerun `py -3 work/freeze_manifest.py` immediately before packaging; concurrent writers make a hand-written manifest drift"
+}

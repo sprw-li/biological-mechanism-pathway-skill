@@ -1,0 +1,38 @@
+{
+  "figure_id": "example-mechanism-pathway",
+  "figure_kind": "mechanism_pathway",
+  "orientation": "top_down",
+  "note": "SYNTHETIC example workorder for the Skill's examples/ directory. It mirrors the shape of a real case workorder (figure-workorder.json) but its molecules, arrows and numbers are invented for interface demonstration and are NOT an organizer case or answer.",
+  "containers": [
+    {"id": "c_extracellular", "label": "胞外", "kind": "compartment", "compartment": "extracellular"},
+    {"id": "c_membrane", "label": "质膜", "kind": "membrane"},
+    {"id": "c_cytosol", "label": "胞质", "kind": "compartment", "compartment": "cytosol"},
+    {"id": "c_nucleus", "label": "细胞核", "kind": "compartment", "compartment": "nucleus"}
+  ],
+  "entities": [
+    {"id": "e_exl1", "label": "EXL1", "kind": "protein", "container": "c_extracellular", "membrane_role": "extracellular"},
+    {"id": "e_exr1", "label": "EXR1", "kind": "protein", "container": "c_membrane", "membrane_role": "transmembrane"},
+    {"id": "e_exk1", "label": "EXK1", "kind": "protein", "container": "c_cytosol", "membrane_role": "cytosolic"},
+    {"id": "e_extf1", "label": "EXTF1", "kind": "protein", "container": "c_cytosol", "membrane_role": "cytosolic"},
+    {"id": "e_extf1n", "label": "EXTF1（nuclear）", "kind": "protein", "container": "c_nucleus", "membrane_role": "na"},
+    {"id": "e_exg1", "label": "EXG1", "kind": "gene", "container": "c_nucleus", "membrane_role": "na"},
+    {"id": "e_exp1", "label": "EXP1", "kind": "protein", "container": "c_cytosol", "membrane_role": "cytosolic"}
+  ],
+  "relations": [
+    {"id": "r_bind", "from": "e_exl1", "to": "e_exr1", "type": "binding", "label": "结合"},
+    {"id": "r_act", "from": "e_exr1", "to": "e_exk1", "type": "activation", "label": "激活"},
+    {"id": "r_mod", "from": "e_exk1", "to": "e_extf1", "type": "modification", "label": "磷酸化"},
+    {"id": "r_nuclear_import", "from": "e_extf1", "to": "e_extf1n", "type": "transport", "label": "转运入核",
+     "crosses": ["c_cytosol", "c_nucleus"]},
+    {"id": "r_tx", "from": "e_extf1n", "to": "e_exg1", "type": "transcription", "label": "转录激活"},
+    {"id": "r_tl", "from": "e_exg1", "to": "e_exp1", "type": "translation", "label": "翻译"},
+    {"id": "r_fb", "from": "e_exp1", "to": "e_exk1", "type": "feedback", "label": "负反馈"}
+  ],
+  "legend_encoding": [
+    {"channel": "line_width", "field": "relations[].evidence.strength", "unit": "pt",
+     "mapping": [{"value": "high", "visual": 1.4},
+                 {"value": "medium", "visual": 1.0},
+                 {"value": "low", "visual": 0.6}]}
+  ],
+  "required_panels": ["A"]
+}

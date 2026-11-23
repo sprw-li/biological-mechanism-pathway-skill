@@ -1,0 +1,19 @@
+{
+  "case_id": "example-mechanism-pathway",
+  "task": "依据 materials/ 中的机制材料（一段机制叙述 + 一份 figure workorder），生成一张可编辑的机制/通路图，交付分层 SVG 源文件与 PDF/PNG 导出件，并标注每个元素的来源。**本输入是示例（SYNTHETIC），不是组织方正式案例。**",
+  "output_contract": {
+    "case_id": "",
+    "status": "",
+    "editable_source": "",
+    "export_artifact": "",
+    "content_map": "",
+    "compliance_checks": "",
+    "exceptions": ""
+  },
+  "required_fields": ["case_id", "status", "editable_source", "export_artifact",
+                      "content_map", "compliance_checks", "exceptions"],
+  "materials": ["materials/example_pathway_notes.md", "materials/example_pathway_workorder.json"],
+  "figure": {"id": "example-mechanism-pathway", "kind": "mechanism_pathway",
+             "canvas": {"width_mm": 180, "height_mm": 120}},
+  "notes": "SYNTHETIC example input (namespaced 'example-'): demonstrates the mechanism/pathway calling convention. It is not the organizer's figure03 case and must not be presented as a case result. Sketch of the expected model shape: examples/expected_model.json."
+}

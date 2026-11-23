@@ -1,0 +1,1089 @@
+{
+  "checks": [
+    {
+      "detail": "",
+      "name": "-- positive: fx-linear-pathway --",
+      "state": "SECTION"
+    },
+    {
+      "detail": "D:\\Borium_Contest\\ARMI2611000060v1\\work\\verify\\fixtures\\models\\fx-linear-pathway.json",
+      "name": "fx-linear-pathway fixture model.json present",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0 stderr=",
+      "name": "fx-linear-pathway prepare exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway prepare wrote case_manifest.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway prepare wrote source_inventory.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway prepare wrote figure_model.draft.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway prepare wrote REVIEW_BATCH.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "units=87 tables=1",
+      "name": "fx-linear-pathway inventory has source units",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[]",
+      "name": "fx-linear-pathway every declared material entered the inventory",
+      "state": "PASS"
+    },
+    {
+      "detail": "status=partial",
+      "name": "fx-linear-pathway early result.json is honestly partial",
+      "state": "PASS"
+    },
+    {
+      "detail": "unresolved=0 []",
+      "name": "fx-linear-pathway 每个实体/关系/容器/图例/标题 source 可解析（逐元素溯源）",
+      "state": "PASS"
+    },
+    {
+      "detail": "imprecise=0 []",
+      "name": "fx-linear-pathway source.locator 精确命中引用行/列",
+      "state": "PASS"
+    },
+    {
+      "detail": "codes=[] first={}",
+      "name": "fx-linear-pathway render: 0 gate errors",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0",
+      "name": "fx-linear-pathway render exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "[]",
+      "name": "fx-linear-pathway gate warnings",
+      "state": "INFO"
+    },
+    {
+      "detail": "bytes=45442",
+      "name": "fx-linear-pathway editable SVG written",
+      "state": "PASS"
+    },
+    {
+      "detail": "layers=7",
+      "name": "fx-linear-pathway SVG has 7 named layers",
+      "state": "PASS"
+    },
+    {
+      "detail": "images=0",
+      "name": "fx-linear-pathway SVG has 0 <image> elements",
+      "state": "PASS"
+    },
+    {
+      "detail": "texts=53 entities=8",
+      "name": "fx-linear-pathway SVG text is real <text>",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=8",
+      "name": "fx-linear-pathway SVG 为每个 实体 写出 ent: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-linear-pathway 实体 锚点带 data-entity-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-linear-pathway 实体 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=7",
+      "name": "fx-linear-pathway SVG 为每个 关系 写出 rel: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-linear-pathway 关系 锚点带 data-relation-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-linear-pathway 关系 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=4",
+      "name": "fx-linear-pathway SVG 为每个 容器 写出 cont: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-linear-pathway 容器 锚点带 data-container-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-linear-pathway 容器 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=9",
+      "name": "fx-linear-pathway SVG 为每个 图例 写出 lg: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-linear-pathway 图例 锚点带 data-legend-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-linear-pathway 图例 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0 failed=[]",
+      "name": "fx-linear-pathway export exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "failed=[]",
+      "name": "fx-linear-pathway 无 error 级失败合规检查",
+      "state": "PASS"
+    },
+    {
+      "detail": "n=29",
+      "name": "fx-linear-pathway 合规检查条目带 where/detail",
+      "state": "PASS"
+    },
+    {
+      "detail": "bytes=45442",
+      "name": "fx-linear-pathway 导出件 svg 真实存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "bytes=59595",
+      "name": "fx-linear-pathway 导出件 pdf 真实存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "bytes=403081",
+      "name": "fx-linear-pathway 导出件 png 真实存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "size=(4252, 3071)",
+      "name": "fx-linear-pathway PNG magic 与 IHDR 可解析",
+      "state": "PASS"
+    },
+    {
+      "detail": "px=4252x3071",
+      "name": "fx-linear-pathway PNG 分辨率与 600dpi 画布一致（>=1200px 宽）",
+      "state": "PASS"
+    },
+    {
+      "detail": "D:\\Borium_Contest\\ARMI2611000060v1\\work\\verify\\_runs\\fx-linear-pathway\\out\\figures\\figure.pdf",
+      "name": "fx-linear-pathway PDF 以 %PDF- 开头",
+      "state": "PASS"
+    },
+    {
+      "detail": "8/8 ['EGF', 'EGFR', 'GRB2', 'MAP2K1', 'MAPK1', 'ELK1']",
+      "name": "fx-linear-pathway PDF 文本层可抽取实体标签",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0",
+      "name": "fx-linear-pathway compare exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0",
+      "name": "fx-linear-pathway finish exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict keys=['checks', 'discovery', 'exceptions', 'reference_path', 'rendered_figure', 'semantic_status']",
+      "name": "fx-linear-pathway result.json 有 reference_comparison 记录",
+      "state": "PASS"
+    },
+    {
+      "detail": "status=na reference_path=None",
+      "name": "fx-linear-pathway 材料无原图 ⇒ semantic_status=na 且不得声称已比对",
+      "state": "PASS"
+    },
+    {
+      "detail": "claims=[]",
+      "name": "fx-linear-pathway 无原图时不得出现 REF_LABEL_COVERAGE pass",
+      "state": "PASS"
+    },
+    {
+      "detail": "status=na checks=['REFERENCE_COMPARISON'] exceptions=1",
+      "name": "fx-linear-pathway reference_comparison",
+      "state": "INFO"
+    },
+    {
+      "detail": "status=ok limitations=[]",
+      "name": "fx-linear-pathway result.json 存在且 status=ok",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[]",
+      "name": "fx-linear-pathway result.json top-level平台字段齐备",
+      "state": "PASS"
+    },
+    {
+      "detail": "empty=[] status=ok",
+      "name": "fx-linear-pathway result.json 必需平台字段非空（ok 时 exceptions 可为空列表）",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict",
+      "name": "fx-linear-pathway output_contract 是可用 mapping",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[]",
+      "name": "fx-linear-pathway output_contract 内也含 7 个平台字段",
+      "state": "PASS"
+    },
+    {
+      "detail": "editable_source='figures/figure.svg'",
+      "name": "fx-linear-pathway editable_source 指向 figures/figure.svg",
+      "state": "PASS"
+    },
+    {
+      "detail": "D:\\Borium_Contest\\ARMI2611000060v1\\work\\verify\\_runs\\fx-linear-pathway\\out\\figures\\figure.svg",
+      "name": "fx-linear-pathway editable_source 文件存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "images=0",
+      "name": "fx-linear-pathway editable_source 是 SVG 且 <image>=0",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict",
+      "name": "fx-linear-pathway export_artifact 是 mapping",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway export_artifact 只声明真实可用文件且 hash/bytes 一致",
+      "state": "PASS"
+    },
+    {
+      "detail": "available={'svg': True, 'pdf': True, 'png': True}",
+      "name": "fx-linear-pathway export_artifact 覆盖 svg/pdf/png",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict",
+      "name": "fx-linear-pathway content_map 是 mapping",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway content_map 每个 id 都真实可定位（on_canvas 与 SVG 锚点一致）",
+      "state": "PASS"
+    },
+    {
+      "detail": "n=30",
+      "name": "fx-linear-pathway compliance_checks 是非空列表",
+      "state": "PASS"
+    },
+    {
+      "detail": "first={'id': 'format_coverage', 'level': 'error', 'status': 'pass', 'where': '', 'detail': 'all requested formats present: eps, pdf, png, svg, tiff'}",
+      "name": "fx-linear-pathway compliance_checks 每条含 id/level/status/where/detail",
+      "state": "PASS"
+    },
+    {
+      "detail": "error_fails=[]",
+      "name": "fx-linear-pathway error 级 fail 时 status 不为 ok",
+      "state": "PASS"
+    },
+    {
+      "detail": "n=1",
+      "name": "fx-linear-pathway exceptions 是列表且每条有原因",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway legend(line_style) 与图面箭头/线型逐一对应（按冻结表）",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-linear-pathway legend(line_width) 与 evidence.strength 线宽逐一对应",
+      "state": "PASS"
+    },
+    {
+      "detail": "node area is not proportional to abundance.value (area/value 4.7995..7.7580, spread 38%)",
+      "name": "fx-linear-pathway legend(node_size) 与 abundance 面积编码逐一对应",
+      "state": "FAIL"
+    },
+    {
+      "detail": "sha=b87390fcd04fde16",
+      "name": "fx-linear-pathway render 确定性（同模型两次 SVG 逐字节相同）",
+      "state": "PASS"
+    },
+    {
+      "detail": "recorded=b87390fcd04fde16",
+      "name": "fx-linear-pathway finish 记录的 SVG sha256 与重渲染后文件一致（无陈旧摘要）",
+      "state": "PASS"
+    },
+    {
+      "detail": "recorded=9b00c6559b5abb1f",
+      "name": "fx-linear-pathway result.json 自校验摘要可独立重算",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "-- positive: fx-branch-feedback --",
+      "state": "SECTION"
+    },
+    {
+      "detail": "D:\\Borium_Contest\\ARMI2611000060v1\\work\\verify\\fixtures\\models\\fx-branch-feedback.json",
+      "name": "fx-branch-feedback fixture model.json present",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0 stderr=",
+      "name": "fx-branch-feedback prepare exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback prepare wrote case_manifest.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback prepare wrote source_inventory.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback prepare wrote figure_model.draft.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback prepare wrote REVIEW_BATCH.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "units=81 tables=1",
+      "name": "fx-branch-feedback inventory has source units",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[]",
+      "name": "fx-branch-feedback every declared material entered the inventory",
+      "state": "PASS"
+    },
+    {
+      "detail": "status=partial",
+      "name": "fx-branch-feedback early result.json is honestly partial",
+      "state": "PASS"
+    },
+    {
+      "detail": "unresolved=0 []",
+      "name": "fx-branch-feedback 每个实体/关系/容器/图例/标题 source 可解析（逐元素溯源）",
+      "state": "PASS"
+    },
+    {
+      "detail": "imprecise=0 []",
+      "name": "fx-branch-feedback source.locator 精确命中引用行/列",
+      "state": "PASS"
+    },
+    {
+      "detail": "codes=[] first={}",
+      "name": "fx-branch-feedback render: 0 gate errors",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0",
+      "name": "fx-branch-feedback render exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "['W_BACKWARD_EDGE', 'W_TRANSCRIPTION_ORIGIN']",
+      "name": "fx-branch-feedback gate warnings",
+      "state": "INFO"
+    },
+    {
+      "detail": "bytes=44429",
+      "name": "fx-branch-feedback editable SVG written",
+      "state": "PASS"
+    },
+    {
+      "detail": "layers=7",
+      "name": "fx-branch-feedback SVG has 7 named layers",
+      "state": "PASS"
+    },
+    {
+      "detail": "images=0",
+      "name": "fx-branch-feedback SVG has 0 <image> elements",
+      "state": "PASS"
+    },
+    {
+      "detail": "texts=53 entities=6",
+      "name": "fx-branch-feedback SVG text is real <text>",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=6",
+      "name": "fx-branch-feedback SVG 为每个 实体 写出 ent: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-branch-feedback 实体 锚点带 data-entity-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-branch-feedback 实体 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=6",
+      "name": "fx-branch-feedback SVG 为每个 关系 写出 rel: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-branch-feedback 关系 锚点带 data-relation-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-branch-feedback 关系 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=3",
+      "name": "fx-branch-feedback SVG 为每个 容器 写出 cont: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-branch-feedback 容器 锚点带 data-container-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-branch-feedback 容器 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=10",
+      "name": "fx-branch-feedback SVG 为每个 图例 写出 lg: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-branch-feedback 图例 锚点带 data-legend-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-branch-feedback 图例 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0 failed=[]",
+      "name": "fx-branch-feedback export exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "failed=[]",
+      "name": "fx-branch-feedback 无 error 级失败合规检查",
+      "state": "PASS"
+    },
+    {
+      "detail": "n=29",
+      "name": "fx-branch-feedback 合规检查条目带 where/detail",
+      "state": "PASS"
+    },
+    {
+      "detail": "bytes=44429",
+      "name": "fx-branch-feedback 导出件 svg 真实存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "bytes=56265",
+      "name": "fx-branch-feedback 导出件 pdf 真实存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "bytes=413345",
+      "name": "fx-branch-feedback 导出件 png 真实存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "size=(4252, 3071)",
+      "name": "fx-branch-feedback PNG magic 与 IHDR 可解析",
+      "state": "PASS"
+    },
+    {
+      "detail": "px=4252x3071",
+      "name": "fx-branch-feedback PNG 分辨率与 600dpi 画布一致（>=1200px 宽）",
+      "state": "PASS"
+    },
+    {
+      "detail": "D:\\Borium_Contest\\ARMI2611000060v1\\work\\verify\\_runs\\fx-branch-feedback\\out\\figures\\figure.pdf",
+      "name": "fx-branch-feedback PDF 以 %PDF- 开头",
+      "state": "PASS"
+    },
+    {
+      "detail": "6/6 ['缺氧刺激', 'HIF-1alpha', 'VEGFA 基因', 'EPO 基因', 'VEGFA protein', 'VHL 蛋白']",
+      "name": "fx-branch-feedback PDF 文本层可抽取实体标签",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0",
+      "name": "fx-branch-feedback compare exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0",
+      "name": "fx-branch-feedback finish exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict keys=['checks', 'discovery', 'exceptions', 'reference_path', 'rendered_figure', 'semantic_status']",
+      "name": "fx-branch-feedback result.json 有 reference_comparison 记录",
+      "state": "PASS"
+    },
+    {
+      "detail": "status=na reference_path=None",
+      "name": "fx-branch-feedback 材料无原图 ⇒ semantic_status=na 且不得声称已比对",
+      "state": "PASS"
+    },
+    {
+      "detail": "claims=[]",
+      "name": "fx-branch-feedback 无原图时不得出现 REF_LABEL_COVERAGE pass",
+      "state": "PASS"
+    },
+    {
+      "detail": "status=na checks=['REFERENCE_COMPARISON'] exceptions=1",
+      "name": "fx-branch-feedback reference_comparison",
+      "state": "INFO"
+    },
+    {
+      "detail": "status=ok limitations=[]",
+      "name": "fx-branch-feedback result.json 存在且 status=ok",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[]",
+      "name": "fx-branch-feedback result.json top-level平台字段齐备",
+      "state": "PASS"
+    },
+    {
+      "detail": "empty=[] status=ok",
+      "name": "fx-branch-feedback result.json 必需平台字段非空（ok 时 exceptions 可为空列表）",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict",
+      "name": "fx-branch-feedback output_contract 是可用 mapping",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[]",
+      "name": "fx-branch-feedback output_contract 内也含 7 个平台字段",
+      "state": "PASS"
+    },
+    {
+      "detail": "editable_source='figures/figure.svg'",
+      "name": "fx-branch-feedback editable_source 指向 figures/figure.svg",
+      "state": "PASS"
+    },
+    {
+      "detail": "D:\\Borium_Contest\\ARMI2611000060v1\\work\\verify\\_runs\\fx-branch-feedback\\out\\figures\\figure.svg",
+      "name": "fx-branch-feedback editable_source 文件存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "images=0",
+      "name": "fx-branch-feedback editable_source 是 SVG 且 <image>=0",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict",
+      "name": "fx-branch-feedback export_artifact 是 mapping",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback export_artifact 只声明真实可用文件且 hash/bytes 一致",
+      "state": "PASS"
+    },
+    {
+      "detail": "available={'svg': True, 'pdf': True, 'png': True}",
+      "name": "fx-branch-feedback export_artifact 覆盖 svg/pdf/png",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict",
+      "name": "fx-branch-feedback content_map 是 mapping",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback content_map 每个 id 都真实可定位（on_canvas 与 SVG 锚点一致）",
+      "state": "PASS"
+    },
+    {
+      "detail": "n=33",
+      "name": "fx-branch-feedback compliance_checks 是非空列表",
+      "state": "PASS"
+    },
+    {
+      "detail": "first={'id': 'format_coverage', 'level': 'error', 'status': 'pass', 'where': '', 'detail': 'all requested formats present: eps, pdf, png, svg, tiff'}",
+      "name": "fx-branch-feedback compliance_checks 每条含 id/level/status/where/detail",
+      "state": "PASS"
+    },
+    {
+      "detail": "error_fails=[]",
+      "name": "fx-branch-feedback error 级 fail 时 status 不为 ok",
+      "state": "PASS"
+    },
+    {
+      "detail": "n=1",
+      "name": "fx-branch-feedback exceptions 是列表且每条有原因",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback legend(line_style) 与图面箭头/线型逐一对应（按冻结表）",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback legend(line_width) 与 evidence.strength 线宽逐一对应",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback legend(node_size) 与 abundance 面积编码逐一对应",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-branch-feedback legend(color) 与数据 series 配色逐一对应",
+      "state": "PASS"
+    },
+    {
+      "detail": "figure.kind=mechanism_pathway 不绘制数据 series",
+      "name": "fx-branch-feedback legend(color) 与图面配色对应",
+      "state": "N/A"
+    },
+    {
+      "detail": "sha=e994aba592be6fe9",
+      "name": "fx-branch-feedback render 确定性（同模型两次 SVG 逐字节相同）",
+      "state": "PASS"
+    },
+    {
+      "detail": "recorded=e994aba592be6fe9",
+      "name": "fx-branch-feedback finish 记录的 SVG sha256 与重渲染后文件一致（无陈旧摘要）",
+      "state": "PASS"
+    },
+    {
+      "detail": "recorded=0688e3c3db2832f9",
+      "name": "fx-branch-feedback result.json 自校验摘要可独立重算",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "-- positive: fx-multi-compartment --",
+      "state": "SECTION"
+    },
+    {
+      "detail": "D:\\Borium_Contest\\ARMI2611000060v1\\work\\verify\\fixtures\\models\\fx-multi-compartment.json",
+      "name": "fx-multi-compartment fixture model.json present",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0 stderr=",
+      "name": "fx-multi-compartment prepare exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-multi-compartment prepare wrote case_manifest.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-multi-compartment prepare wrote source_inventory.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-multi-compartment prepare wrote figure_model.draft.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-multi-compartment prepare wrote REVIEW_BATCH.json",
+      "state": "PASS"
+    },
+    {
+      "detail": "units=92 tables=0",
+      "name": "fx-multi-compartment inventory has source units",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[]",
+      "name": "fx-multi-compartment every declared material entered the inventory",
+      "state": "PASS"
+    },
+    {
+      "detail": "status=partial",
+      "name": "fx-multi-compartment early result.json is honestly partial",
+      "state": "PASS"
+    },
+    {
+      "detail": "unresolved=0 []",
+      "name": "fx-multi-compartment 每个实体/关系/容器/图例/标题 source 可解析（逐元素溯源）",
+      "state": "PASS"
+    },
+    {
+      "detail": "imprecise=0 []",
+      "name": "fx-multi-compartment source.locator 精确命中引用行/列",
+      "state": "PASS"
+    },
+    {
+      "detail": "codes=[] first={}",
+      "name": "fx-multi-compartment render: 0 gate errors",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0",
+      "name": "fx-multi-compartment render exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "['W_FLOW_RANKS_DERIVED']",
+      "name": "fx-multi-compartment gate warnings",
+      "state": "INFO"
+    },
+    {
+      "detail": "bytes=44735",
+      "name": "fx-multi-compartment editable SVG written",
+      "state": "PASS"
+    },
+    {
+      "detail": "layers=7",
+      "name": "fx-multi-compartment SVG has 7 named layers",
+      "state": "PASS"
+    },
+    {
+      "detail": "images=0",
+      "name": "fx-multi-compartment SVG has 0 <image> elements",
+      "state": "PASS"
+    },
+    {
+      "detail": "texts=48 entities=9",
+      "name": "fx-multi-compartment SVG text is real <text>",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=9",
+      "name": "fx-multi-compartment SVG 为每个 实体 写出 ent: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-multi-compartment 实体 锚点带 data-entity-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-multi-compartment 实体 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=9",
+      "name": "fx-multi-compartment SVG 为每个 关系 写出 rel: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-multi-compartment 关系 锚点带 data-relation-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-multi-compartment 关系 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=4",
+      "name": "fx-multi-compartment SVG 为每个 容器 写出 cont: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-multi-compartment 容器 锚点带 data-container-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-multi-compartment 容器 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[] got=9",
+      "name": "fx-multi-compartment SVG 为每个 图例 写出 lg: 锚点",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing_attribute=[]",
+      "name": "fx-multi-compartment 图例 锚点带 data-legend-id 属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "incomplete=[]",
+      "name": "fx-multi-compartment 图例 锚点带完整 data-source-* 溯源属性",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0 failed=[]",
+      "name": "fx-multi-compartment export exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "failed=[]",
+      "name": "fx-multi-compartment 无 error 级失败合规检查",
+      "state": "PASS"
+    },
+    {
+      "detail": "n=29",
+      "name": "fx-multi-compartment 合规检查条目带 where/detail",
+      "state": "PASS"
+    },
+    {
+      "detail": "bytes=44735",
+      "name": "fx-multi-compartment 导出件 svg 真实存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "bytes=53803",
+      "name": "fx-multi-compartment 导出件 pdf 真实存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "bytes=397503",
+      "name": "fx-multi-compartment 导出件 png 真实存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "size=(4252, 3071)",
+      "name": "fx-multi-compartment PNG magic 与 IHDR 可解析",
+      "state": "PASS"
+    },
+    {
+      "detail": "px=4252x3071",
+      "name": "fx-multi-compartment PNG 分辨率与 600dpi 画布一致（>=1200px 宽）",
+      "state": "PASS"
+    },
+    {
+      "detail": "D:\\Borium_Contest\\ARMI2611000060v1\\work\\verify\\_runs\\fx-multi-compartment\\out\\figures\\figure.pdf",
+      "name": "fx-multi-compartment PDF 以 %PDF- 开头",
+      "state": "PASS"
+    },
+    {
+      "detail": "9/9 ['IGF1', 'IGF1R', 'IGFBP3', 'IRS1', 'PI3K', 'p85']",
+      "name": "fx-multi-compartment PDF 文本层可抽取实体标签",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0",
+      "name": "fx-multi-compartment compare exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "exit=0",
+      "name": "fx-multi-compartment finish exit 0",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict keys=['checks', 'discovery', 'exceptions', 'reference_path', 'rendered_figure', 'semantic_status']",
+      "name": "fx-multi-compartment result.json 有 reference_comparison 记录",
+      "state": "PASS"
+    },
+    {
+      "detail": "status=na reference_path=None",
+      "name": "fx-multi-compartment 材料无原图 ⇒ semantic_status=na 且不得声称已比对",
+      "state": "PASS"
+    },
+    {
+      "detail": "claims=[]",
+      "name": "fx-multi-compartment 无原图时不得出现 REF_LABEL_COVERAGE pass",
+      "state": "PASS"
+    },
+    {
+      "detail": "status=na checks=['REFERENCE_COMPARISON'] exceptions=1",
+      "name": "fx-multi-compartment reference_comparison",
+      "state": "INFO"
+    },
+    {
+      "detail": "status=ok limitations=[]",
+      "name": "fx-multi-compartment result.json 存在且 status=ok",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[]",
+      "name": "fx-multi-compartment result.json top-level平台字段齐备",
+      "state": "PASS"
+    },
+    {
+      "detail": "empty=[] status=ok",
+      "name": "fx-multi-compartment result.json 必需平台字段非空（ok 时 exceptions 可为空列表）",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict",
+      "name": "fx-multi-compartment output_contract 是可用 mapping",
+      "state": "PASS"
+    },
+    {
+      "detail": "missing=[]",
+      "name": "fx-multi-compartment output_contract 内也含 7 个平台字段",
+      "state": "PASS"
+    },
+    {
+      "detail": "editable_source='figures/figure.svg'",
+      "name": "fx-multi-compartment editable_source 指向 figures/figure.svg",
+      "state": "PASS"
+    },
+    {
+      "detail": "D:\\Borium_Contest\\ARMI2611000060v1\\work\\verify\\_runs\\fx-multi-compartment\\out\\figures\\figure.svg",
+      "name": "fx-multi-compartment editable_source 文件存在",
+      "state": "PASS"
+    },
+    {
+      "detail": "images=0",
+      "name": "fx-multi-compartment editable_source 是 SVG 且 <image>=0",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict",
+      "name": "fx-multi-compartment export_artifact 是 mapping",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-multi-compartment export_artifact 只声明真实可用文件且 hash/bytes 一致",
+      "state": "PASS"
+    },
+    {
+      "detail": "available={'svg': True, 'pdf': True, 'png': True}",
+      "name": "fx-multi-compartment export_artifact 覆盖 svg/pdf/png",
+      "state": "PASS"
+    },
+    {
+      "detail": "type=dict",
+      "name": "fx-multi-compartment content_map 是 mapping",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-multi-compartment content_map 每个 id 都真实可定位（on_canvas 与 SVG 锚点一致）",
+      "state": "PASS"
+    },
+    {
+      "detail": "n=32",
+      "name": "fx-multi-compartment compliance_checks 是非空列表",
+      "state": "PASS"
+    },
+    {
+      "detail": "first={'id': 'format_coverage', 'level': 'error', 'status': 'pass', 'where': '', 'detail': 'all requested formats present: eps, pdf, png, svg, tiff'}",
+      "name": "fx-multi-compartment compliance_checks 每条含 id/level/status/where/detail",
+      "state": "PASS"
+    },
+    {
+      "detail": "error_fails=[]",
+      "name": "fx-multi-compartment error 级 fail 时 status 不为 ok",
+      "state": "PASS"
+    },
+    {
+      "detail": "n=1",
+      "name": "fx-multi-compartment exceptions 是列表且每条有原因",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-multi-compartment legend(line_style) 与图面箭头/线型逐一对应（按冻结表）",
+      "state": "PASS"
+    },
+    {
+      "detail": "",
+      "name": "fx-multi-compartment legend(line_width) 与 evidence.strength 线宽逐一对应",
+      "state": "PASS"
+    },
+    {
+      "detail": "node area is not proportional to abundance.value (area/value 14.3359..19.6364, spread 27%)",
+      "name": "fx-multi-compartment legend(node_size) 与 abundance 面积编码逐一对应",
+      "state": "FAIL"
+    },
+    {
+      "detail": "sha=289f7dd05323334b",
+      "name": "fx-multi-compartment render 确定性（同模型两次 SVG 逐字节相同）",
+      "state": "PASS"
+    },
+    {
+      "detail": "recorded=289f7dd05323334b",
+      "name": "fx-multi-compartment finish 记录的 SVG sha256 与重渲染后文件一致（无陈旧摘要）",
+      "state": "PASS"
+    },
+    {
+      "detail": "recorded=164a029a194457ae",
+      "name": "fx-multi-compartment result.json 自校验摘要可独立重算",
+      "state": "PASS"
+    }
+  ],
+  "command": "run",
+  "counts": {
+    "fail": 2,
+    "info": 6,
+    "na": 1,
+    "pass": 200,
+    "section": 3,
+    "unverified": 0
+  },
+  "elapsed_s": 92.6,
+  "python": "3.12.14",
+  "skill_module_sha256": {
+    "common.py": "b41935018c17ea6fc13bf578c8967556641a542e69aa51a6990031731dc43a80",
+    "compliance.py": "a00d77be1ab880f00c6e8ea31a0571b40f0acb07dbb256e707734a349dcc8c3a",
+    "export.py": "3bf1d606cb0ca8cbf4ea8954f860057b1df63d4b8bc72346079c78d4b0591dfd",
+    "ingest.py": "c3979e65336283ecdf49df15e126427a317ea68c17cf18920fc0296582f9433e",
+    "layout.py": "95463b0f62fd2237eb42806473c32e2985de4473e0761d1f6506fc17792457bd",
+    "mech.py": "43f48fdcc1681b9e536027bea240613a1c26acf14efd48f7055aedf8e87e526e",
+    "model.py": "4430a2f3792d6ddedb17255d9632ee3ee8cef5d9947e67c22763da5b0601b287",
+    "reference.py": "24500594c9f512e498d0d64031866c70130e93af1b9a73dcf1870e274418e4ae",
+    "render_svg.py": "237c4517f62c35166eb22cc60a60b48016dcda69f30317166699a8ed8adb621f",
+    "run.py": "3da40c3ae5471b69829c8e404985cbc9474c617b43d26eaef549a6b10543eac8",
+    "selftest.py": "ce504b72ee12c35771888d8cf8fbef8900ec0172441f1111b38fcaac5006bd81"
+  },
+  "title": "POSITIVE SUITE (run)"
+}
