@@ -1,0 +1,5 @@
+group,gene,fold_change
+Normoxia,VEGFA,1.00
+Hypoxia,VEGFA,4.60
+Normoxia,EPO,1.00
+Hypoxia,EPO,3.20
