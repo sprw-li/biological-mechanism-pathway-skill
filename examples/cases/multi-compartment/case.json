@@ -1,0 +1,35 @@
+{
+  "case_id": "example-multi-compartment",
+  "task": "依据 materials/igf1r_compartments.md 绘制多区室跨膜受体机制图：胞外配体、跨膜受体与膜锚定蛋白、胞内复合物、核内转录因子、区室内结合、跨边界转运，交付分层 SVG 主源与 PDF/PNG 导出件与逐元素溯源。",
+  "output_contract": [
+    "case_id",
+    "status",
+    "editable_source",
+    "export_artifact",
+    "content_map",
+    "compliance_checks",
+    "exceptions"
+  ],
+  "required_fields": [
+    "case_id",
+    "status",
+    "editable_source",
+    "export_artifact",
+    "content_map",
+    "compliance_checks",
+    "exceptions"
+  ],
+  "materials": [
+    "materials/igf1r_compartments.md"
+  ],
+  "figure": {
+    "id": "example-figure",
+    "kind": "mechanism_pathway",
+    "canvas": {
+      "width_mm": 180,
+      "height_mm": 130
+    }
+  },
+  "notes": "verify-harness 本地机制夹具（非组织方正式案例）；output_contract 采用 list 形态。",
+  "note": "SYNTHETIC EXAMPLE - NOT AN OFFICIAL CASE. Authored by the contest team to demonstrate the Skill interface and to make the gain comparison reproducible. Not the organisers' figure03 and not any hidden case."
+}
