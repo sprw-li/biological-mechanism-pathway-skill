@@ -1,0 +1,737 @@
+{
+  "schema_version": "1.1",
+  "case_id": "example-branch-feedback",
+  "figure": {
+    "id": "example-figure",
+    "kind": "mechanism_pathway",
+    "title": {
+      "text": "缺氧-HIF1A 分支与反馈通路",
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L5",
+        "kind": "explicit",
+        "quote": "缺氧刺激激活 HIF-1alpha 蛋白的稳定化。"
+      }
+    },
+    "canvas": {
+      "width_mm": 180,
+      "height_mm": 130,
+      "background": "#FFFFFF"
+    },
+    "style": {
+      "font_stack": [
+        "DejaVu Sans",
+        "Liberation Sans",
+        "Arial"
+      ],
+      "color_space": "RGB",
+      "font_sizes_pt": {
+        "panel": 9,
+        "label": 7,
+        "title": 9,
+        "legend": 7
+      },
+      "line_widths_pt": {
+        "edge": 0.8,
+        "node": 0.6,
+        "axis": 0.6
+      },
+      "palette": [
+        "#0072B2",
+        "#D55E00",
+        "#009E73",
+        "#CC79A7",
+        "#56B4E9",
+        "#E69F00",
+        "#6A51A3",
+        "#666666",
+        "#999999",
+        "#F0E442"
+      ]
+    },
+    "flow": {
+      "orientation": "top_down",
+      "ranks": {
+        "e_hypoxia": 0,
+        "e_hif1a": 1,
+        "e_vegf": 2,
+        "e_epo": 2,
+        "e_vegf_p": 3,
+        "e_vhl": 4
+      }
+    }
+  },
+  "relations": [
+    {
+      "id": "r_hypoxia_hif1a",
+      "from": "e_hypoxia",
+      "to": "e_hif1a",
+      "type": "activation",
+      "direction": "forward",
+      "label": "激活",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#0072B2",
+        "line_width_pt": 1.4
+      },
+      "evidence": {
+        "strength": "high",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/hypoxia_hif.md",
+          "locator": "L5",
+          "kind": "explicit",
+          "quote": "缺氧刺激激活 HIF-1alpha 蛋白的稳定化。"
+        }
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L5",
+        "kind": "explicit",
+        "quote": "缺氧刺激激活 HIF-1alpha 蛋白的稳定化。"
+      }
+    },
+    {
+      "id": "r_hif1a_vegf",
+      "from": "e_hif1a",
+      "to": "e_vegf",
+      "type": "transcription",
+      "direction": "forward",
+      "label": "转录",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#CC79A7",
+        "line_width_pt": 1.4
+      },
+      "evidence": {
+        "strength": "high",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/hypoxia_hif.md",
+          "locator": "L6",
+          "kind": "explicit",
+          "quote": "HIF1A 促进 VEGFA 基因转录。"
+        }
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L6",
+        "kind": "explicit",
+        "quote": "HIF1A 促进 VEGFA 基因转录。"
+      }
+    },
+    {
+      "id": "r_hif1a_epo",
+      "from": "e_hif1a",
+      "to": "e_epo",
+      "type": "transcription",
+      "direction": "forward",
+      "label": "转录",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#CC79A7",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/hypoxia_hif.md",
+          "locator": "L7",
+          "kind": "explicit",
+          "quote": "HIF1A 促进 EPO 基因转录。"
+        }
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L7",
+        "kind": "explicit",
+        "quote": "HIF1A 促进 EPO 基因转录。"
+      }
+    },
+    {
+      "id": "r_vegf_vefgp",
+      "from": "e_vegf",
+      "to": "e_vegf_p",
+      "type": "translation",
+      "direction": "forward",
+      "label": "翻译",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#E69F00",
+        "line_width_pt": 1.4
+      },
+      "evidence": {
+        "strength": "high",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/hypoxia_hif.md",
+          "locator": "L8",
+          "kind": "explicit",
+          "quote": "VEGFA 基因翻译为 VEGFA protein。"
+        }
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L8",
+        "kind": "explicit",
+        "quote": "VEGFA 基因翻译为 VEGFA protein。"
+      }
+    },
+    {
+      "id": "r_vefgp_vhl",
+      "from": "e_vegf_p",
+      "to": "e_vhl",
+      "type": "activation",
+      "direction": "forward",
+      "label": "激活",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#0072B2",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/hypoxia_hif.md",
+          "locator": "L9",
+          "kind": "explicit",
+          "quote": "VEGFA 蛋白激活 VHL 蛋白。"
+        }
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L9",
+        "kind": "explicit",
+        "quote": "VEGFA 蛋白激活 VHL 蛋白。"
+      }
+    },
+    {
+      "id": "r_vhl_hif1a",
+      "from": "e_vhl",
+      "to": "e_hif1a",
+      "type": "feedback",
+      "direction": "forward",
+      "label": "负反馈",
+      "style": {
+        "stroke": "dashed",
+        "arrow": "normal",
+        "color": "#666666",
+        "line_width_pt": 0.6
+      },
+      "evidence": {
+        "strength": "low",
+        "kind": "direct",
+        "note": "闭合 HIF1A→VEGFA→VEGFAp→VHL→HIF1A 环",
+        "source": {
+          "path": "materials/hypoxia_hif.md",
+          "locator": "L10",
+          "kind": "explicit",
+          "quote": "VHL 蛋白抑制 HIF-1alpha 蛋白，构成负反馈环。"
+        }
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L10",
+        "kind": "explicit",
+        "quote": "VHL 蛋白抑制 HIF-1alpha 蛋白，构成负反馈环。"
+      }
+    }
+  ],
+  "entities": [
+    {
+      "id": "e_hypoxia",
+      "label": "缺氧刺激",
+      "kind": "stimulus",
+      "container": "c_ext",
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L5",
+        "kind": "explicit",
+        "quote": "缺氧刺激激活 HIF-1alpha 蛋白的稳定化。"
+      },
+      "layout": {
+        "level": 0
+      }
+    },
+    {
+      "id": "e_hif1a",
+      "label": "HIF-1alpha",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "HIF1A",
+        "synonyms": [
+          "HIF-1alpha 蛋白"
+        ]
+      },
+      "abundance": {
+        "value": 8.0,
+        "unit": "nM",
+        "source": {
+          "path": "materials/hypoxia_hif.md",
+          "locator": "L18",
+          "kind": "explicit",
+          "quote": "丰度数据：HIF-1alpha 蛋白的丰度为 8.0 nM。"
+        }
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L6",
+        "kind": "explicit",
+        "quote": "HIF1A 促进 VEGFA 基因转录。"
+      },
+      "layout": {
+        "level": 1
+      }
+    },
+    {
+      "id": "e_vegf",
+      "label": "VEGFA 基因",
+      "kind": "gene",
+      "container": "c_nuc",
+      "attributes": {
+        "normalized_symbol": "VEGFA",
+        "synonyms": [
+          "VEGFA"
+        ]
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L6",
+        "kind": "explicit",
+        "quote": "HIF1A 促进 VEGFA 基因转录。"
+      },
+      "layout": {
+        "level": 2
+      }
+    },
+    {
+      "id": "e_epo",
+      "label": "EPO 基因",
+      "kind": "gene",
+      "container": "c_nuc",
+      "attributes": {
+        "normalized_symbol": "EPO",
+        "synonyms": [
+          "EPO"
+        ]
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L7",
+        "kind": "explicit",
+        "quote": "HIF1A 促进 EPO 基因转录。"
+      },
+      "layout": {
+        "level": 2
+      }
+    },
+    {
+      "id": "e_vegf_p",
+      "label": "VEGFA protein",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "VEGFA",
+        "synonyms": []
+      },
+      "abundance": {
+        "value": 20.0,
+        "unit": "nM",
+        "source": {
+          "path": "materials/hypoxia_hif.md",
+          "locator": "L19",
+          "kind": "explicit",
+          "quote": "丰度数据：VEGFA protein 的丰度为 20.0 nM。"
+        }
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L8",
+        "kind": "explicit",
+        "quote": "VEGFA 基因翻译为 VEGFA protein。"
+      },
+      "layout": {
+        "level": 3
+      }
+    },
+    {
+      "id": "e_vhl",
+      "label": "VHL 蛋白",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "VHL",
+        "synonyms": []
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L10",
+        "kind": "explicit",
+        "quote": "VHL 蛋白抑制 HIF-1alpha 蛋白，构成负反馈环。"
+      },
+      "layout": {
+        "level": 4
+      }
+    }
+  ],
+  "containers": [
+    {
+      "id": "c_ext",
+      "label": "胞外区室",
+      "kind": "compartment",
+      "compartment": "extracellular",
+      "members": [
+        "e_hypoxia"
+      ],
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L12",
+        "kind": "explicit",
+        "quote": "区室成员：胞外区室包含缺氧刺激。"
+      }
+    },
+    {
+      "id": "c_cyt",
+      "label": "胞质",
+      "kind": "compartment",
+      "compartment": "cytosol",
+      "members": [
+        "e_hif1a",
+        "e_vegf_p",
+        "e_vhl"
+      ],
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L13",
+        "kind": "explicit",
+        "quote": "胞质包含 HIF-1alpha 蛋白与 VEGFA protein。"
+      }
+    },
+    {
+      "id": "c_nuc",
+      "label": "细胞核",
+      "kind": "compartment",
+      "compartment": "nucleus",
+      "members": [
+        "e_vegf",
+        "e_epo"
+      ],
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L14",
+        "kind": "explicit",
+        "quote": "细胞核包含 VEGFA 基因与 EPO 基因。"
+      }
+    }
+  ],
+  "legend": [
+    {
+      "id": "lg_activation",
+      "label": "激活（实线箭头）",
+      "kind": "line_style",
+      "value": "activation",
+      "color": "#0072B2",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L10",
+        "kind": "explicit",
+        "quote": "VHL 蛋白抑制 HIF-1alpha 蛋白，构成负反馈环。"
+      }
+    },
+    {
+      "id": "lg_transcription",
+      "label": "转录（箭头）",
+      "kind": "line_style",
+      "value": "transcription",
+      "color": "#CC79A7",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L10",
+        "kind": "explicit",
+        "quote": "VHL 蛋白抑制 HIF-1alpha 蛋白，构成负反馈环。"
+      }
+    },
+    {
+      "id": "lg_translation",
+      "label": "翻译（箭头）",
+      "kind": "line_style",
+      "value": "translation",
+      "color": "#E69F00",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L10",
+        "kind": "explicit",
+        "quote": "VHL 蛋白抑制 HIF-1alpha 蛋白，构成负反馈环。"
+      }
+    },
+    {
+      "id": "lg_feedback",
+      "label": "反馈（虚线）",
+      "kind": "line_style",
+      "value": "feedback",
+      "color": "#666666",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L10",
+        "kind": "explicit",
+        "quote": "VHL 蛋白抑制 HIF-1alpha 蛋白，构成负反馈环。"
+      }
+    },
+    {
+      "id": "lg_encoding_line_style",
+      "label": "线型=相互作用类型（线型按冻结表）",
+      "kind": "value_scale",
+      "value": "relations[].type",
+      "encoding": {
+        "channel": "line_style",
+        "field": "relations[].type",
+        "unit": "",
+        "mapping": [
+          {
+            "value": "activation",
+            "visual": "solid"
+          },
+          {
+            "value": "transcription",
+            "visual": "solid"
+          },
+          {
+            "value": "translation",
+            "visual": "solid"
+          },
+          {
+            "value": "feedback",
+            "visual": "dashed"
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L17",
+        "kind": "explicit",
+        "quote": "冻结线宽映射：evidence.strength 为 high 对应 1.4 pt，medium 对应 1.0 pt，low 对应 0.6 pt。"
+      }
+    },
+    {
+      "id": "lg_evidence_width",
+      "label": "线宽=证据强度（high 1.4 / medium 1.0 / low 0.6 pt）",
+      "kind": "value_scale",
+      "value": "relations[].evidence.strength",
+      "encoding": {
+        "channel": "line_width",
+        "field": "relations[].evidence.strength",
+        "unit": "pt",
+        "mapping": [
+          {
+            "value": "high",
+            "visual": 1.4
+          },
+          {
+            "value": "medium",
+            "visual": 1.0
+          },
+          {
+            "value": "low",
+            "visual": 0.6
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L17",
+        "kind": "explicit",
+        "quote": "冻结线宽映射：evidence.strength 为 high 对应 1.4 pt，medium 对应 1.0 pt，low 对应 0.6 pt。"
+      }
+    },
+    {
+      "id": "lg_abundance_size",
+      "label": "节点面积=丰度（面积 ∝ value）",
+      "kind": "value_scale",
+      "value": "entities[].abundance",
+      "encoding": {
+        "channel": "node_size",
+        "field": "entities[].abundance",
+        "unit": "nM",
+        "mapping": [
+          {
+            "value": 8.0,
+            "visual": "area"
+          },
+          {
+            "value": 20.0,
+            "visual": "area"
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/hypoxia_hif.md",
+        "locator": "L19",
+        "kind": "explicit",
+        "quote": "丰度数据：VEGFA protein 的丰度为 20.0 nM。"
+      }
+    },
+    {
+      "id": "lg_normoxia",
+      "label": "Normoxia",
+      "kind": "category",
+      "value": "Normoxia",
+      "color": "#56B4E9",
+      "source": {
+        "path": "materials/expression.csv",
+        "locator": "table:group",
+        "kind": "explicit",
+        "quote": "Normoxia"
+      }
+    },
+    {
+      "id": "lg_hypoxia",
+      "label": "Hypoxia",
+      "kind": "category",
+      "value": "Hypoxia",
+      "color": "#CC79A7",
+      "source": {
+        "path": "materials/expression.csv",
+        "locator": "table:group",
+        "kind": "explicit",
+        "quote": "Hypoxia"
+      }
+    },
+    {
+      "id": "lg_encoding_color",
+      "label": "配色=分组（category 配色映射）",
+      "kind": "value_scale",
+      "value": "group",
+      "encoding": {
+        "channel": "color",
+        "field": "group",
+        "unit": "fold change",
+        "mapping": [
+          {
+            "value": "Normoxia",
+            "visual": "#56B4E9"
+          },
+          {
+            "value": "Hypoxia",
+            "visual": "#CC79A7"
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/expression.csv",
+        "locator": "table:group",
+        "kind": "explicit",
+        "quote": "Hypoxia"
+      }
+    }
+  ],
+  "data": {
+    "path": "materials/expression.csv",
+    "sha256": null,
+    "group_field": "group",
+    "columns": [
+      "group",
+      "gene",
+      "fold_change"
+    ],
+    "units": {
+      "fold_change": "fold change"
+    },
+    "rows": [
+      [
+        "Normoxia",
+        "VEGFA",
+        "1.00"
+      ],
+      [
+        "Hypoxia",
+        "VEGFA",
+        "4.60"
+      ],
+      [
+        "Normoxia",
+        "EPO",
+        "1.00"
+      ],
+      [
+        "Hypoxia",
+        "EPO",
+        "3.20"
+      ]
+    ],
+    "series": [
+      {
+        "name": "Normoxia",
+        "x": [
+          "VEGFA",
+          "EPO"
+        ],
+        "y": [
+          1.0,
+          1.0
+        ],
+        "unit": "fold change",
+        "color": "#56B4E9"
+      },
+      {
+        "name": "Hypoxia",
+        "x": [
+          "VEGFA",
+          "EPO"
+        ],
+        "y": [
+          4.6,
+          3.2
+        ],
+        "unit": "fold change",
+        "color": "#CC79A7"
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": "A",
+      "caption": {
+        "text": "分支与反馈环示意",
+        "source": {
+          "path": "materials/hypoxia_hif.md",
+          "locator": "L10",
+          "kind": "explicit",
+          "quote": "VHL 蛋白抑制 HIF-1alpha 蛋白，构成负反馈环。"
+        }
+      }
+    }
+  ],
+  "uncertainty": [],
+  "provenance": {
+    "generated_by": "verify-harness/fx-branch-feedback",
+    "created_utc": "2026-11-23T00:00:00Z",
+    "model_version": "1.1",
+    "source_files": [
+      {
+        "path": "materials/hypoxia_hif.md",
+        "sha256": null
+      },
+      {
+        "path": "materials/expression.csv",
+        "sha256": null
+      }
+    ]
+  }
+}
