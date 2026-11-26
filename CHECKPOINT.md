@@ -4,9 +4,11 @@
 
 ## 0. 一句话状态
 
-**已交付并已提交**（attempt **100345**，`submitted`/`queued`，人工评审）。冻结树 `tree_sha256 = 1046714de9e1a0a63eda2f80f107cbc34f6b11ce70f6ea00236b17f10c147220`
-（30 文件 / 1,121,506 B），**打包后复算逐字节相同**；bundle 闸门 + G10 轨迹闸门双 PASS；GitHub public 仓库已推送并核验可见。
-独立验收者判定 **CONDITIONAL**（正向 198/1、负例 injected 33 / detected 7）——**不作为"达成"**，未解决项见 §3。
+**已交付并已提交（v2）**：attempt **100713**（`submitted`/`queued`，人工评审）。冻结树 `tree_sha256 = 2c3c9af9e22e49758c57da03c67f8e4b26e271e4f024af4b3c45255602201237`
+（30 文件 / 1,128,381 B），bundle 闸门 + G10 轨迹闸门**双 PASS**；GitHub public 仓库已与冻结树同步（Contents API）。
+独立验收者终验判定 **CONDITIONAL**：正向 **207 PASS / 2 FAIL**（两条同源 = **B1-residual**：节点面积混入标签长度）、
+负例 **injected 33 / detected 31**（缺口 2 条 = 两个契约已冻结但未实现的码）——**不作为"达成"**，未清项见 §3。
+
 
 ## 1. 底座
 
@@ -29,28 +31,36 @@
 |---|---|
 | 交付本体 | `work/submission/`（30 文件）；`deliverables/submission/` 哈希一致镜像（30 文件，0 处不符） |
 | Skill 名 | `biological-mechanism-pathway-figure`（`common.SKILL_NAME` 从 `SKILL.md` frontmatter 读取，单一真相源） |
-| **attempt_id** | **100345** |
-| bundle | `receipts/bundle_v1.zip` 8,453,199 B，sha256 `8a7e2bad51bf6d578d5925a479222d7523b6056d75149e21b37ccbdd8c8d669f` |
-| trace | `traces/trace_v2.jsonl` 1,262,495 B / 663 记录 / 359 tool_result，sha256 `c1ce88dbd388e765bdc5f4c189663448770f4df7a74925cb58ad318b8f307fca` |
-| 闸门 | bundle **PASS**（104 entries、unsafe 0、native_trace 恰好 1、skill_files 30、symlinks 0）；G10 **PASS exit 0**；SHA 去重通过 |
-| 回执原文 | `receipts/submit_v1.out` |
-| GitHub | https://github.com/sprw-li/biological-mechanism-pathway-skill （public，commit `2f07dd659984`；提交回执落盘后的一次 `RESULT.md` 文档增补**未能补推**——15:2x 两次 `github.com:443` 连接失败后按规则停手，仓库与本地差一次**文档**提交） |
+| **attempt_id** | **100713**（v2，当前有效；v1 = 100345，两笔包 SHA 不同、均非重复提交） |
+| bundle | `receipts/bundle_v2.zip` 9,499,508 B，sha256 `a0b47b1127d411057d971817a5076d3557862a2964f7dea6eee75c441fe5e5de` |
+| trace | `traces/trace_v3.jsonl` 1,512,214 B / 856 记录 / 454 tool_result，sha256 `cee6bacd10fae8d2…` |
+| 冻结树 | `files=30 / bytes=1,128,381 / tree_sha256 = 2c3c9af9e22e49758c57da03c67f8e4b26e271e4f024af4b3c45255602201237`；`deliverables/submission/` 逐文件哈希一致 |
+| 闸门 | v2 bundle **PASS**（104 entries、unsafe 0、native_trace 恰好 1、skill_files 30、symlinks 0）；G10 **PASS exit 0**；SHA 去重通过（该题 1 条历史包，SHA 不同） |
+| 回执原文 | `receipts/submit_v2.out`（v1：`submit_v1.out`） |
+| GitHub | https://github.com/sprw-li/biological-mechanism-pathway-skill （public；**已与冻结 v2 树同步**，最新提交 `fe043343561cba1ce321f268c1b57b6710d4eef7`；`git push` 两次连接重置后改走 Contents API `work/publish_repo.py`） |
+
 | 轮询 | 3 次全部 `queued` ⇒ 归 **external-review**，已停手（不重投、不换 SHA） |
 
 ## 3. 独立验收与未解决缺陷
 
-**验收者（verify-harness，非实现方）总门禁：`CONDITIONAL`**（`work/verify/REVIEW.md`）
-- 正向 `run`：198 PASS / 1 FAIL / 0 UNVERIFIED / 1 N/A
-- 负例 `negative`：`injected=33 / detected=7 / vacuous_skips=[]` ⇒ **26 条注入未检出**（最严重未解决项）
-- 不可验范围：隐藏案例、`/skills` 实装与触发、人工视觉判断、平台计分
+**验收者（verify-harness，非实现方）终验总门禁：`CONDITIONAL`**（`work/verify/REVIEW.md`，指纹绑定 `harness_results.json.skill_module_sha256`）
+- 正向 `run`：**207 PASS / 2 FAIL / 0 UNVERIFIED / 6 N/A**
+- 负例 `negative`：**`injected=33 / detected=31`**，`vacuous_skips=[]`，无超时假阴性
+- 不可验范围：隐藏案例、`/skills` 实装与触发、人工视觉判断、平台计分与白板、64 请求/900s 真实消耗
 
 | 缺陷 | 状态 |
 |---|---|
-| B1 节点面积 ∝ `abundance.value` 被钳位 | **验收后已修**（精确 `sqrt(v/ref)` + 超界发 `W_ABUNDANCE_SIZE_CLAMPED` 披露） |
-| B2 中文材料下 `E_GENE_PROTEIN_CONFUSION` 误报（`_norm_name` 删 CJK） | **已修**（与 `mech.normalise_key` 同口径；`render_svg._key` 同源缺陷一并修） |
-| B3 `E_PLATFORM_FIELD_MISSING` 未实现 | **已修**（`run.py`：缺字段 ⇒ error 级 + `status` 降 `partial`） |
-| B4 `E_EVIDENCE_WIDTH_MISMATCH` / `E_ABUNDANCE_SIZE_MISMATCH` 未实现 | **未修**（契约已冻结、实现未落地 ⇒ 记 UNVERIFIED） |
-| 负例 26/33 未检出 | **未解决**（下一步优先） |
+| **P0** 我引入的 `layout.py` `NameError: degrade`（全管线 `render exit 2`） | **已修**（验收者 `run8` 曾 84 FAIL / SVG 全空，修复后四夹具 exit 0） |
+| **B1 二次缩放根因**（render 与 layout 各自缩放同一通道 ⇒ 面积恒偏 x0.68） | **已修**（删除 render 侧缩放；判据 (iv)「SVG 盒 == layout 盒」三夹具全 PASS，drift 全 x1.00） |
+| **B1-residual**（面积 = 文本/列宽驱动基础盒 × √(value/ref) ⇒ 混入标签长度） | **未修**（唯一未清正例根因，2 条 FAIL；锚点 `layout.py:1947-1950`） |
+| B2 中文材料下 `E_GENE_PROTEIN_CONFUSION` 误报 | **已修**（`_norm_name` 保留 CJK，与 `mech.normalise_key` 同口径；验收者新指纹复核转绿） |
+| B3 `E_PLATFORM_FIELD_MISSING` 未实现 | **已修**（`run.py`；验收者负例检出） |
+| B7 无量纲 allowlist 未接上报错路径（过严） | **已修**（正反两向均有验收者实测） |
+| B8 `abundance.value` 不做来源核对 | **已修**（伪造值 ⇒ `E_NUMBER_NOT_IN_SOURCE`，`where` 命中元素） |
+| B9 `ctx["degradations"]` 从未 flush ⇒ 披露达不到平台可见字段 | **已修**（`layout()` 末尾统一 flush；`figure_issues.json`/`compliance_checks` 实测可见） |
+| B4 `E_EVIDENCE_WIDTH_MISMATCH` / `E_ABUNDANCE_SIZE_MISMATCH` 未实现 | **未修**（契约已冻结、实现未落地 ⇒ 记 UNVERIFIED，负例缺口的全部来源） |
+| B6 单阶段偶发 >150s（宿主争用） | 未清（真实风险：平台 900s/案例预算） |
+
 
 ## 4. 本版真实成绩（可重跑）
 
@@ -85,13 +95,13 @@
 
 ## 7. 下一轮（按优先级）
 
-1. **负例 26/33 未检出**（`work/verify/negative_results.json`）：逐条核对是"判据缺失"还是"注入本身无效"，前者补门禁、后者修注入——**这是当前最大缺口**。
-2. B4 两个冻结码落地（`E_EVIDENCE_WIDTH_MISMATCH` / `E_ABUNDANCE_SIZE_MISMATCH`）。
+1. **B1-residual（首位）**：节点尺寸改为**只由 value 决定**（边长 ∝ √value，标签只做字号+换行降级，复用 `W_LABEL_DEGRADED` 阶梯）；或保留文本驱动盒但把 legend/契约措辞改为**方向性编码**并实现 `E_ABUNDANCE_SIZE_MISMATCH`。锚点 `layout.py:1947-1950`，证据 `work/verify/harness_results.json` 的 2 条 FAIL。
+2. 实现两个已冻结未落地的码：`E_EVIDENCE_WIDTH_MISMATCH`、`E_ABUNDANCE_SIZE_MISMATCH`（可把负例从 31/33 抬到 33/33）。
 3. `top_down` 真转置（思路见 `RESULT.md §7.1`：转置做成构建参数 + 与 `left_right` 共用同一确定性 fit 判据）。
-4. 其余 `RESULT.md §7` 的 1–10 条。
-5. attempt 100345 出分后读**平台详情原文**归因（勿只看 `status`；`score=0 + scoringDetails=null + queued` 是未评分默认值）；**同 bundle SHA256 绝不重投**。
+4. `RESULT.md §7` 其余项（自环路由退化、面板字母溯源、`metrics.flow_scale` 恒 1.0、确定性 fit 未接线）。
+5. attempt **100713** 出分后读**平台详情原文**归因（勿只看 `status`；`score=0 + scoringDetails=null + queued` 是未评分默认值）；**同 bundle SHA256 绝不重投**。
 6. 补跑 opt 8×n 矩阵与 council 8 次调用（本轮未跑，见 `RESULT.md §6`）。
 
 ## 8. 污染事件（如实记录）
 
-提交（14:57）后 15:07:45 出现 `work/submission/scripts/__pycache__/mech.cpython-312.pyc`（64,407 B，某并发运行的 import 残留；**提交时的 bundle 已核为 30 文件且无 pycache**）。Lead 已删除，复算 `tree_sha256` 与冻结值**逐字节相同**；`deliverables/submission/` 与 GitHub 副本扫描均无 `__pycache__`。
+v1 提交（14:57）后 15:07:45 出现 `work/submission/scripts/__pycache__/mech.cpython-312.pyc`（64,407 B，并发运行的 import 残留；**提交时的 bundle 已核为 30 文件且无 pycache**）。删除后复算 `tree_sha256` 与冻结值逐字节相同。**v2 冻结前再次全树扫描 `__pycache__`/`*.pyc` 为空**；`deliverables/submission/` 与 GitHub 副本亦无。
