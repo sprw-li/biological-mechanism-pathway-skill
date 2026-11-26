@@ -47,6 +47,61 @@
           "sha256": "d39207cd1d2393785d29abb8ff394e0e161638a6624ebfbf812fa51bb17dcff9"
         },
         {
+          "path": "examples/cases/branch-feedback/case.json",
+          "bytes": 1211,
+          "sha256": "c5b47d8191e49a50ef1057d853663d530edb9c1082de2b44d52ca56bd5b2fa51"
+        },
+        {
+          "path": "examples/cases/branch-feedback/materials/expression.csv",
+          "bytes": 97,
+          "sha256": "96a1d0bc6db33ce085c0d0adfeea43b030304cb99b1ecc365f3560538dbf84db"
+        },
+        {
+          "path": "examples/cases/branch-feedback/materials/hypoxia_hif.md",
+          "bytes": 1645,
+          "sha256": "641be8add42483f47fc6c136967b5a8a94df4153a936df97eecef5ee56bb478c"
+        },
+        {
+          "path": "examples/cases/branch-feedback/model.json",
+          "bytes": 17547,
+          "sha256": "fc202e6d4e867eec6e11fcc2cb3a8976c0dda0e340a617aa3deee9c2eb262c7d"
+        },
+        {
+          "path": "examples/cases/linear-pathway/case.json",
+          "bytes": 1228,
+          "sha256": "8a5259c4846573554b2180d6fec407a15eef6214980c266f79f6324fb1787e5b"
+        },
+        {
+          "path": "examples/cases/linear-pathway/materials/egf_mapk.md",
+          "bytes": 1947,
+          "sha256": "7dd79f3936e6ea97bc4f1d905ccf2cfc3a113c09091d1b0a4081f58fe3966130"
+        },
+        {
+          "path": "examples/cases/linear-pathway/materials/expression.csv",
+          "bytes": 73,
+          "sha256": "c089909d211d7052efa8f237cf8b94ed7289baffaff847d7d6379f9486fb3a77"
+        },
+        {
+          "path": "examples/cases/linear-pathway/model.json",
+          "bytes": 19044,
+          "sha256": "fde356745581aa9cf67ca295e2a9899514473a98316474bd52e3470e497fc688"
+        },
+        {
+          "path": "examples/cases/multi-compartment/case.json",
+          "bytes": 1198,
+          "sha256": "2395a8a8f33210fbd89350f5b530698a956639d3eaac9a908db1a758b51755f7"
+        },
+        {
+          "path": "examples/cases/multi-compartment/materials/igf1r_compartments.md",
+          "bytes": 2263,
+          "sha256": "c5237f6969135b151c5f678d9fd24c1dd76929040cb9de4082af12b9ad02d8de"
+        },
+        {
+          "path": "examples/cases/multi-compartment/model.json",
+          "bytes": 22023,
+          "sha256": "c1e5c44f410ca014ddbe845d12ab37152624cdb395b9c1a57d94f3892a10bea6"
+        },
+        {
           "path": "examples/expected_model.json",
           "bytes": 12067,
           "sha256": "5c5cff1271f43f1019b485462eb11823c7e5bbde16e91b42b1ac8a3feea54b76"
@@ -63,8 +118,8 @@
         },
         {
           "path": "examples/README.md",
-          "bytes": 6283,
-          "sha256": "59a52e127bc61eceda7daf7b3c4c3f03c26ba46f872bda2e7bc3256bfcbfeb18"
+          "bytes": 8287,
+          "sha256": "4ef9091d805258c8cf78225f654590c03cd14bf579a38dfe841886347413ed0a"
         },
         {
           "path": "GITHUB_URL.txt",
@@ -73,8 +128,8 @@
         },
         {
           "path": "README.md",
-          "bytes": 13859,
-          "sha256": "6b82f43338928348e15d87427d45f6a818153b2862cd800585d012cdf17b49df"
+          "bytes": 14574,
+          "sha256": "c8f32bf905390ed3c4a619ae9bf472a1b90ff60ea113f81bf29825de2611b1fd"
         },
         {
           "path": "references/export_and_compliance.md",
@@ -87,6 +142,11 @@
           "sha256": "36d459c6633268a0a62a003cfc41e2c1c9f169ead6b9ea5b1a3a8992018e091e"
         },
         {
+          "path": "references/gain_results.json",
+          "bytes": 4729,
+          "sha256": "cc0bb4828b0646f311fc4e760ff5ac8a6be5d55452d4b447514866ec84f21e4d"
+        },
+        {
           "path": "references/implementation_status.md",
           "bytes": 21190,
           "sha256": "83c69eb902e1c0d34298a5316ced4c1c6be95d84b18e4efad8e24ba5780c3e04"
@@ -97,6 +157,11 @@
           "sha256": "54a52d3ef3f0ad31f5af20fc7c75e83e2c40444885bfa1d556dd06dfa0ae49b7"
         },
         {
+          "path": "references/measured-gain.md",
+          "bytes": 4329,
+          "sha256": "99fdb0938b6953bef1f01c988088ed09cca9732b53de8e8f48f0b7e81f0aafac"
+        },
+        {
           "path": "references/mechanism_semantics.md",
           "bytes": 21129,
           "sha256": "5efd7cc21d78d5709b242c20a0b90e36d8cb1e5598ef888a21455c22b0ad09fb"
@@ -105,6 +170,16 @@
           "path": "references/result_contract.md",
           "bytes": 10450,
           "sha256": "66d5130080730c19706eface9b3da59271deaea7fc6db17ca4d23e8e927b6456"
+        },
+        {
+          "path": "references/reuse-and-contribution.md",
+          "bytes": 5261,
+          "sha256": "0420ad97f30c96b2c4b317174302b40a8b3887c84bdd507903e9019ba549faf8"
+        },
+        {
+          "path": "references/rubric-mapping.md",
+          "bytes": 9389,
+          "sha256": "4917c3bb82cd9009703313823638b63bdb3147494157662b15d78471f9f9c7fe"
         },
         {
           "path": "schemas/edit_ops.schema.json",
@@ -140,6 +215,11 @@
           "path": "scripts/export.py",
           "bytes": 98754,
           "sha256": "3bf1d606cb0ca8cbf4ea8954f860057b1df63d4b8bc72346079c78d4b0591dfd"
+        },
+        {
+          "path": "scripts/gain_check.py",
+          "bytes": 17233,
+          "sha256": "2f1890e7cbbe446de3c04561f55b8939319aee91eda63db33cba6ac9bff25089"
         },
         {
           "path": "scripts/ingest.py",
@@ -183,12 +263,12 @@
         },
         {
           "path": "SKILL.md",
-          "bytes": 26164,
-          "sha256": "eb14ae827c5e36cd5ccb2d7b8325db9a67d3b93b83e0e6e6eae1b9cce07a0966"
+          "bytes": 27355,
+          "sha256": "ad30a37261a48968dcbc78faad4331293f73e19db7799a8af337685d477f23e1"
         }
       ],
-      "file_count_including_self": 30,
-      "bytes_including_self": 1128381,
+      "file_count_including_self": 46,
+      "bytes_including_self": 1241508,
       "github": "https://github.com/sprw-li/biological-mechanism-pathway-skill"
     }
   ],
