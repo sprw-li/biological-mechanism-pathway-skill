@@ -1,0 +1,839 @@
+{
+  "schema_version": "1.1",
+  "case_id": "example-multi-compartment",
+  "figure": {
+    "id": "example-figure",
+    "kind": "mechanism_pathway",
+    "title": {
+      "text": "IGF1R 多区室跨膜受体机制图",
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L5",
+        "kind": "explicit",
+        "quote": "胞外配体 IGF1 激活质膜上的跨膜受体 IGF1R。"
+      }
+    },
+    "canvas": {
+      "width_mm": 180,
+      "height_mm": 130,
+      "background": "#FFFFFF"
+    },
+    "style": {
+      "font_stack": [
+        "DejaVu Sans",
+        "Liberation Sans",
+        "Arial"
+      ],
+      "color_space": "RGB",
+      "font_sizes_pt": {
+        "panel": 9,
+        "label": 7,
+        "title": 9,
+        "legend": 7
+      },
+      "line_widths_pt": {
+        "edge": 0.8,
+        "node": 0.6,
+        "axis": 0.6
+      },
+      "palette": [
+        "#0072B2",
+        "#D55E00",
+        "#009E73",
+        "#CC79A7",
+        "#56B4E9",
+        "#E69F00",
+        "#6A51A3",
+        "#666666",
+        "#999999",
+        "#F0E442"
+      ]
+    },
+    "flow": {
+      "orientation": "top_down",
+      "ranks": {
+        "e_igf1": 0,
+        "e_igf1r": 1,
+        "e_igfbp3": 1,
+        "e_irs1": 2,
+        "e_pi3k": 3,
+        "e_p85": 3,
+        "e_akt1": 4,
+        "e_glut4": 5,
+        "e_foxo3": 5
+      }
+    }
+  },
+  "entities": [
+    {
+      "id": "e_igf1",
+      "label": "IGF1",
+      "kind": "stimulus",
+      "container": "c_ext",
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L5",
+        "kind": "explicit",
+        "quote": "胞外配体 IGF1 激活质膜上的跨膜受体 IGF1R。"
+      },
+      "layout": {
+        "level": 0
+      }
+    },
+    {
+      "id": "e_igf1r",
+      "label": "IGF1R",
+      "kind": "protein",
+      "container": "c_pm",
+      "membrane_role": "transmembrane",
+      "attributes": {
+        "normalized_symbol": "IGF1R",
+        "synonyms": [
+          "IGF-1R"
+        ]
+      },
+      "abundance": {
+        "value": 5.5,
+        "unit": "nM",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L23",
+          "kind": "explicit",
+          "quote": "丰度数据：IGF1R 的丰度为 5.5 nM。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L6",
+        "kind": "explicit",
+        "quote": "IGF1R 是跨膜受体，胞外域在胞外区室，胞内域在胞质。"
+      },
+      "layout": {
+        "level": 1
+      }
+    },
+    {
+      "id": "e_igfbp3",
+      "label": "IGFBP3",
+      "kind": "protein",
+      "container": "c_pm",
+      "membrane_role": "membrane_anchored",
+      "attributes": {
+        "normalized_symbol": "IGFBP3",
+        "synonyms": [
+          "IGFBP-3"
+        ]
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L7",
+        "kind": "explicit",
+        "quote": "IGFBP3 是膜锚定蛋白，锚定在质膜上。"
+      },
+      "layout": {
+        "level": 1
+      }
+    },
+    {
+      "id": "e_irs1",
+      "label": "IRS1",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "IRS1",
+        "synonyms": []
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L8",
+        "kind": "explicit",
+        "quote": "活化的 IGF1R 激活胞质接头蛋白 IRS1。"
+      },
+      "layout": {
+        "level": 2
+      }
+    },
+    {
+      "id": "e_pi3k",
+      "label": "PI3K",
+      "kind": "complex",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "PI3K",
+        "synonyms": [
+          "PI3K 复合物"
+        ]
+      },
+      "abundance": {
+        "value": 2.2,
+        "unit": "nM",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L24",
+          "kind": "explicit",
+          "quote": "丰度数据：PI3K 的丰度为 2.2 nM。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L9",
+        "kind": "explicit",
+        "quote": "IRS1 激活胞质复合物 PI3K。"
+      },
+      "layout": {
+        "level": 3
+      }
+    },
+    {
+      "id": "e_p85",
+      "label": "p85",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "PIK3R1",
+        "synonyms": [
+          "p85 亚基"
+        ]
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L10",
+        "kind": "explicit",
+        "quote": "PI3K 与 p85 在同一区室（胞质）内结合，形成稳定的复合物。"
+      },
+      "layout": {
+        "level": 3
+      }
+    },
+    {
+      "id": "e_akt1",
+      "label": "Akt1",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "AKT1",
+        "synonyms": [
+          "Akt1 激酶"
+        ]
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L11",
+        "kind": "explicit",
+        "quote": "PI3K 激活胞质激酶 Akt1。"
+      },
+      "layout": {
+        "level": 4
+      }
+    },
+    {
+      "id": "e_glut4",
+      "label": "GLUT4",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "SLC2A4",
+        "synonyms": [
+          "GLUT4 转运体"
+        ]
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L12",
+        "kind": "explicit",
+        "quote": "Akt1 磷酸化 GLUT4 并促使其转位。"
+      },
+      "layout": {
+        "level": 5
+      }
+    },
+    {
+      "id": "e_foxo3",
+      "label": "FOXO3",
+      "kind": "protein",
+      "container": "c_nuc",
+      "attributes": {
+        "normalized_symbol": "FOXO3",
+        "synonyms": []
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L13",
+        "kind": "explicit",
+        "quote": "活化的 Akt1 转运进入细胞核区室，作用于转录因子 FOXO3。"
+      },
+      "layout": {
+        "level": 5
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "r_igf1_igf1r",
+      "from": "e_igf1",
+      "to": "e_igf1r",
+      "type": "activation",
+      "direction": "forward",
+      "label": "激活",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#0072B2",
+        "line_width_pt": 1.4
+      },
+      "evidence": {
+        "strength": "high",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L5",
+          "kind": "explicit",
+          "quote": "胞外配体 IGF1 激活质膜上的跨膜受体 IGF1R。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L5",
+        "kind": "explicit",
+        "quote": "胞外配体 IGF1 激活质膜上的跨膜受体 IGF1R。"
+      }
+    },
+    {
+      "id": "r_igf1r_irs1",
+      "from": "e_igf1r",
+      "to": "e_irs1",
+      "type": "activation",
+      "direction": "forward",
+      "label": "激活",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#0072B2",
+        "line_width_pt": 1.4
+      },
+      "evidence": {
+        "strength": "high",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L8",
+          "kind": "explicit",
+          "quote": "活化的 IGF1R 激活胞质接头蛋白 IRS1。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L8",
+        "kind": "explicit",
+        "quote": "活化的 IGF1R 激活胞质接头蛋白 IRS1。"
+      }
+    },
+    {
+      "id": "r_irs1_pi3k",
+      "from": "e_irs1",
+      "to": "e_pi3k",
+      "type": "activation",
+      "direction": "forward",
+      "label": "激活",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#0072B2",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L9",
+          "kind": "explicit",
+          "quote": "IRS1 激活胞质复合物 PI3K。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L9",
+        "kind": "explicit",
+        "quote": "IRS1 激活胞质复合物 PI3K。"
+      }
+    },
+    {
+      "id": "r_pi3k_p85",
+      "from": "e_pi3k",
+      "to": "e_p85",
+      "type": "binding",
+      "direction": "none",
+      "label": "结合",
+      "style": {
+        "stroke": "solid",
+        "arrow": "none",
+        "color": "#6A51A3",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L10",
+          "kind": "explicit",
+          "quote": "PI3K 与 p85 在同一区室（胞质）内结合，形成稳定的复合物。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L10",
+        "kind": "explicit",
+        "quote": "PI3K 与 p85 在同一区室（胞质）内结合，形成稳定的复合物。"
+      }
+    },
+    {
+      "id": "r_pi3k_akt1",
+      "from": "e_pi3k",
+      "to": "e_akt1",
+      "type": "activation",
+      "direction": "forward",
+      "label": "激活",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#0072B2",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L11",
+          "kind": "explicit",
+          "quote": "PI3K 激活胞质激酶 Akt1。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L11",
+        "kind": "explicit",
+        "quote": "PI3K 激活胞质激酶 Akt1。"
+      }
+    },
+    {
+      "id": "r_akt1_glut4",
+      "from": "e_akt1",
+      "to": "e_glut4",
+      "type": "modification",
+      "direction": "forward",
+      "label": "磷酸化",
+      "style": {
+        "stroke": "dashed",
+        "arrow": "normal",
+        "color": "#009E73",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L12",
+          "kind": "explicit",
+          "quote": "Akt1 磷酸化 GLUT4 并促使其转位。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L12",
+        "kind": "explicit",
+        "quote": "Akt1 磷酸化 GLUT4 并促使其转位。"
+      },
+      "notes": "修饰种类：磷酸化"
+    },
+    {
+      "id": "r_akt1_foxo3",
+      "from": "e_akt1",
+      "to": "e_foxo3",
+      "type": "transport",
+      "direction": "forward",
+      "label": "转运",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#56B4E9",
+        "line_width_pt": 0.6
+      },
+      "evidence": {
+        "strength": "low",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L13",
+          "kind": "explicit",
+          "quote": "活化的 Akt1 转运进入细胞核区室，作用于转录因子 FOXO3。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L13",
+        "kind": "explicit",
+        "quote": "活化的 Akt1 转运进入细胞核区室，作用于转录因子 FOXO3。"
+      },
+      "crosses": [
+        "c_cyt",
+        "c_nuc"
+      ]
+    },
+    {
+      "id": "r_akt1_foxo3_inh",
+      "from": "e_akt1",
+      "to": "e_foxo3",
+      "type": "inhibition",
+      "direction": "forward",
+      "label": "抑制",
+      "style": {
+        "stroke": "solid",
+        "arrow": "tee",
+        "color": "#D55E00",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L14",
+          "kind": "explicit",
+          "quote": "Akt1 磷酸化 FOXO3 并抑制其转录活性。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L14",
+        "kind": "explicit",
+        "quote": "Akt1 磷酸化 FOXO3 并抑制其转录活性。"
+      }
+    },
+    {
+      "id": "r_igfbp3_igf1r",
+      "from": "e_igfbp3",
+      "to": "e_igf1r",
+      "type": "association",
+      "direction": "none",
+      "label": "关联",
+      "style": {
+        "stroke": "dotted",
+        "arrow": "none",
+        "color": "#999999",
+        "line_width_pt": 0.6
+      },
+      "evidence": {
+        "strength": "low",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L15",
+          "kind": "explicit",
+          "quote": "IGFBP3 与 IGF1R 存在关联，可能影响配体结合。"
+        }
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L15",
+        "kind": "explicit",
+        "quote": "IGFBP3 与 IGF1R 存在关联，可能影响配体结合。"
+      }
+    }
+  ],
+  "containers": [
+    {
+      "id": "c_ext",
+      "label": "胞外区室",
+      "kind": "compartment",
+      "compartment": "extracellular",
+      "members": [
+        "e_igf1",
+        "c_pm"
+      ],
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L18",
+        "kind": "explicit",
+        "quote": "区室成员：胞外区室包含 IGF1 与质膜。"
+      }
+    },
+    {
+      "id": "c_pm",
+      "label": "质膜",
+      "kind": "membrane",
+      "compartment": "plasma_membrane",
+      "members": [
+        "e_igf1r",
+        "e_igfbp3",
+        "c_cyt"
+      ],
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L19",
+        "kind": "explicit",
+        "quote": "质膜包含 IGF1R、IGFBP3 与胞质。"
+      }
+    },
+    {
+      "id": "c_cyt",
+      "label": "胞质",
+      "kind": "compartment",
+      "compartment": "cytosol",
+      "members": [
+        "e_irs1",
+        "e_pi3k",
+        "e_p85",
+        "e_akt1",
+        "e_glut4",
+        "c_nuc"
+      ],
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L20",
+        "kind": "explicit",
+        "quote": "胞质包含 IRS1、PI3K、p85、Akt1、GLUT4 与细胞核。"
+      }
+    },
+    {
+      "id": "c_nuc",
+      "label": "细胞核",
+      "kind": "compartment",
+      "compartment": "nucleus",
+      "members": [
+        "e_foxo3"
+      ],
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L21",
+        "kind": "explicit",
+        "quote": "细胞核包含 FOXO3。"
+      }
+    }
+  ],
+  "legend": [
+    {
+      "id": "lg_activation",
+      "label": "激活（实线箭头）",
+      "kind": "line_style",
+      "value": "activation",
+      "color": "#0072B2",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L26",
+        "kind": "explicit",
+        "quote": "证据强度：IGF1 到 IGF1R 为 high，IGF1R 到 IRS1 为 high，IRS1 到 PI3K 为 medium，Akt1 到 FOXO3 为 low，Akt1 到 GLUT4 为 medium，IGFBP3 到 IGF1R 为 low。"
+      }
+    },
+    {
+      "id": "lg_inhibition",
+      "label": "抑制（平头线）",
+      "kind": "line_style",
+      "value": "inhibition",
+      "color": "#D55E00",
+      "marker": "arrow:tee",
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L26",
+        "kind": "explicit",
+        "quote": "证据强度：IGF1 到 IGF1R 为 high，IGF1R 到 IRS1 为 high，IRS1 到 PI3K 为 medium，Akt1 到 FOXO3 为 low，Akt1 到 GLUT4 为 medium，IGFBP3 到 IGF1R 为 low。"
+      }
+    },
+    {
+      "id": "lg_binding",
+      "label": "结合（无箭头实线）",
+      "kind": "line_style",
+      "value": "binding",
+      "color": "#6A51A3",
+      "marker": "arrow:none",
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L26",
+        "kind": "explicit",
+        "quote": "证据强度：IGF1 到 IGF1R 为 high，IGF1R 到 IRS1 为 high，IRS1 到 PI3K 为 medium，Akt1 到 FOXO3 为 low，Akt1 到 GLUT4 为 medium，IGFBP3 到 IGF1R 为 low。"
+      }
+    },
+    {
+      "id": "lg_modification",
+      "label": "修饰（虚线箭头）",
+      "kind": "line_style",
+      "value": "modification",
+      "color": "#009E73",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L26",
+        "kind": "explicit",
+        "quote": "证据强度：IGF1 到 IGF1R 为 high，IGF1R 到 IRS1 为 high，IRS1 到 PI3K 为 medium，Akt1 到 FOXO3 为 low，Akt1 到 GLUT4 为 medium，IGFBP3 到 IGF1R 为 low。"
+      }
+    },
+    {
+      "id": "lg_transport",
+      "label": "转运（跨边界箭头）",
+      "kind": "line_style",
+      "value": "transport",
+      "color": "#56B4E9",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L26",
+        "kind": "explicit",
+        "quote": "证据强度：IGF1 到 IGF1R 为 high，IGF1R 到 IRS1 为 high，IRS1 到 PI3K 为 medium，Akt1 到 FOXO3 为 low，Akt1 到 GLUT4 为 medium，IGFBP3 到 IGF1R 为 low。"
+      }
+    },
+    {
+      "id": "lg_association",
+      "label": "关联（点线）",
+      "kind": "line_style",
+      "value": "association",
+      "color": "#999999",
+      "marker": "arrow:none",
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L26",
+        "kind": "explicit",
+        "quote": "证据强度：IGF1 到 IGF1R 为 high，IGF1R 到 IRS1 为 high，IRS1 到 PI3K 为 medium，Akt1 到 FOXO3 为 low，Akt1 到 GLUT4 为 medium，IGFBP3 到 IGF1R 为 low。"
+      }
+    },
+    {
+      "id": "lg_encoding_line_style",
+      "label": "线型=相互作用类型（线型按冻结表）",
+      "kind": "value_scale",
+      "value": "relations[].type",
+      "encoding": {
+        "channel": "line_style",
+        "field": "relations[].type",
+        "unit": "",
+        "mapping": [
+          {
+            "value": "activation",
+            "visual": "solid"
+          },
+          {
+            "value": "inhibition",
+            "visual": "solid"
+          },
+          {
+            "value": "binding",
+            "visual": "solid"
+          },
+          {
+            "value": "modification",
+            "visual": "dashed"
+          },
+          {
+            "value": "transport",
+            "visual": "solid"
+          },
+          {
+            "value": "association",
+            "visual": "dotted"
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L26",
+        "kind": "explicit",
+        "quote": "证据强度：IGF1 到 IGF1R 为 high，IGF1R 到 IRS1 为 high，IRS1 到 PI3K 为 medium，Akt1 到 FOXO3 为 low，Akt1 到 GLUT4 为 medium，IGFBP3 到 IGF1R 为 low。"
+      }
+    },
+    {
+      "id": "lg_evidence_width",
+      "label": "线宽=证据强度（high 1.4 / medium 1.0 / low 0.6 pt）",
+      "kind": "value_scale",
+      "value": "relations[].evidence.strength",
+      "encoding": {
+        "channel": "line_width",
+        "field": "relations[].evidence.strength",
+        "unit": "pt",
+        "mapping": [
+          {
+            "value": "high",
+            "visual": 1.4
+          },
+          {
+            "value": "medium",
+            "visual": 1.0
+          },
+          {
+            "value": "low",
+            "visual": 0.6
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L25",
+        "kind": "explicit",
+        "quote": "冻结线宽映射：evidence.strength 为 high 对应 1.4 pt，medium 对应 1.0 pt，low 对应 0.6 pt。"
+      }
+    },
+    {
+      "id": "lg_abundance_size",
+      "label": "节点面积=丰度（面积 ∝ value）",
+      "kind": "value_scale",
+      "value": "entities[].abundance",
+      "encoding": {
+        "channel": "node_size",
+        "field": "entities[].abundance",
+        "unit": "nM",
+        "mapping": [
+          {
+            "value": 2.2,
+            "visual": "area"
+          },
+          {
+            "value": 5.5,
+            "visual": "area"
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/igf1r_compartments.md",
+        "locator": "L23",
+        "kind": "explicit",
+        "quote": "丰度数据：IGF1R 的丰度为 5.5 nM。"
+      }
+    }
+  ],
+  "panels": [
+    {
+      "id": "A",
+      "caption": {
+        "text": "多区室受体通路示意",
+        "source": {
+          "path": "materials/igf1r_compartments.md",
+          "locator": "L17",
+          "kind": "explicit",
+          "quote": "区室层级：胞外区室、质膜、胞质、细胞核，rank 沿受体-胞内-核内层级单调递增。"
+        }
+      }
+    }
+  ],
+  "uncertainty": [],
+  "provenance": {
+    "generated_by": "verify-harness/fixture-C",
+    "created_utc": "2026-11-23T00:00:00Z",
+    "model_version": "1.1",
+    "source_files": [
+      {
+        "path": "materials/igf1r_compartments.md",
+        "sha256": null
+      }
+    ]
+  }
+}
