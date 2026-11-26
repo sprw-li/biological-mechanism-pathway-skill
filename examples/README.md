@@ -15,6 +15,39 @@
 | `materials/example_pathway_workorder.json` | **figure workorder**（镜像真实案例的输入形状）：区室/膜容器、实体与 `membrane_role`、冻结关系类型、`legend_encoding` |
 | `materials/example_pathway_notes.md` | 机制叙述材料：逐字引文的来源（`L9`、`L14`、`L20` …） |
 | `expected_model.json` | **模型示意**（不是渲染结果）：演示 `schemas/figure_model.schema.json` 的机制图完整形状与逐元素溯源绑定 |
+| `cases/linear-pathway/` | 题集 ①：线性通路（配体→受体→激酶级联→核内 TF→基因→蛋白），含 `case.json` + `materials/` + `model.json` |
+| `cases/branch-feedback/` | 题集 ②：**并行分支 + 显式反馈环**（`relations[].type="feedback"` 收环） |
+| `cases/multi-compartment/` | 题集 ③：**多区室 + 跨膜受体 + 膜带**（extracellular/membrane/cytosol/nucleus 嵌套） |
+
+三套 `cases/` 就是「基础对照 / 回归 / 题集」共用的那三套，同时是 `scripts/gain_check.py`
+测增益时用的输入（见 `references/measured-gain.md`）。它们与根目录的最小示例一样，
+**全部是合成示例**：`case_id` 带 `example-` 前缀，`figure.id` 统一为 `example-figure`
+（不要与组织方的 `figure03` 混淆）。
+
+### 跑题集（任选一套）
+
+```powershell
+python "$SKILL/scripts/run.py" prepare --input "$SKILL/examples/cases/linear-pathway" --work w --output o
+# 用题集自带 model.json 代替「Agent 裁决」这一步（它就是一个已裁决好的模型）
+python "$SKILL/scripts/run.py" render --work w --output o --model "$SKILL/examples/cases/linear-pathway/model.json"
+python "$SKILL/scripts/run.py" export --work w --output o --model "$SKILL/examples/cases/linear-pathway/model.json" --journal nature --dpi 600
+python "$SKILL/scripts/run.py" finish --work w --output o --model "$SKILL/examples/cases/linear-pathway/model.json"
+```
+
+### 一次测出"这个 Skill 到底有没有用"
+
+```powershell
+python "$SKILL/scripts/gain_check.py" `
+    --case "$SKILL/examples/cases/linear-pathway" `
+    --case "$SKILL/examples/cases/branch-feedback" `
+    --case "$SKILL/examples/cases/multi-compartment" `
+    --work <tmp>/w --out <tmp>/o
+```
+
+它会把**朴素基线**（材料名词串链、全默认激活箭头、无来源）与**本 Skill**（`model.json`）
+放进同一条管线跑，输出 `gain_results.json` + `measured-gain.md`。
+本仓库当前那份输出见 `references/measured-gain.md`。
+
 
 `expected_model.json` 里每条 `source.quote` 都能在 `materials/example_pathway_notes.md` 的对应行**逐字**找到，
 这正是 `validate_model` 会核对的那件事——示例因此同时充当「最小可核验样例」。
