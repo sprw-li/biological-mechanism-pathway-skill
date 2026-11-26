@@ -183,5 +183,16 @@ python "$SKILL/scripts/run.py" compare --input /input --work /app/work --output 
   `references/`、`scripts/selftest.py`，并让 `selftest.py` 重新通过。
 - 自测：`python "$SKILL/scripts/selftest.py"`（正例真跑 + 注入缺陷必须被检出，`vacuous_skips` 必须为 0）。
 - 结构自检（本地工具）：`py -3 _shared/tools/validate_skill_submission.py <submission-dir>`。
+
+## 12. 本作品的证据文档（评审可从这里入手）
+
+| 想知道什么 | 看这个 |
+|---|---|
+| 每个评分点对应哪段实现、哪条命令能复核，以及**哪些没做到** | `references/rubric-mapping.md` |
+| 这个 Skill 相比"把名词串成链"的朴素做法到底强在哪、代价是什么 | `references/measured-gain.md`（由 `scripts/gain_check.py` 真实产出，可重跑） |
+| 三套题集覆盖了哪些机制形态 | `examples/cases/{linear-pathway,branch-feedback,multi-compartment}` |
+| 哪些资产可以拿走复用、边界在哪 | `references/reuse-and-contribution.md` |
+| 本版每条能力的实测状态（含 UNVERIFIED） | `references/implementation_status.md` |
+
 - 已知限制：CJK 字体是否可用取决于运行环境；PDF 文本抽取依赖 `pypdf`；EPS 由 matplotlib 输出，
   不含 `<text>` 语义但仍保留矢量与字体引用，可编辑性以 SVG 主源文件为准。
