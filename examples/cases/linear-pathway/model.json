@@ -1,0 +1,769 @@
+{
+  "schema_version": "1.1",
+  "case_id": "example-linear-pathway",
+  "figure": {
+    "id": "example-figure",
+    "kind": "mechanism_pathway",
+    "title": {
+      "text": "EGF-MAPK 线性通路机制图",
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L5",
+        "kind": "explicit",
+        "quote": "胞外刺激 EGF 激活质膜受体 EGFR",
+        "derived_from": [
+          "L5"
+        ]
+      }
+    },
+    "canvas": {
+      "width_mm": 180,
+      "height_mm": 130,
+      "background": "#FFFFFF"
+    },
+    "style": {
+      "font_stack": [
+        "DejaVu Sans",
+        "Liberation Sans",
+        "Arial"
+      ],
+      "color_space": "RGB",
+      "font_sizes_pt": {
+        "panel": 9,
+        "label": 7,
+        "title": 9,
+        "legend": 7
+      },
+      "line_widths_pt": {
+        "edge": 0.8,
+        "node": 0.6,
+        "axis": 0.6
+      },
+      "palette": [
+        "#0072B2",
+        "#D55E00",
+        "#009E73",
+        "#CC79A7",
+        "#56B4E9",
+        "#E69F00",
+        "#6A51A3",
+        "#666666",
+        "#999999",
+        "#F0E442"
+      ]
+    },
+    "flow": {
+      "orientation": "top_down",
+      "ranks": {
+        "e_egf": 0,
+        "e_egfr": 1,
+        "e_grb2": 2,
+        "e_map2k1": 3,
+        "e_mapk1": 4,
+        "e_elk1": 5,
+        "e_fos": 6,
+        "e_fos_p": 7
+      }
+    }
+  },
+  "entities": [
+    {
+      "id": "e_egf",
+      "label": "EGF",
+      "kind": "stimulus",
+      "container": "c_ext",
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L5",
+        "kind": "explicit",
+        "quote": "胞外刺激 EGF 激活质膜受体 EGFR"
+      },
+      "layout": {
+        "level": 0
+      }
+    },
+    {
+      "id": "e_egfr",
+      "label": "EGFR",
+      "kind": "protein",
+      "container": "c_pm",
+      "membrane_role": "transmembrane",
+      "attributes": {
+        "normalized_symbol": "EGFR",
+        "synonyms": [
+          "ERBB1"
+        ]
+      },
+      "abundance": {
+        "value": 3.0,
+        "unit": "nM",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L22",
+          "kind": "explicit",
+          "quote": "丰度数据：EGFR 的丰度为 3.0 nM"
+        }
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L6",
+        "kind": "explicit",
+        "quote": "EGFR 是跨膜受体，其胞外域朝向胞外区室，胞内域位于胞质"
+      },
+      "layout": {
+        "level": 1
+      }
+    },
+    {
+      "id": "e_grb2",
+      "label": "GRB2",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "GRB2",
+        "synonyms": []
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L7",
+        "kind": "explicit",
+        "quote": "活化的 EGFR 激活胞质接头蛋白 GRB2"
+      },
+      "layout": {
+        "level": 2
+      }
+    },
+    {
+      "id": "e_map2k1",
+      "label": "MAP2K1",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "MAP2K1",
+        "synonyms": [
+          "MEK1"
+        ]
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L8",
+        "kind": "explicit",
+        "quote": "GRB2 激活激酶 MAP2K1"
+      },
+      "layout": {
+        "level": 3
+      }
+    },
+    {
+      "id": "e_mapk1",
+      "label": "MAPK1",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "MAPK1",
+        "synonyms": [
+          "ERK2"
+        ]
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L9",
+        "kind": "explicit",
+        "quote": "MAP2K1 磷酸化并激活 MAPK1"
+      },
+      "layout": {
+        "level": 4
+      }
+    },
+    {
+      "id": "e_elk1",
+      "label": "ELK1",
+      "kind": "protein",
+      "container": "c_nuc",
+      "attributes": {
+        "normalized_symbol": "ELK1",
+        "synonyms": []
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L11",
+        "kind": "explicit",
+        "quote": "核内转录因子 ELK1 被 MAPK1 激活"
+      },
+      "layout": {
+        "level": 5
+      }
+    },
+    {
+      "id": "e_fos",
+      "label": "FOS",
+      "kind": "gene",
+      "container": "c_nuc",
+      "attributes": {
+        "normalized_symbol": "FOS",
+        "synonyms": []
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L12",
+        "kind": "explicit",
+        "quote": "ELK1 促进 FOS 基因转录"
+      },
+      "layout": {
+        "level": 6
+      }
+    },
+    {
+      "id": "e_fos_p",
+      "label": "c-Fos",
+      "kind": "protein",
+      "container": "c_cyt",
+      "attributes": {
+        "normalized_symbol": "CI-FOS",
+        "synonyms": [
+          "c-Fos 蛋白"
+        ]
+      },
+      "abundance": {
+        "value": 12.5,
+        "unit": "nM",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L23",
+          "kind": "explicit",
+          "quote": "丰度数据：c-Fos 蛋白的丰度为 12.5 nM。"
+        }
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L13",
+        "kind": "explicit",
+        "quote": "FOS 基因翻译为 c-Fos 蛋白。"
+      },
+      "layout": {
+        "level": 7
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "r_egf_egfr",
+      "from": "e_egf",
+      "to": "e_egfr",
+      "type": "activation",
+      "direction": "forward",
+      "label": "激活",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#0072B2",
+        "line_width_pt": 1.4
+      },
+      "evidence": {
+        "strength": "high",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L5",
+          "kind": "explicit",
+          "quote": "胞外刺激 EGF 激活质膜受体 EGFR"
+        }
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L5",
+        "kind": "explicit",
+        "quote": "胞外刺激 EGF 激活质膜受体 EGFR"
+      }
+    },
+    {
+      "id": "r_egfr_grb2",
+      "from": "e_egfr",
+      "to": "e_grb2",
+      "type": "activation",
+      "direction": "forward",
+      "label": "激活",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#0072B2",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L7",
+          "kind": "explicit",
+          "quote": "活化的 EGFR 激活胞质接头蛋白 GRB2"
+        }
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L7",
+        "kind": "explicit",
+        "quote": "活化的 EGFR 激活胞质接头蛋白 GRB2"
+      }
+    },
+    {
+      "id": "r_grb2_map2k1",
+      "from": "e_grb2",
+      "to": "e_map2k1",
+      "type": "activation",
+      "direction": "forward",
+      "label": "激活",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#0072B2",
+        "line_width_pt": 1.4
+      },
+      "evidence": {
+        "strength": "high",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L8",
+          "kind": "explicit",
+          "quote": "GRB2 激活激酶 MAP2K1"
+        }
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L8",
+        "kind": "explicit",
+        "quote": "GRB2 激活激酶 MAP2K1"
+      }
+    },
+    {
+      "id": "r_map2k1_mapk1",
+      "from": "e_map2k1",
+      "to": "e_mapk1",
+      "type": "modification",
+      "direction": "forward",
+      "label": "磷酸化",
+      "style": {
+        "stroke": "dashed",
+        "arrow": "normal",
+        "color": "#009E73",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L9",
+          "kind": "explicit",
+          "quote": "MAP2K1 磷酸化并激活 MAPK1"
+        }
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L9",
+        "kind": "explicit",
+        "quote": "MAP2K1 磷酸化并激活 MAPK1"
+      },
+      "notes": "修饰种类：磷酸化"
+    },
+    {
+      "id": "r_mapk1_elk1",
+      "from": "e_mapk1",
+      "to": "e_elk1",
+      "type": "transport",
+      "direction": "forward",
+      "label": "转运",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#56B4E9",
+        "line_width_pt": 0.6
+      },
+      "evidence": {
+        "strength": "low",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L10",
+          "kind": "explicit",
+          "quote": "活化的 MAPK1 转运进入细胞核区室"
+        }
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L10",
+        "kind": "explicit",
+        "quote": "活化的 MAPK1 转运进入细胞核区室"
+      },
+      "crosses": [
+        "c_cyt",
+        "c_nuc"
+      ]
+    },
+    {
+      "id": "r_elk1_fos",
+      "from": "e_elk1",
+      "to": "e_fos",
+      "type": "transcription",
+      "direction": "forward",
+      "label": "转录",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#CC79A7",
+        "line_width_pt": 1.4
+      },
+      "evidence": {
+        "strength": "high",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L12",
+          "kind": "explicit",
+          "quote": "ELK1 促进 FOS 基因转录"
+        }
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L12",
+        "kind": "explicit",
+        "quote": "ELK1 促进 FOS 基因转录"
+      }
+    },
+    {
+      "id": "r_fos_fosp",
+      "from": "e_fos",
+      "to": "e_fos_p",
+      "type": "translation",
+      "direction": "forward",
+      "label": "翻译",
+      "style": {
+        "stroke": "solid",
+        "arrow": "normal",
+        "color": "#E69F00",
+        "line_width_pt": 1.0
+      },
+      "evidence": {
+        "strength": "medium",
+        "kind": "direct",
+        "note": "",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L13",
+          "kind": "explicit",
+          "quote": "FOS 基因翻译为 c-Fos 蛋白。"
+        }
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L13",
+        "kind": "explicit",
+        "quote": "FOS 基因翻译为 c-Fos 蛋白。"
+      }
+    }
+  ],
+  "containers": [
+    {
+      "id": "c_ext",
+      "label": "胞外区室",
+      "kind": "compartment",
+      "compartment": "extracellular",
+      "members": [
+        "e_egf",
+        "c_pm"
+      ],
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L16",
+        "kind": "explicit",
+        "quote": "区室成员：胞外区室包含 EGF 与质膜"
+      }
+    },
+    {
+      "id": "c_pm",
+      "label": "质膜",
+      "kind": "membrane",
+      "compartment": "plasma_membrane",
+      "members": [
+        "e_egfr",
+        "c_cyt"
+      ],
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L17",
+        "kind": "explicit",
+        "quote": "质膜包含 EGFR 与胞质"
+      }
+    },
+    {
+      "id": "c_cyt",
+      "label": "胞质",
+      "kind": "compartment",
+      "compartment": "cytosol",
+      "members": [
+        "e_grb2",
+        "e_map2k1",
+        "e_mapk1",
+        "c_nuc"
+      ],
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L18",
+        "kind": "explicit",
+        "quote": "胞质包含 GRB2、MAP2K1、MAPK1 与细胞核"
+      }
+    },
+    {
+      "id": "c_nuc",
+      "label": "细胞核",
+      "kind": "compartment",
+      "compartment": "nucleus",
+      "members": [
+        "e_elk1",
+        "e_fos"
+      ],
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L19",
+        "kind": "explicit",
+        "quote": "细胞核包含 ELK1 与 FOS 基因"
+      }
+    }
+  ],
+  "legend": [
+    {
+      "id": "lg_activation",
+      "label": "激活（实线箭头）",
+      "kind": "line_style",
+      "value": "activation",
+      "color": "#0072B2",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L24",
+        "kind": "explicit",
+        "quote": "证据强度：EGF 到 EGFR 为 high，EGFR 到 GRB2 为 medium，GRB2 到 MAP2K1 为 high，MAP2K1 到 MAPK1 为 medium，MAPK1 到 ELK1 为 low，ELK1 到 FOS 为 high，FOS 到 c-Fos 为 medium。"
+      }
+    },
+    {
+      "id": "lg_modification",
+      "label": "修饰（虚线箭头）",
+      "kind": "line_style",
+      "value": "modification",
+      "color": "#009E73",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L24",
+        "kind": "explicit",
+        "quote": "证据强度：EGF 到 EGFR 为 high，EGFR 到 GRB2 为 medium，GRB2 到 MAP2K1 为 high，MAP2K1 到 MAPK1 为 medium，MAPK1 到 ELK1 为 low，ELK1 到 FOS 为 high，FOS 到 c-Fos 为 medium。"
+      }
+    },
+    {
+      "id": "lg_transport",
+      "label": "转运（跨边界箭头）",
+      "kind": "line_style",
+      "value": "transport",
+      "color": "#56B4E9",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L24",
+        "kind": "explicit",
+        "quote": "证据强度：EGF 到 EGFR 为 high，EGFR 到 GRB2 为 medium，GRB2 到 MAP2K1 为 high，MAP2K1 到 MAPK1 为 medium，MAPK1 到 ELK1 为 low，ELK1 到 FOS 为 high，FOS 到 c-Fos 为 medium。"
+      }
+    },
+    {
+      "id": "lg_transcription",
+      "label": "转录（箭头）",
+      "kind": "line_style",
+      "value": "transcription",
+      "color": "#CC79A7",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L24",
+        "kind": "explicit",
+        "quote": "证据强度：EGF 到 EGFR 为 high，EGFR 到 GRB2 为 medium，GRB2 到 MAP2K1 为 high，MAP2K1 到 MAPK1 为 medium，MAPK1 到 ELK1 为 low，ELK1 到 FOS 为 high，FOS 到 c-Fos 为 medium。"
+      }
+    },
+    {
+      "id": "lg_translation",
+      "label": "翻译（箭头）",
+      "kind": "line_style",
+      "value": "translation",
+      "color": "#E69F00",
+      "marker": "arrow:normal",
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L24",
+        "kind": "explicit",
+        "quote": "证据强度：EGF 到 EGFR 为 high，EGFR 到 GRB2 为 medium，GRB2 到 MAP2K1 为 high，MAP2K1 到 MAPK1 为 medium，MAPK1 到 ELK1 为 low，ELK1 到 FOS 为 high，FOS 到 c-Fos 为 medium。"
+      }
+    },
+    {
+      "id": "lg_encoding_line_style",
+      "label": "线型=相互作用类型（线型按冻结表）",
+      "kind": "value_scale",
+      "value": "relations[].type",
+      "encoding": {
+        "channel": "line_style",
+        "field": "relations[].type",
+        "unit": "",
+        "mapping": [
+          {
+            "value": "activation",
+            "visual": "solid"
+          },
+          {
+            "value": "modification",
+            "visual": "dashed"
+          },
+          {
+            "value": "transport",
+            "visual": "solid"
+          },
+          {
+            "value": "transcription",
+            "visual": "solid"
+          },
+          {
+            "value": "translation",
+            "visual": "solid"
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L24",
+        "kind": "explicit",
+        "quote": "证据强度：EGF 到 EGFR 为 high，EGFR 到 GRB2 为 medium，GRB2 到 MAP2K1 为 high，MAP2K1 到 MAPK1 为 medium，MAPK1 到 ELK1 为 low，ELK1 到 FOS 为 high，FOS 到 c-Fos 为 medium。"
+      }
+    },
+    {
+      "id": "lg_evidence_width",
+      "label": "线宽=证据强度（high 1.4 / medium 1.0 / low 0.6 pt）",
+      "kind": "value_scale",
+      "value": "relations[].evidence.strength",
+      "encoding": {
+        "channel": "line_width",
+        "field": "relations[].evidence.strength",
+        "unit": "pt",
+        "mapping": [
+          {
+            "value": "high",
+            "visual": 1.4
+          },
+          {
+            "value": "medium",
+            "visual": 1.0
+          },
+          {
+            "value": "low",
+            "visual": 0.6
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L21",
+        "kind": "explicit",
+        "quote": "冻结线宽映射：evidence.strength 为 high 对应 1.4 pt，medium 对应 1.0 pt，low 对应 0.6 pt。"
+      }
+    },
+    {
+      "id": "lg_abundance_size",
+      "label": "节点面积=丰度（面积 ∝ value）",
+      "kind": "value_scale",
+      "value": "entities[].abundance",
+      "encoding": {
+        "channel": "node_size",
+        "field": "entities[].abundance",
+        "unit": "nM",
+        "mapping": [
+          {
+            "value": 3.0,
+            "visual": "area"
+          },
+          {
+            "value": 12.5,
+            "visual": "area"
+          }
+        ]
+      },
+      "source": {
+        "path": "materials/egf_mapk.md",
+        "locator": "L22",
+        "kind": "explicit",
+        "quote": "丰度数据：EGFR 的丰度为 3.0 nM。"
+      }
+    }
+  ],
+  "data": {
+    "path": "materials/expression.csv",
+    "columns": [
+      "gene",
+      "fold_change",
+      "abundance_nM"
+    ],
+    "rows": [
+      [
+        "FOS",
+        "1.85",
+        "12.5"
+      ],
+      [
+        "EGFR",
+        "0.72",
+        "3.0"
+      ],
+      [
+        "MAPK1",
+        "2.40",
+        "6.0"
+      ]
+    ],
+    "units": {
+      "fold_change": "fold change",
+      "abundance_nM": "nM"
+    },
+    "sha256": null
+  },
+  "panels": [
+    {
+      "id": "A",
+      "caption": {
+        "text": "线性通路关系示意",
+        "source": {
+          "path": "materials/egf_mapk.md",
+          "locator": "L15",
+          "kind": "explicit",
+          "quote": "区室层级：胞外区室、质膜、胞质、细胞核，rank 沿通路单调递增。"
+        }
+      }
+    }
+  ],
+  "uncertainty": [],
+  "provenance": {
+    "generated_by": "verify-harness/fixture-A",
+    "created_utc": "2026-11-23T00:00:00Z",
+    "model_version": "1.1",
+    "source_files": [
+      {
+        "path": "materials/egf_mapk.md",
+        "sha256": null
+      },
+      {
+        "path": "materials/expression.csv",
+        "sha256": null
+      }
+    ]
+  }
+}
