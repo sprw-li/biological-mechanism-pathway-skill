@@ -70,6 +70,24 @@ python "$SKILL/scripts/run.py" compare --input /input --work /app/work --output 
 python "$SKILL/scripts/run.py" finish --work /app/work --output /app/output
 ```
 
+### 想先确认"它到底有没有用"：一条命令测增益
+
+```bash
+# 同一管线、同一夹具、同一 DPI，只换模型：朴素基线 vs 本 Skill
+python "$SKILL/scripts/gain_check.py" \
+    --case "$SKILL/examples/cases/linear-pathway" \
+    --case "$SKILL/examples/cases/branch-feedback" \
+    --case "$SKILL/examples/cases/multi-compartment" \
+    --work /tmp/gain/w --out /tmp/gain/o
+```
+
+产出 `gain_results.json` + `measured-gain.md`（人工返工条目 / 方向边有类型比例 / 溯源覆盖 /
+门禁错误数 / 导出格式数 / 墙钟）。本仓库的实测结果在 `references/measured-gain.md`；
+**效率是劣势**（Skill 更慢，省的是人工返工），这一点在该文件的"诚实边界"里写死。
+
+> 评分维度逐条对照（含**没有做到**的部分）见 `references/rubric-mapping.md`；
+> 可复用资产与用法边界见 `references/reuse-and-contribution.md`。
+
 可选：来源保留式编辑（改标签/配色/数据点后重绘重导，并写 `change_log.json`）：
 
 ```bash
@@ -260,6 +278,9 @@ references/layout_and_svg.md       布局与 SVG 合同（区室/膜/方向）
 references/export_and_compliance.md 导出与合规检查 id 清单（17 项 + 产物侧机制复核 + REF_*）
 references/result_contract.md      结果合同（平台原字段 + reference_comparison）
 references/implementation_status.md 本版实测核验表（哪条能力已被实测，哪些 UNVERIFIED）
+references/measured-gain.md         增益实测（gain_check.py 的真实 stdout：naive vs skill）
+references/rubric-mapping.md        评分维度 → 实现与证据（含"没做到"清单）
+references/reuse-and-contribution.md 可复用资产清单与用法边界
 examples/                       最小调用示例（**示例**，非正式案例答案）
 ```
 
